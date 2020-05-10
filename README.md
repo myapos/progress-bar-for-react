@@ -28,7 +28,7 @@ Please see the **src/Examples** folder for more descriptive usage.
 
 ### Demo
 
-You can see a demo in the following link `https://myapos.github.io/progress-bar-for-react/`
+You can see a demo in the following [link](https://myapos.github.io/progress-bar-for-react/)
 
 ### Fork instructions
 
