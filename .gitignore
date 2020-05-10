@@ -17,7 +17,3 @@ node_modules
 /.project
 
 ./cypress/videos/
-
-dist
-
-build
