@@ -4,9 +4,10 @@
   "description": "This is a simple fully customizable react progress bar component",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot",
-    "build": "webpack --mode production --config webpack.config.production.js",
-    "test": "jest"
+    "start": "webpack-dev-server --config webpack.dev.js --mode development --hot",
+    "build": "PRODUCTION=true webpack --mode production --config webpack.prod.js ",
+    "test": "jest",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -78,5 +79,9 @@
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
   },
-  "homepage": "https://github.com/myapos/progress-bar-for-react#readme"
+  "homepage": "https://github.com/myapos/progress-bar-for-react#readme",
+  "devDependencies": {
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "webpack-merge": "^4.2.2"
+  }
 }

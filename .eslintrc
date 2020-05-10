@@ -18,12 +18,7 @@
       "pragma": "h"
     }
   },
-  "globals": {
-    "Adman": true,
-    "bitmovin": true,
-    "PhaistosPlayer": true,
-    "ga": true
-  },
+  "globals": {},
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 6
