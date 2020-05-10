@@ -20,8 +20,6 @@ const ProgressBarContainer = ({
 
   let ProgressBarToUse = ProgressBar;
 
-  console.log("tooltip", tooltip);
-
   if (tooltip && tooltip.length > 0) {
     ProgressBarToUse = withTooltip(ProgressBar);
   }
