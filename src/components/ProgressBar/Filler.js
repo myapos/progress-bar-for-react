@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Filler = ({ percentage, backgroundColor, classes }) => {
+const Filler = ({ percentage, extraStyles, classes }) => {
   const options = {
     className: classes.filler,
     style: {
@@ -9,10 +9,10 @@ const Filler = ({ percentage, backgroundColor, classes }) => {
     },
   };
 
-  if (backgroundColor) {
+  if (extraStyles) {
     options.style = {
       ...options.style,
-      backgroundColor,
+      ...extraStyles,
     };
   }
 

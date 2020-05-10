@@ -1,13 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Filler from './Filler';
+import React from "react";
+import PropTypes from "prop-types";
+import Filler from "./Filler";
 
-const ProgressBar = ({ percentage, backgroundColor, classes }) => (
+const ProgressBar = ({ percentage, extraStyles, classes }) => (
   <div className={classes.progressBar}>
     <Filler
       percentage={percentage}
-      backgroundColor={backgroundColor}
-      classes={classes} />
+      extraStyles={extraStyles}
+      classes={classes}
+    />
   </div>
 );
 

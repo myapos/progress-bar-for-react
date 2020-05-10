@@ -4,7 +4,13 @@ import "../css/css.styl";
 
 const App = (name) => (
   <div id="container">
-    <ProgressBar percentage={50} />
+    <ProgressBar
+      percentage={50}
+      tooltip="demo text"
+      extraStyles={{
+        backgroundColor: "red",
+      }}
+    />
   </div>
 );
 
