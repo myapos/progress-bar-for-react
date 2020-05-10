@@ -24,7 +24,7 @@ After that you can use it. The option `percentage` is mandatory in order for the
 | fillerExtraStyles={{...}}      | Filler extra styles will override the default styling. Usage: backgroundColor: blue or hex code                |
 | progressBarExtraStyles={{...}} | Progress Bar extra styles will override the default styling. Usage: position,height,width,borderRadius, border |
 
-Please see the examples folder for more descriptive usage.
+Please see the **src/Examples** folder for more descriptive usage.
 
 ### Demo
 
