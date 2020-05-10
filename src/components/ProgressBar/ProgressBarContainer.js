@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import ProgressBar from './ProgressBar';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+
+import ProgressBar from "./ProgressBar";
+import styles from "./styles";
 
 const ProgressBarContainer = ({ percentage, backgroundColor, classes }) => {
   if (percentage === 100) {
@@ -12,7 +15,8 @@ const ProgressBarContainer = ({ percentage, backgroundColor, classes }) => {
       <ProgressBar
         percentage={percentage}
         backgroundColor={backgroundColor}
-        classes={classes} />
+        classes={classes}
+      />
     </div>
   );
 };
@@ -23,4 +27,4 @@ ProgressBarContainer.propTypes = {
   classes: PropTypes.object,
 };
 
-export default ProgressBarContainer;
+export default withStyles(styles)(ProgressBarContainer);
