@@ -7,7 +7,7 @@ const ProgressBarStyles = (name) => (
       percentage={50}
       progressBarExtraStyles={{
         position: "relative",
-        height: "5px",
+        height: "50px",
         width: "200px",
         borderRadius: "1px",
         border: "1px solid blue",
