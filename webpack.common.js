@@ -12,8 +12,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Production",
-      template: "demo.html",
+      title: "Index",
+      template: "index.html",
       inject: "body",
     }),
     new webpack.BannerPlugin({

@@ -1,4 +1,5 @@
 const merge = require("webpack-merge");
+
 const path = require("path");
 const webpack = require("webpack");
 const common = require("./webpack.common.js");
@@ -6,7 +7,7 @@ const common = require("./webpack.common.js");
 const PORT = 2222;
 // console.log(process.env.PRODUCTION);
 // https://github.com/cvut/fittable/issues/171
-module.exports = merge(common, {
+const webpackOptions = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
@@ -24,7 +25,7 @@ module.exports = merge(common, {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "app.bundle.js",
     publicPath: `http://localhost:${PORT}/dist/`,
   },
   plugins: [
@@ -36,3 +37,7 @@ module.exports = merge(common, {
     }),
   ],
 });
+
+console.log("webpackOptions", webpackOptions.plugins);
+
+module.exports = webpackOptions;
