@@ -28,6 +28,8 @@ Please see the **src/Examples** folder for more descriptive usage.
 
 ### Demo
 
+You can see a demo in the following link `https://myapos.github.io/progress-bar-for-react/`
+
 ### Fork instructions
 
 You can fork this repository for your own modifications following the bellow steps
