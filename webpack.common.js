@@ -16,10 +16,6 @@ module.exports = {
       template: "demo.html",
       inject: "body",
     }),
-    // new webpack.ProvidePlugin({
-    //   fetch: 'imports-loader?this=>global!exports?global.fetch!whatwg-fetch',
-    //   Promise: 'es6-promise', // <============ add Promises for IE !!!
-    // }),
     new webpack.BannerPlugin({
       banner: `@Build ${new Date().toLocaleString()}`,
     }),
@@ -49,7 +45,6 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        // use: 'css-loader',
         use: [
           {
             loader: "style-loader", // creates style nodes from JS strings
