@@ -67,6 +67,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-tooltip": "^4.2.6",
     "style-loader": "^1.2.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",

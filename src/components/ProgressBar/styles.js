@@ -13,7 +13,7 @@ const styles = (theme) => ({
     border: "1px solid #333",
   },
   filler: {
-    background: "#1DA598", // default background color
+    background: "black", // default background color
     height: "100%",
     borderRadius: "inherit",
     transition: "width .2s ease-in",

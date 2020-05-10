@@ -2,5 +2,12 @@
 
 This is a simple fully customizable react progress bar component
 
-#Author
+### Author
+
 Myron Apostolakis
+
+### Usage
+
+### Demo
+
+### License
