@@ -2,6 +2,8 @@
 
 This is a simple fully customizable react progress bar component
 
+![Image description](link-to-image)
+
 ### Author
 
 Myron Apostolakis
