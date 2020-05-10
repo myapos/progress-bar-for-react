@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Filler = ({ percentage, extraStyles, classes }) => {
+const Filler = ({ percentage, fillerExtraStyles, classes }) => {
   const options = {
     className: classes.filler,
     style: {
@@ -9,10 +9,10 @@ const Filler = ({ percentage, extraStyles, classes }) => {
     },
   };
 
-  if (extraStyles) {
+  if (fillerExtraStyles) {
     options.style = {
       ...options.style,
-      ...extraStyles,
+      ...fillerExtraStyles,
     };
   }
 
@@ -23,5 +23,6 @@ Filler.propTypes = {
   percentage: PropTypes.number,
   backgroundColor: PropTypes.string,
   classes: PropTypes.object,
+  fillerExtraStyles: PropTypes.object,
 };
 export default Filler;

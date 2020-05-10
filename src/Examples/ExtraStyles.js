@@ -5,7 +5,7 @@ const ExtraStyles = (name) => (
   <div id="container">
     <ProgressBar
       percentage={50}
-      extraStyles={{
+      fillerExtraStyles={{
         backgroundColor: "red",
       }}
     />

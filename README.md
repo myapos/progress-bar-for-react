@@ -18,10 +18,11 @@ After that you can use it. The option `percentage` is mandatory in order for the
 
 ### Supported Options
 
-| Options  | Description |
-| ------------- | ------------- |
-| tooltip='Demo text' |If this option is set then the 'Demo text' appears as a tooltip on mouse hovering  |
-| extraStyles={{...}}  | Any extra styles will upload to the progress bar container and will override the default styling  |
+| Options                        | Description                                                                                                    |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| tooltip='Demo text'            | If this option is set then the 'Demo text' appears as a tooltip on mouse hovering                              |
+| fillerExtraStyles={{...}}      | Filler extra styles will override the default styling. Usage: backgroundColor: blue or hex code                |
+| progressBarExtraStyles={{...}} | Progress Bar extra styles will override the default styling. Usage: position,height,width,borderRadius, border |
 
 Please see the examples folder for more descriptive usage.
 
