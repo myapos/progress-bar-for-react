@@ -28,17 +28,21 @@ Please see the examples folder for more descriptive usage.
 
 ### Demo
 
-### Clone instructions
+### Fork instructions
 
-You can clone this repository for your own modifications following the bellow steps
+You can fork this repository for your own modifications following the bellow steps
 
-- Clone
+- Fork
 
-`git clone https://github.com/myapos/progress-bar-for-react.git`
+Please follow the instructions from `https://help.github.com/en/github/getting-started-with-github/fork-a-repo`
 
 - Run in development mode
 
 Use command `npm start` and visit `http://localhost:2222`. Every example in the Examples folder will load.
+
+- Build
+
+Use command `npm run build`
 
 ### License
 
