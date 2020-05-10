@@ -1,0 +1,23 @@
+*.vscode
+
+# dotenv environment variables file
+.env
+
+ignore/
+
+# Optional npm cache directory
+.npm
+
+#npm packages
+
+node_modules
+
+.cache
+
+/.project
+
+./cypress/videos/
+
+dist
+
+build
