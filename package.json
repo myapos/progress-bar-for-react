@@ -1,0 +1,28 @@
+{
+  "name": "progress_bar_for_react",
+  "version": "1.0.0",
+  "description": "This is a simple fully customizable react progress bar component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myapos/progress-bar-for-react.git"
+  },
+  "keywords": [
+    "progress",
+    "progressbar",
+    "react",
+    "javascript",
+    "npm",
+    "progress-bar-for-react",
+    "progress-bar"
+  ],
+  "author": "Myron Apostolakis",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/myapos/progress-bar-for-react/issues"
+  },
+  "homepage": "https://github.com/myapos/progress-bar-for-react#readme"
+}
