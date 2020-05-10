@@ -10,7 +10,7 @@ import styles from "./styles";
 // const Footer = React.lazy(() => import('../components/Footer/Footer.js'));
 const ProgressBarContainer = ({
   percentage,
-  extraStyles,
+  fillerExtraStyles,
   classes,
   tooltip,
 }) => {
@@ -28,7 +28,7 @@ const ProgressBarContainer = ({
     <div className={classes.progressBarContainer}>
       <ProgressBarToUse
         percentage={percentage}
-        extraStyles={extraStyles}
+        fillerExtraStyles={fillerExtraStyles}
         classes={classes}
         tooltipContent={tooltip}
       />
@@ -40,6 +40,7 @@ ProgressBarContainer.propTypes = {
   percentage: PropTypes.number,
   backgroundColor: PropTypes.string,
   classes: PropTypes.object,
+  fillerExtraStyles: PropTypes.object,
 };
 
 export default withStyles(styles)(ProgressBarContainer);

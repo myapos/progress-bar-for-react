@@ -6,7 +6,7 @@ const Complex = (name) => (
     <ProgressBar
       percentage={50}
       tooltip="this is a long text tooltip example"
-      extraStyles={{
+      fillerExtraStyles={{
         backgroundColor: "red",
       }}
     />
