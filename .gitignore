@@ -3,7 +3,7 @@
 # dotenv environment variables file
 .env
 
-ignore/
+ignore
 
 # Optional npm cache directory
 .npm
