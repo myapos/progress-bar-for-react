@@ -13,11 +13,11 @@ const conf = merge(common, {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   output: {
-    // path: path.resolve(__dirname, 'dist'),
+    // path: path.resolve(__dirname, 'public'),
     publicPath: "/",
     filename: "[name].bundle.js",
     chunkFilename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "public"),
   },
   plugins: [
     new webpack.DefinePlugin({
