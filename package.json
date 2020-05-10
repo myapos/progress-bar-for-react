@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d pages"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -46,6 +46,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
+    "deploy": "^1.0.3",
     "es6-promise": "^4.2.8",
     "eslint": "7",
     "eslint-config-defaults": "^9.0.0",
@@ -70,6 +71,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-tooltip": "^4.2.6",
+    "run": "^1.4.0",
     "style-loader": "^1.2.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
