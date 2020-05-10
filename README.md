@@ -18,7 +18,7 @@ After that you can use it. The option `percentage` is mandatory in order for the
 
 ### Supported Options
 
-| Options                        | Description                                                                                                    |
+| Option                         | Description                                                                                                    |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
 | tooltip='Demo text'            | If this option is set then the 'Demo text' appears as a tooltip on mouse hovering                              |
 | fillerExtraStyles={{...}}      | Filler extra styles will override the default styling. Usage: backgroundColor: blue or hex code                |
