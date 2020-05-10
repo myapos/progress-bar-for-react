@@ -28,4 +28,18 @@ Please see the examples folder for more descriptive usage.
 
 ### Demo
 
+### Clone instructions
+
+You can clone this repository for your own modifications following the bellow steps
+
+- Clone
+
+`git clone https://github.com/myapos/progress-bar-for-react.git`
+
+- Run in development mode
+
+Use command `npm start` and visit `http://localhost:2222`. Every example in the Examples folder will load.
+
 ### License
+
+This is repo is licensed under GNU General Public License v3.0
