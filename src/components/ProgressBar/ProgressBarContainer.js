@@ -11,6 +11,7 @@ import styles from "./styles";
 const ProgressBarContainer = ({
   percentage,
   fillerExtraStyles,
+  progressBarExtraStyles,
   classes,
   tooltip,
 }) => {
@@ -29,6 +30,7 @@ const ProgressBarContainer = ({
       <ProgressBarToUse
         percentage={percentage}
         fillerExtraStyles={fillerExtraStyles}
+        progressBarExtraStyles={progressBarExtraStyles}
         classes={classes}
         tooltipContent={tooltip}
       />
@@ -41,6 +43,7 @@ ProgressBarContainer.propTypes = {
   backgroundColor: PropTypes.string,
   classes: PropTypes.object,
   fillerExtraStyles: PropTypes.object,
+  progressBarExtraStyles: PropTypes.object,
 };
 
 export default withStyles(styles)(ProgressBarContainer);

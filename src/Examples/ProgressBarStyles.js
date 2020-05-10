@@ -1,14 +1,10 @@
 import React from "react";
 import ProgressBar from "../components/ProgressBar";
 
-const Complex = (name) => (
+const ProgressBarStyles = (name) => (
   <div id="container">
     <ProgressBar
       percentage={50}
-      tooltip="this is a long text tooltip example"
-      fillerExtraStyles={{
-        backgroundColor: "blue",
-      }}
       progressBarExtraStyles={{
         position: "relative",
         height: "5px",
@@ -20,4 +16,4 @@ const Complex = (name) => (
   </div>
 );
 
-export default Complex;
+export default ProgressBarStyles;
