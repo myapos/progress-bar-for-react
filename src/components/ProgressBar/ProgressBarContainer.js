@@ -10,7 +10,7 @@ import styles from "./styles";
 // const Footer = React.lazy(() => import('../components/Footer/Footer.js'));
 const ProgressBarContainer = ({
   percentage,
-  backgroundColor,
+  extraStyles,
   classes,
   tooltip,
 }) => {
@@ -20,8 +20,6 @@ const ProgressBarContainer = ({
 
   let ProgressBarToUse = ProgressBar;
 
-  console.log("tooltip", tooltip);
-
   if (tooltip && tooltip.length > 0) {
     ProgressBarToUse = withTooltip(ProgressBar);
   }
@@ -30,7 +28,7 @@ const ProgressBarContainer = ({
     <div className={classes.progressBarContainer}>
       <ProgressBarToUse
         percentage={percentage}
-        backgroundColor={backgroundColor}
+        extraStyles={extraStyles}
         classes={classes}
         tooltipContent={tooltip}
       />

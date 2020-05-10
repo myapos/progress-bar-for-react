@@ -1,11 +1,21 @@
 import React from "react";
-import ProgressBar from "./ProgressBar";
+import * as Examples from "../Examples";
 import "../css/css.styl";
 
-const App = (name) => (
-  <div id="container">
-    <ProgressBar percentage={50} />
-  </div>
-);
+const App = (name) => {
+  return (
+    <div id="app-container">
+      {Object.keys(Examples).map((key) => {
+        const Example = Examples[key];
+        return (
+          <div className="example" key={key}>
+            <div className="example-label"> {key}</div>
+            <Example />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export default App;
