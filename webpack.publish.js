@@ -32,11 +32,11 @@ const conf = merge(common, {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   output: {
-    // path: path.resolve(__dirname, 'dist'),
+    // path: path.resolve(__dirname, 'build'),
     publicPath: "/",
     filename: "index.js",
     chunkFilename: "index.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     libraryTarget: "commonjs2",
   },
   plugins: [

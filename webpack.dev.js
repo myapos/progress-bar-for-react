@@ -24,7 +24,7 @@ const webpackOptions = merge(common, {
     headers: { "Access-Control-Allow-Origin": "*" },
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     filename: "index.js",
     publicPath: `http://localhost:${PORT}/`,
   },
