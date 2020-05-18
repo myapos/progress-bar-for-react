@@ -1,0 +1,5 @@
+<ToolTipedProgressBarContainer
+percentage={percentage}
+classes={classes}
+tooltipContent={`${percentage}%`}
+backgroundColor={'gray'} />
