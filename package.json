@@ -6,11 +6,11 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --mode development --hot",
     "build:demo": "PRODUCTION=true webpack --mode production --config webpack.prod.js ",
-    "npm-publish-build": "PRODUCTION=true webpack --mode production --config webpack.publish.js ",
+    "npm:publish:build": "PRODUCTION=true webpack --mode production --config webpack.publish.js ",
     "test": "jest",
     "lint": "eslint",
-    "predeploy": "npm run publish-build",
-    "deploy": "gh-pages -d publish",
+    "predeploy": "npm run build:demo",
+    "deploy": "gh-pages -d dist",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install"
   },

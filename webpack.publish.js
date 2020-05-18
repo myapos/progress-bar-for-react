@@ -13,6 +13,10 @@ const conf = merge(common, {
     app: "./src/components/ProgressBar",
     // app: "./src/components/DummyComponent",
   },
+  externals: {
+    react: "react",
+    "react-dom": "react-dom",
+  },
   resolve: {
     alias: {
       react: path.resolve(__dirname, "node_modules", "react"),
