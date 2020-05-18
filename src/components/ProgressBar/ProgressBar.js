@@ -9,20 +9,20 @@ const ProgressBar = ({
   classes,
 }) => {
   const opt = progressBarExtraStyles;
-
-  console.log("opt", opt);
   return (
-    <div
-      className="progressBar"
-      style={{
-        ...opt,
-      }}
-    >
-      <Filler
-        percentage={percentage}
-        fillerExtraStyles={fillerExtraStyles}
-        classes={classes}
-      />
+    <div className={classes.progressBarContainer}>
+      <div
+        className={classes.progressBar}
+        style={{
+          ...opt,
+        }}
+      >
+        <Filler
+          percentage={percentage}
+          fillerExtraStyles={fillerExtraStyles}
+          classes={classes}
+        />
+      </div>
     </div>
   );
 };

@@ -3,23 +3,20 @@ import PropTypes from "prop-types";
 
 const Filler = ({ percentage, fillerExtraStyles, classes }) => {
   const options = {
-    // className: classes.filler,
+    className: classes.filler,
     style: {
       width: `${percentage}%`,
     },
   };
 
   if (fillerExtraStyles) {
-    debugger;
     options.style = {
       ...options.style,
       ...fillerExtraStyles,
     };
   }
 
-  console.log("options 123", options);
-
-  return <div {...options} className="filler" />;
+  return <div {...options} />;
 };
 
 Filler.propTypes = {

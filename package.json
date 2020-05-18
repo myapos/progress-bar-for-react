@@ -35,8 +35,8 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-tooltip": "^4.2.6",
-    "@material-ui/core": "^4.9.14"
+    "react-jss": "^10.1.1",
+    "react-tooltip": "^4.2.6"
   },
   "peerDependencies": {},
   "resolutions": {
