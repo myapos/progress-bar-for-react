@@ -2,7 +2,7 @@
 
 This is a simple fully customizable react progress bar component
 
-![Image description test](https://github.com/myapos/progress-bar-for-react/blob/master/images/progress_bar.png)
+![Image description](https://github.com/myapos/progress-bar-for-react/blob/master/images/progress_bar.png)
 
 ### Author
 
