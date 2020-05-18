@@ -14,11 +14,11 @@ const conf = merge(common, {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   output: {
-    // path: path.resolve(__dirname, 'build'),
+    // path: path.resolve(__dirname, 'public'),
     publicPath: "/",
     filename: "index.js",
     chunkFilename: "index.js",
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "public"),
   },
   plugins: [
     new CleanWebpackPlugin(),

@@ -24,8 +24,8 @@ module.exports = {
     }),
   ],
   output: {
-    filename: "index.js",
-    path: path.resolve(__dirname, "build"),
+    filename: "./index.js",
+    path: path.resolve(__dirname, "public"),
   },
   resolve: {
     alias: {

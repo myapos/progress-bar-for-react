@@ -2,15 +2,15 @@
   "name": "progress_bar_for_react",
   "version": "1.0.8",
   "description": "This is a simple fully customizable react progress bar component",
-  "main": "build/index.js",
+  "main": "public/index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --mode development --hot",
-    "build:demo": "PRODUCTION=true webpack --mode production --config webpack.prod.js ",
-    "npm:publish:build": "PRODUCTION=true webpack --mode production --config webpack.publish.js ",
+    "public:demo": "PRODUCTION=true webpack --mode production --config webpack.prod.js ",
+    "npm:publish:public": "PRODUCTION=true webpack --mode production --config webpack.publish.js ",
     "test": "jest",
     "lint": "eslint",
-    "predeploy": "npm run build:demo",
-    "deploy": "gh-pages -d build",
+    "predeploy": "npm run public:demo",
+    "deploy": "gh-pages -d public",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install"
   },
@@ -42,7 +42,7 @@
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
   },
-  "homepage": "https://github.com/myapos/progress-bar-for-react",
+  "homepage": "https://myapos.github.io/progress-bar-for-react",
   "devDependencies": {
     "gh-pages": "^2.2.0",
     "npm-check-updates": "^6.0.1",
@@ -98,6 +98,6 @@
     "whatwg-fetch": "^3.0.0"
   },
   "files": [
-    "build"
+    "public"
   ]
 }
