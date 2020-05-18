@@ -51,3 +51,8 @@ Use command `npm run dist`
 ### License
 
 This is repo is licensed under GNU General Public License v3.0
+
+### TODO
+
+- Add tests
+- Add storybook
