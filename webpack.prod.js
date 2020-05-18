@@ -15,7 +15,7 @@ const conf = merge(common, {
   },
   output: {
     // path: path.resolve(__dirname, 'public'),
-    publicPath: "/",
+    publicPath: "./",
     filename: "index.js",
     chunkFilename: "index.js",
     path: path.resolve(__dirname, "public"),
