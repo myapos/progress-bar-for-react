@@ -9,7 +9,7 @@
     "npm:publish:build": "PRODUCTION=true webpack --mode production --config webpack.publish.js ",
     "test": "jest",
     "lint": "eslint",
-    "predploy": "npm run build:demo",
+    "predeploy": "npm run build:demo",
     "deploy": "gh-pages -d dist",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install"
