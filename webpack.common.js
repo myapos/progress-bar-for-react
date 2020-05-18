@@ -1,6 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -10,10 +10,9 @@ module.exports = {
     app: "./src/index.js",
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Index",
-      template: "index.html",
+      template: "template.html",
       inject: "body",
     }),
     new webpack.BannerPlugin({
@@ -25,8 +24,14 @@ module.exports = {
     }),
   ],
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "public"),
+    filename: "index.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+  resolve: {
+    alias: {
+      react: path.resolve(__dirname, "node_modules", "react"),
+      "react-dom": path.resolve(__dirname, "node_modules", "react-dom"),
+    },
   },
   module: {
     rules: [

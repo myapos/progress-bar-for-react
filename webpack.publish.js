@@ -9,15 +9,31 @@ const common = require("./webpack.common.js");
 const conf = merge(common, {
   mode: "production",
   devtool: "source-map",
+  entry: {
+    app: "./src/components/ProgressBar",
+    // app: "./src/components/DummyComponent",
+  },
+  resolve: {
+    alias: {
+      react: path.resolve(__dirname, "node_modules", "react"),
+      "react-dom": path.resolve(__dirname, "node_modules", "react-dom"),
+      "@material-ui/core": path.resolve(
+        __dirname,
+        "node_modules",
+        "@material-ui/core"
+      ),
+    },
+  },
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   output: {
-    // path: path.resolve(__dirname, 'public'),
+    // path: path.resolve(__dirname, 'dist'),
     publicPath: "/",
-    filename: "[name].bundle.js",
-    chunkFilename: "[name].bundle.js",
-    path: path.resolve(__dirname, "publish"),
+    filename: "index.js",
+    chunkFilename: "index.js",
+    path: path.resolve(__dirname, "dist"),
+    libraryTarget: "commonjs2",
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -27,9 +43,6 @@ const conf = merge(common, {
       },
     }),
   ],
-  entry: {
-    app: "./src/indexPublish.js",
-  },
 });
 
 module.exports = conf;

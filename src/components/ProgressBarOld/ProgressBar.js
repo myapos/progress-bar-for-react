@@ -13,7 +13,7 @@ const ProgressBar = ({
   console.log("opt", opt);
   return (
     <div
-      className="progressBar"
+      className={classes.progressBar}
       style={{
         ...opt,
       }}

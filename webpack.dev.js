@@ -16,7 +16,7 @@ const webpackOptions = merge(common, {
     noInfo: false,
     compress: true,
     port: PORT,
-    publicPath: `http://localhost:${PORT}/public/`,
+    publicPath: `http://localhost:${PORT}/`,
     historyApiFallback: {
       disableDotRule: true,
     },
@@ -24,9 +24,9 @@ const webpackOptions = merge(common, {
     headers: { "Access-Control-Allow-Origin": "*" },
   },
   output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "app.bundle.js",
-    publicPath: `http://localhost:${PORT}/public/`,
+    path: path.resolve(__dirname, "dist"),
+    filename: "index.js",
+    publicPath: `http://localhost:${PORT}/`,
   },
   plugins: [
     new webpack.DefinePlugin({
