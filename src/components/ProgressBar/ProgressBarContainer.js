@@ -1,28 +1,23 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-// import { withStyles } from "@material-ui/core/styles";
-import ProgressBarChild from "./ProgressBarChild";
+import { createUseStyles } from "react-jss";
 
 import ProgressBar from "./ProgressBar";
 import withTooltip from "../../HOCS/withTooltip";
-import "./css.css";
+// import "./css.css";
 
-// import styles from "./styles";
+import styles from "./styles";
 
-// const Footer = React.lazy(() => import('../components/Footer/Footer.js'));
+const useStyles = createUseStyles(styles);
+
 const ProgressBarContainer = ({
   percentage,
   fillerExtraStyles,
   progressBarExtraStyles,
-  classes = {},
   tooltip,
 }) => {
-  console.log("test", percentage);
+  const classes = useStyles();
 
-  // const StyledProgressBarChild = withStyles(styles)(ProgressBarChild);
-  // const StyledProgressBar = withStyles(styles)(ProgressBar);
-
-  // return <StyledProgressBarChild />;
   if (percentage === 100) {
     return null;
   }
@@ -34,15 +29,13 @@ const ProgressBarContainer = ({
   }
 
   return (
-    <div className="progressBarContainer">
-      <ProgressBarToUse
-        percentage={percentage}
-        fillerExtraStyles={fillerExtraStyles}
-        progressBarExtraStyles={progressBarExtraStyles}
-        classes={classes}
-        tooltipContent={tooltip}
-      />
-    </div>
+    <ProgressBarToUse
+      percentage={percentage}
+      fillerExtraStyles={fillerExtraStyles}
+      progressBarExtraStyles={progressBarExtraStyles}
+      tooltipContent={tooltip}
+      classes={classes}
+    />
   );
 };
 

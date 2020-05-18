@@ -38,6 +38,4 @@ const webpackOptions = merge(common, {
   ],
 });
 
-console.log("webpackOptions", webpackOptions.plugins);
-
 module.exports = webpackOptions;
