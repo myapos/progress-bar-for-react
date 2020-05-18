@@ -2,15 +2,15 @@
   "name": "progress_bar_for_react",
   "version": "1.0.8",
   "description": "This is a simple fully customizable react progress bar component",
-  "main": "public/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --mode development --hot",
-    "public:demo": "PRODUCTION=true webpack --mode production --config webpack.prod.js ",
-    "npm:publish:public": "PRODUCTION=true webpack --mode production --config webpack.publish.js ",
+    "dist:demo": "PRODUCTION=true webpack --mode production --config webpack.prod.js ",
+    "npm:publish:dist": "PRODUCTION=true webpack --mode production --config webpack.publish.js ",
     "test": "jest",
     "lint": "eslint",
-    "predeploy": "npm run public:demo",
-    "deploy": "gh-pages -d public",
+    "predeploy": "npm run dist:demo",
+    "deploy": "gh-pages -d dist",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install"
   },
@@ -98,6 +98,6 @@
     "whatwg-fetch": "^3.0.0"
   },
   "files": [
-    "public"
+    "dist"
   ]
 }

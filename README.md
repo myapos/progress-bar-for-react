@@ -46,7 +46,7 @@ Use command `npm start` and visit `http://localhost:2222`. Every example in the 
 
 - Build
 
-Use command `npm run public`
+Use command `npm run dist`
 
 ### License
 
