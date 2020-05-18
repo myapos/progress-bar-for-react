@@ -1,28 +1,20 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-// import { withStyles } from "@material-ui/core/styles";
-import ProgressBarChild from "./ProgressBarChild";
+import { withStyles } from "@material-ui/core/styles";
 
 import ProgressBar from "./ProgressBar";
 import withTooltip from "../../HOCS/withTooltip";
-import "./css.css";
 
-// import styles from "./styles";
+import styles from "./styles";
 
 // const Footer = React.lazy(() => import('../components/Footer/Footer.js'));
 const ProgressBarContainer = ({
   percentage,
   fillerExtraStyles,
   progressBarExtraStyles,
-  classes = {},
+  classes,
   tooltip,
 }) => {
-  console.log("test", percentage);
-
-  // const StyledProgressBarChild = withStyles(styles)(ProgressBarChild);
-  // const StyledProgressBar = withStyles(styles)(ProgressBar);
-
-  // return <StyledProgressBarChild />;
   if (percentage === 100) {
     return null;
   }
@@ -34,7 +26,7 @@ const ProgressBarContainer = ({
   }
 
   return (
-    <div className="progressBarContainer">
+    <div className={classes.progressBarContainer}>
       <ProgressBarToUse
         percentage={percentage}
         fillerExtraStyles={fillerExtraStyles}
@@ -54,4 +46,4 @@ ProgressBarContainer.propTypes = {
   progressBarExtraStyles: PropTypes.object,
 };
 
-export default ProgressBarContainer;
+export default withStyles(styles)(ProgressBarContainer);
