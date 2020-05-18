@@ -9,7 +9,7 @@
     "npm:publish:build": "PRODUCTION=true webpack --mode production --config webpack.publish.js ",
     "test": "jest",
     "lint": "eslint",
-    "deploy": "npm run build:demo && git add . && git commit -m \"Initial dist subtree commit\" && git subtree push --prefix dist origin gh-pages",
+    "deploy": "npm run build:demo && git add . && git commit -m \"Initial dist subtree commit\" && git subtree push --force --prefix dist origin gh-pages",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install"
   },
