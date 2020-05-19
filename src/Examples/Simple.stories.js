@@ -1,10 +1,10 @@
 import React from "react";
 import ProgressBar from "../components/ProgressBar";
 
-const Simple = () => (
+export default { title: "Simple" };
+
+export const Simple = () => (
   <div id="container">
     <ProgressBar percentage={50} />
   </div>
 );
-
-export default Simple;

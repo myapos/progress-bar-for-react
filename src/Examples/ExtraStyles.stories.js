@@ -1,7 +1,9 @@
 import React from "react";
 import ProgressBar from "../components/ProgressBar";
 
-const ExtraStyles = () => (
+export default { title: "ExtraStyles" };
+
+export const ExtraStyles = () => (
   <div id="container">
     <ProgressBar
       percentage={50}
@@ -11,5 +13,3 @@ const ExtraStyles = () => (
     />
   </div>
 );
-
-export default ExtraStyles;

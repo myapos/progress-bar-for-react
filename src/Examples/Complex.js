@@ -1,7 +1,7 @@
 import React from "react";
 import ProgressBar from "../components/ProgressBar";
 
-const Complex = (name) => (
+const Complex = () => (
   <div id="container">
     <ProgressBar
       percentage={50}
