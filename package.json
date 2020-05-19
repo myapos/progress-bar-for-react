@@ -11,6 +11,7 @@
     "lint": "eslint",
     "preghdeploy": "npm run dist:demo",
     "ghdeploy": "gh-pages -d dist",
+    "postghdeploy": "npm run npm:publish:dist",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install",
     "storybook": "start-storybook"
