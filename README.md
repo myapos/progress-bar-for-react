@@ -48,6 +48,10 @@ Use command `npm start` and visit `http://localhost:2222`. Every example in the 
 
 Use command `npm run dist`
 
+- Storybook
+
+Use command `npm run storybook`
+
 ### License
 
 This is repo is licensed under GNU General Public License v3.0
@@ -55,5 +59,3 @@ This is repo is licensed under GNU General Public License v3.0
 ### TODO
 
 - Add tests
-- Add storybook
-  `https://storybook.js.org/docs/guides/guide-react/`
