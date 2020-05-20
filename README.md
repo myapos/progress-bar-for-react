@@ -64,7 +64,7 @@ This is repo is licensed under GNU General Public License v3.0
 
 ### Codesandbox examples
 
-![Simple](https://codesandbox.io/s/green-shadow-3370g?file=/src/Simple.js) 
+[Simple](https://codesandbox.io/s/green-shadow-3370g?file=/src/Simple.js)
 
 ### TODO
 
