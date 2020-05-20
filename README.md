@@ -14,8 +14,6 @@ Myron Apostolakis
 
 ### Import
 
-- import the ProgressBar as follows
-
 `import ProgressBar from "./ProgressBar";`
 
 ### Usage
