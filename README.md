@@ -62,10 +62,13 @@ Use command `npm run storybook`
 
 This is repo is licensed under GNU General Public License v3.0
 
-### Codesandbox examples
+### Codesandbox
 
 - [Simple](https://codesandbox.io/s/green-shadow-3370g?file=/src/Simple.js)
 - [Extra Styles](https://codesandbox.io/s/compassionate-sara-friwc?file=/src/App.js)
+- [Complex](https://codesandbox.io/s/compassionate-firefly-ofstl?file=/src/App.js)
+- [ProgressBarStyles](https://codesandbox.io/s/practical-sanne-zidqd?file=/src/App.js)
+- [ToolTip](https://codesandbox.io/s/winter-silence-30mox?file=/src/App.js)
 
 ### TODO
 
