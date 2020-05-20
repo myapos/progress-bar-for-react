@@ -63,6 +63,8 @@ Use command `npm run storybook`
 - [Complex](https://codesandbox.io/s/compassionate-firefly-ofstl?file=/src/App.js)
 - [ProgressBarStyles](https://codesandbox.io/s/practical-sanne-zidqd?file=/src/App.js)
 - [ToolTip](https://codesandbox.io/s/winter-silence-30mox?file=/src/App.js)
+- [ClockedProgressBar](https://codesandbox.io/s/intelligent-taussig-19iz0?file=/src/App.js)
+
 
 ### License
 
