@@ -8,17 +8,23 @@ This is a simple fully customizable react progress bar component
 
 Myron Apostolakis
 
-### Usage
+### Installation
 
-- First import the ProgressBar as follows
+- `npm install --save progress_bar_for_react`
+
+### Import
+
+- import the ProgressBar as follows
 
 `import ProgressBar from "./ProgressBar";`
 
-After that you can use it. The option `percentage` is mandatory in order for the ProgressBar to display. When the percentage is equal to 100% the ProgressBar will hide itself.
+### Usage
 
 `<ProgressBar percentage={50} />`
 
-### Supported Options
+The option `percentage` is mandatory in order for the ProgressBar to display. When the percentage is equal to 100% the ProgressBar will hide itself.
+
+### List of supported Options
 
 | Option                         | Description                                                                                                    |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
@@ -59,3 +65,4 @@ This is repo is licensed under GNU General Public License v3.0
 ### TODO
 
 - Add tests
+- Codesandbox examples
