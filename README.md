@@ -42,19 +42,17 @@ You can see a demo in the following [link](https://myapos.github.io/progress-bar
 
 You can fork this repository for your own modifications following the bellow steps
 
-- Fork
-
 Please follow the instructions from `https://help.github.com/en/github/getting-started-with-github/fork-a-repo`
 
-- Run in development mode
+### Development
 
 Use command `npm start` and visit `http://localhost:2222`. Every example in the Examples folder will load.
 
-- Build
+### Build
 
 Use command `npm run dist`
 
-- Storybook
+### Storybook
 
 Use command `npm run storybook`
 
