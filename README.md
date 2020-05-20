@@ -58,10 +58,6 @@ Use command `npm run dist`
 
 Use command `npm run storybook`
 
-### License
-
-This is repo is licensed under GNU General Public License v3.0
-
 ### Codesandbox
 
 - [Simple](https://codesandbox.io/s/green-shadow-3370g?file=/src/Simple.js)
@@ -69,6 +65,10 @@ This is repo is licensed under GNU General Public License v3.0
 - [Complex](https://codesandbox.io/s/compassionate-firefly-ofstl?file=/src/App.js)
 - [ProgressBarStyles](https://codesandbox.io/s/practical-sanne-zidqd?file=/src/App.js)
 - [ToolTip](https://codesandbox.io/s/winter-silence-30mox?file=/src/App.js)
+
+### License
+
+This is repo is licensed under GNU General Public License v3.0
 
 ### TODO
 
