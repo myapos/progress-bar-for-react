@@ -1,5 +1,6 @@
 {
-  "extends": "phaistos-networks",
+  "extends": ["phaistos-networks", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
   "rules": {
     "func-names": 0,
     "one-var": 0,
@@ -11,7 +12,8 @@
     "prefer-template": 0,
     "max-classes-per-file": 1,
     "max-lines-per-function": 1,
-    "no-debugger": 0
+    "no-debugger": 0,
+    "prettier/prettier": "error"
   },
   "settings": {
     "react": {

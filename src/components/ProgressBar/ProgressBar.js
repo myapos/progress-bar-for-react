@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Filler from "./Filler";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Filler from './Filler';
 
 const ProgressBar = ({
   percentage,

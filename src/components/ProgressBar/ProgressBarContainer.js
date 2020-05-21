@@ -1,21 +1,45 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { createUseStyles } from "react-jss";
+import React, { useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { createUseStyles } from 'react-jss';
 
-import ProgressBar from "./ProgressBar";
-import withTooltip from "../../HOCS/withTooltip";
+import ProgressBar from './ProgressBar';
+import withTooltip from '../../HOCS/withTooltip';
 // import "./css.css";
 
-import styles from "./styles";
+import styles from './styles';
 
 const useStyles = createUseStyles(styles);
+
+const usePrevious = (value) => {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+};
 
 const ProgressBarContainer = ({
   percentage,
   fillerExtraStyles,
   progressBarExtraStyles,
   tooltip,
+  onPercentageChange,
 }) => {
+  // inspired source
+  // https://stackoverflow.com/questions/53446020/how-to-compare-oldvalues-and-newvalues-on-react-hooks-useeffect
+  const previousValue = usePrevious({ percentage });
+
+  useEffect(() => {
+    const hasChanged = previousValue && previousValue.percentage !== percentage;
+    const hasSetOnPercentageChange =
+      onPercentageChange && typeof onPercentageChange === 'function';
+
+    if (hasChanged && hasSetOnPercentageChange) {
+      // process here
+      onPercentageChange(percentage);
+    }
+  }, [percentage]);
+
   const classes = useStyles();
 
   if (percentage === 100) {

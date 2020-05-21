@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import ProgressBar from "../components/ProgressBar";
 
-export default { title: "ClockedProgressBar" };
+export default { title: "Clocked" };
 
-export const ClockedProgressBar = () => {
+export const Clocked = () => {
   let [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
