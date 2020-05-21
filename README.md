@@ -34,6 +34,12 @@ The option `percentage` is mandatory in order for the ProgressBar to display. Wh
 
 Please see the **src/Examples** folder for more descriptive usage.
 
+### API calls
+
+`onPercentageChange`
+
+It will be triggered when a new percentage is received. Please see examples
+
 ### Demo
 
 You can see a demo in the following [link](https://myapos.github.io/progress-bar-for-react/)
