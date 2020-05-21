@@ -2,7 +2,7 @@ import React from "react";
 import * as Examples from "../Examples";
 import "../css/css.styl";
 
-const App = (name) => {
+const App = () => {
   return (
     <div id="app-container">
       {Object.keys(Examples).map((key) => {
