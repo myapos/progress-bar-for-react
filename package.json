@@ -14,7 +14,8 @@
     "postghdeploy": "npm run npm:publish:dist",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "cypress": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -64,6 +65,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
+    "cypress": "^4.6.0",
     "deploy": "^1.0.3",
     "es6-promise": "^4.2.8",
     "eslint": "^7.0.0",
