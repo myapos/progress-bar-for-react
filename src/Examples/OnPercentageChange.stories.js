@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component, useEffect, useState } from 'react';
+import { action } from '@storybook/addon-actions';
 
 import ProgressBar from '../components/ProgressBar';
 
@@ -15,6 +16,12 @@ export const OnPercentageChange = () => {
         setPercentage(0);
       }
     }, 100);
+
+    window.document.addEventListener('onPercentageChange', function (e) {
+      console.log('data received', e.detail);
+      setDataOnChange(e.detail);
+      action('percentage changed')();
+    });
     return () => clearInterval(interval);
   }, [percentage]);
 
@@ -46,6 +53,7 @@ export const OnPercentageChange = () => {
         onPercentageChange={(e) => {
           // set data on change
           setDataOnChange(e);
+          action('percentage changed')();
         }}
       />
     </div>

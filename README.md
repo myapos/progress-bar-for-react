@@ -73,8 +73,9 @@ Use command `npm run storybook`
 
 ### License
 
-This is repo is licensed under GNU General Public License v3.0
+This repo is licensed under GNU General Public License v3.0
 
 ### TODO
 
 - Add tests
+- Add CI/CD with CircleCI
