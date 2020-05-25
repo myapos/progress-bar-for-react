@@ -77,5 +77,4 @@ This repo is licensed under GNU General Public License v3.0
 
 ### TODO
 
-- Add tests
 - Add CI/CD with CircleCI
