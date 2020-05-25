@@ -1,3 +1,4 @@
+const webpackPreprocessor = require('@cypress/webpack-preprocessor');
 /// <reference types="cypress" />
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
@@ -18,4 +19,13 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-}
+
+  const options = {
+    // send in the options from your webpack.config.js, so it works the same
+    // as your app's code
+    webpackOptions: require('../../webpack.dev.js'),
+    watchOptions: {},
+  };
+
+  on('file:preprocessor', webpackPreprocessor());
+};

@@ -4,7 +4,6 @@ import { createUseStyles } from 'react-jss';
 
 import ProgressBar from './ProgressBar';
 import withTooltip from '../../HOCS/withTooltip';
-// import "./css.css";
 
 import styles from './styles';
 
