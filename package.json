@@ -16,7 +16,9 @@
     "storybook": "start-storybook -p 2233",
     "storybook:ci": "start-storybook --ci -p 2233",
     "cypress:open": "cypress open",
-    "test": "start-server-and-test storybook:ci  http://localhost:2233 cypress:open"
+    "cypress:headless": "cypress run",
+    "test": "start-server-and-test storybook:ci  http://localhost:2233 cypress:open",
+    "test:headless": "start-server-and-test storybook:ci  http://localhost:2233 cypress:headless"
   },
   "repository": {
     "type": "git",
