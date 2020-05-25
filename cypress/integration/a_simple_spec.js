@@ -6,7 +6,7 @@ function iget(doc, selector) {
   return cy.wrap(doc.find(selector));
 }
 
-describe('simple', () => {
+describe('Simple', () => {
   before(() => {
     cy.viewport(1200, 600);
     cy.visit('http://localhost:2233');

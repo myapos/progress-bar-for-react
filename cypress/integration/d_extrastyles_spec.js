@@ -2,7 +2,7 @@ function iget(doc, selector) {
   return cy.wrap(doc.find(selector));
 }
 // https://medium.com/@mtiller/testing-react-components-using-storybook-and-cypress-1689a27f55aa
-describe('extrastyles', () => {
+describe('Extrastyles', () => {
   before(() => {
     cy.viewport(1200, 600);
     cy.visit('http://localhost:2233');

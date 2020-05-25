@@ -3,7 +3,7 @@ function iget(doc, selector) {
 }
 
 // https://medium.com/@mtiller/testing-react-components-using-storybook-and-cypress-1689a27f55aa
-describe('on perecentage change', () => {
+describe('On perecentage change', () => {
   const TIMER = 1000;
 
   before(() => {
