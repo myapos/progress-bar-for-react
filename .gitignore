@@ -16,4 +16,8 @@ node_modules
 
 /.project
 
-./cypress/videos/
+cypress/videos/
+
+cypress/screenshots/
+
+cypress/snapshots/

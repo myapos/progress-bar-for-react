@@ -32,6 +32,12 @@ The option `percentage` is mandatory in order for the ProgressBar to display. Wh
 
 Please see the **src/Examples** folder for more descriptive usage.
 
+### API calls
+
+`onPercentageChange`
+
+It will be triggered when a new percentage is received. Please see examples
+
 ### Demo
 
 You can see a demo in the following [link](https://myapos.github.io/progress-bar-for-react/)
@@ -63,11 +69,10 @@ Use command `npm run storybook`
 - [ToolTip](https://codesandbox.io/s/winter-silence-30mox?file=/src/App.js)
 - [ClockedProgressBar](https://codesandbox.io/s/intelligent-taussig-19iz0?file=/src/App.js)
 
-
 ### License
 
-This is repo is licensed under GNU General Public License v3.0
+This repo is licensed under GNU General Public License v3.0
 
 ### TODO
 
-- Add tests
+- Add CI/CD with CircleCI
