@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { createUseStyles } from 'react-jss';
 
@@ -24,18 +24,28 @@ const ProgressBarContainer = ({
   tooltip,
   onPercentageChange,
 }) => {
+  const [savedOnpercentage, setSaveOnPercentage] = useState(false);
   // inspired source
   // https://stackoverflow.com/questions/53446020/how-to-compare-oldvalues-and-newvalues-on-react-hooks-useeffect
   const previousValue = usePrevious({ percentage });
+
+  if (window.top && window.top.Cypress && !savedOnpercentage) {
+    console.log('loaded');
+    // keep reference for testing with cypresss
+    window.top.onPercentageChange = onPercentageChange;
+    setSaveOnPercentage(true);
+  }
 
   useEffect(() => {
     const hasChanged = previousValue && previousValue.percentage !== percentage;
     const hasSetOnPercentageChange =
       onPercentageChange && typeof onPercentageChange === 'function';
 
-    if (hasChanged && hasSetOnPercentageChange) {
+    if (hasChanged && hasSetOnPercentageChange && !savedOnpercentage) {
       // process here
       onPercentageChange(percentage);
+    } else if (hasChanged && hasSetOnPercentageChange && savedOnpercentage) {
+      window.top.onPercentageChange(percentage);
     }
   }, [percentage]);
 

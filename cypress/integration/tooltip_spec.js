@@ -23,7 +23,7 @@ describe('tooltip', () => {
     });
   });
 
-  it.only('progress bar tooltip must be shown on hover', () => {
+  it('progress bar tooltip must be shown on hover', () => {
     cy.get('#storybook-preview-iframe').then(($iframe) => {
       console.log('$iframe', $iframe);
       const doc = $iframe.contents();
