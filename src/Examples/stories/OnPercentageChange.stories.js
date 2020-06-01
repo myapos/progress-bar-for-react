@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from 'react';
 import { action } from '@storybook/addon-actions';
 
-import ProgressBar from '../components/ProgressBar';
+import ProgressBar from '../../components/ProgressBar';
 
 export default { title: 'OnPercentageChange' };
 
