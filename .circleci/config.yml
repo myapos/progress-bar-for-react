@@ -3,7 +3,7 @@ orbs:
   cypress: cypress-io/cypress@1.16.1
   node: circleci/node@2.0.2 # the node orb provides common node-related configuration
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node:10-browsers-legacy
     steps:
