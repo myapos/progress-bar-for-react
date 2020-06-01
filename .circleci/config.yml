@@ -1,10 +1,10 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
-  node: circleci/node@2.0.2 # the node orb provides common node-related configuration 
+  node: circleci/node@2.0.2 # the node orb provides common node-related configuration
 workflows:
   build:
     jobs:
       - cypress/run
-    - node/test:
-        version: 12.16.3
+      - node/test:
+          version: 12.16.3
