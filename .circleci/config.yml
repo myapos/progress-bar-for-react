@@ -9,3 +9,7 @@ workflows:
       # and perform a few more small steps like linting
       - cypress/install:
           name: Install
+      - test:
+          name: Run all tests
+          requires:
+            - Install
