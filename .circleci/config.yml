@@ -1,6 +1,11 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
+persist_to_workspace:
+  root: .
+  paths:
+    - node_modules/*
+    - cypress/*
 jobs:
   build-and-test:
     executor:
