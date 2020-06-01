@@ -71,7 +71,7 @@ Use command `npm run storybook`
 
 ### Testing and Code coverage
 
-THis project is tested with Cypress with two ways. The first one is the combination of cypress and storybook. The storybook is the application that is loaded and used to navigate between stories. There is an
+This project is tested with Cypress with two ways. The first one is the combination of cypress and storybook. The storybook is the application that is loaded and used to navigate between stories. There is an
 issue with this approach related to coverage.Since the storybook is loaded inside iframes the code cannot be instrumented properly in order to produce the code coverage report through the window.**coverage** variable.
 Basically it is used as a quick testing local tool.
 
@@ -80,7 +80,3 @@ The second approach uses the dev server which loads every example and navigates 
 ### License
 
 This repo is licensed under GNU General Public License v3.0
-
-### TODO
-
-- Add CI/CD with CircleCI
