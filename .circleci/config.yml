@@ -8,8 +8,9 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - checkout
-      - run: npm install
-      - run: npm run test:react:headless
+      #- run: npm install
+      #- run: npm run test:react:headless
+      - run: node --version
 workflows:
   install_and_test:
     jobs:
