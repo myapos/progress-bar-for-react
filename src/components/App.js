@@ -9,7 +9,7 @@ const App = () => {
         const Example = Examples[key];
 
         return (
-          <div className="example" key={key}>
+          <div id={key} className="example" key={key}>
             <div className="example-label"> {key}</div>
             <Example />
           </div>
