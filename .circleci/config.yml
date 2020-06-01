@@ -16,9 +16,9 @@ workflows:
     jobs:
       # first, run a single job to install dependencies and Cypress
       # and perform a few more small steps like linting
-      - cypress/install:
-          name: Install
+      #- cypress/install:
+      #    name: Install
       - test:
           name: Run all tests for react components
-          requires:
-            - Install
+          #requires:
+          #  - Install
