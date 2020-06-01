@@ -8,18 +8,18 @@ jobs:
       - image: circleci/node:12.16.3
     steps:
       - checkout
-      #- run: npm install
-      #- run: npm run test:react:headless
       - run: node --version
       - run: npm --version
+      #- run: npm install
+      #- run: npm run test:react:headless
 workflows:
   install_and_test:
     jobs:
       # first, run a single job to install dependencies and Cypress
       # and perform a few more small steps like linting
-      #- cypress/install:
-      #    name: Install
+      - cypress/install:
+          name: Install
       - test:
           name: Run all tests for react components
-          #requires:
-          #  - Install
+          requires:
+            - Install
