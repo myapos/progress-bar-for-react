@@ -2,6 +2,15 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1.16.1
   node: circleci/node@2.0.2 # the node orb provides common node-related configuration
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10-browsers-legacy
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm start
+      - run: npm run cypress:open:react:headless
 workflows:
   install_and_test:
     jobs:
