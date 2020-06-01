@@ -4,7 +4,7 @@ orbs:
 jobs:
   test:
     docker:
-      - image: circleci/node:12.6.13-browsers
+      - image: circleci/node:12.6.13-browsers-legacy
     steps:
       - checkout
       - run: npm install
