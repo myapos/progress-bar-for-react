@@ -69,10 +69,6 @@ Use command `npm run storybook`
 - [ToolTip](https://codesandbox.io/s/winter-silence-30mox?file=/src/App.js)
 - [ClockedProgressBar](https://codesandbox.io/s/intelligent-taussig-19iz0?file=/src/App.js)
 
-### License
-
-This repo is licensed under GNU General Public License v3.0
-
 ### Testing and Code coverage
 
 THis project is tested with Cypress with two ways. The first one is the combination of cypress and storybook. The storybook is the application that is loaded and used to navigate between stories. There is an
@@ -80,6 +76,10 @@ issue with this approach related to coverage.Since the storybook is loaded insid
 Basically it is used as a quick testing local tool.
 
 The second approach uses the dev server which loads every example and navigates between them. Then the coverage report is generated normally.
+
+### License
+
+This repo is licensed under GNU General Public License v3.0
 
 ### TODO
 
