@@ -2,9 +2,22 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
   node: circleci/node@2.0.2 # the node orb provides common node-related configuration
+jobs:
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm run test:react:headless
 workflows:
   build:
     jobs:
       - cypress/run
       - node/test:
           version: 12.16.3
+  build-and-test:
+    jobs:
+      - build-and-test
