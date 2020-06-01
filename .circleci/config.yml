@@ -1,22 +1,8 @@
+# See https://github.com/cypress-io/circleci-orb
 version: 2.1
 orbs:
-  node: circleci/node@1.1.6
-persist_to_workspace:
-  root: .
-  paths:
-    - node_modules/*
-    - cypress/*
-jobs:
-  build-and-test:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm run test:react:headless
+  cypress: cypress-io/cypress@1
 workflows:
-  build-and-test:
+  build:
     jobs:
-      - build-and-test
+      - cypress/run
