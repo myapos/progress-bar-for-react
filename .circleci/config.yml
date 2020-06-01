@@ -13,9 +13,9 @@ workflows:
   install_and_test:
     jobs:
       - cypress/run
-      - node/version:
+      - node/test:
           version: 12.16.3
       - test:
           requires:
-            - node/version
+            - node/test
             - cypress/run
