@@ -15,6 +15,6 @@ workflows:
       - cypress/run
       - node/test:
           version: 12.16.3
-  test:
-    jobs:
-      - test
+      - test:
+          requires:
+            - cypress/run
