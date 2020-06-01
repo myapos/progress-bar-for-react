@@ -1,10 +1,11 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1.16.1
+  node: circleci/node@12.6.3
 jobs:
   test:
     docker:
-      - image: circleci/node:12.6.13-browsers-legacy
+      - image: "cimg/base:stable"
     steps:
       - checkout
       - run: npm install
