@@ -10,11 +10,12 @@ jobs:
       - run: npm install
       - run: npm run test:react:headless
 workflows:
-  build:
+  install_and_test:
     jobs:
       - cypress/run
-      - node/test:
+      - node/version:
           version: 12.16.3
       - test:
           requires:
+            - node/version
             - cypress/run
