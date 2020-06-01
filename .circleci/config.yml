@@ -7,9 +7,6 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      - run: npm install
-      - run: npm start
-      - run: npm run cypress:open:react:headless
 workflows:
   install_and_test:
     jobs:
