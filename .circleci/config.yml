@@ -18,6 +18,6 @@ workflows:
       - cypress/install:
           name: Install
       - test:
-          name: Run all tests
+          name: Run all tests for react components
           requires:
             - Install
