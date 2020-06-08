@@ -16,7 +16,8 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          build: "npm install" # run a custom app build step
+          install-command: npm install --frozen-lockfile
+          # build: "npm install" # run a custom app build step
           name: Install
       - check_environment:
           name: Print environment tool versions
