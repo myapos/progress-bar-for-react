@@ -19,7 +19,7 @@ workflows:
           post-steps:
             - run:
                 name: Install latest GIT
-                command: apt-get install software-properties-common && add-apt-repository ppa:git-core/ppa && apt-get update && apt-get install git
+                command: apt-get install software-properties-common -y && add-apt-repository ppa:git-core/ppa && apt-get update && apt-get install git
       - check_environment:
           name: Print environment tool versions
           requires:
