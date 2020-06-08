@@ -16,10 +16,15 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          install: "npm install" # run a custom app build step
+          build: "npm install" # run a custom app build step
           name: Install
       - check_environment:
           name: Print environment tool versions
+          requires:
+            - Install
+      - cypress/run:
+          name: Run all tests for react components
+          command: npm run test:react:headless
           requires:
             - Install
       # - test:
