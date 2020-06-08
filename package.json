@@ -95,7 +95,6 @@
     "extract-text-webpack-plugin": "^v4.0.0-alpha.0",
     "gh-pages": "^2.2.0",
     "html-webpack-plugin": "^4.3.0",
-    "husky": "^4.2.5",
     "istanbul-lib-coverage": "^3.0.0",
     "jsdoc": "^3.6.4",
     "jsdom": "^16.2.2",
