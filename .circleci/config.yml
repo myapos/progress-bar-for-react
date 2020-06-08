@@ -25,3 +25,6 @@ workflows:
           command: npm run test:react:headless
           requires:
             - Install
+          post-steps:
+            - store_artifacts:
+                path: coverage
