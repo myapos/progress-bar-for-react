@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run: node --version
       - run: npm --version
-      - run: npm install
+      #- run: npm install
       - run: npm run test:react:headless
 workflows:
   build:
