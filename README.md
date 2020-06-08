@@ -1,5 +1,7 @@
 # progress-bar-for-react
 
+[![npm version](https://img.shields.io/npm/v/progress_bar_for_react?style=flat-square)](https://www.npmjs.com/package/progress_bar_for_react)
+
 This is a simple fully customizable react progress bar component
 
 ![Image description](./images/progress_bar.png)
