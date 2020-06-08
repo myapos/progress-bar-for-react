@@ -1,12 +1,13 @@
 {
   "name": "progress_bar_for_react",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "description": "This is a simple fully customizable react progress bar component",
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --mode development --hot",
     "dist:demo": "PRODUCTION=true webpack --mode production --config webpack.prod.js ",
     "npm:publish:dist": "PRODUCTION=true webpack --mode production --config webpack.publish.js && npm publish",
+    "prenpm:publish:dist": "node ./buildVersion.js && git commit -am 'update version' && git push",
     "lint": "eslint",
     "preghdeploy": "npm run dist:demo",
     "ghdeploy": "gh-pages -d dist",
@@ -112,6 +113,7 @@
     "style-loader": "^1.2.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
+    "versiony": "^2.0.1",
     "webpack": "^4.43.0",
     "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.11",
