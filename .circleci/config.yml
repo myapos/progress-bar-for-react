@@ -14,7 +14,7 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          build: "npm install" # run a custom app build step
+          build: 'npm install' # run a custom app build step
           name: Install
       - check_environment:
           name: Print environment tool versions
