@@ -8,6 +8,7 @@
     "dist:demo": "PRODUCTION=true webpack --mode production --config webpack.prod.js ",
     "npm:publish:dist": "PRODUCTION=true webpack --mode production --config webpack.publish.js && npm publish",
     "prenpm:publish:dist": "node ./buildVersion.js && git commit -am 'update version' && git push",
+    "postnpm:publish:dist": "git checkout .",
     "lint": "eslint",
     "preghdeploy": "npm run dist:demo",
     "ghdeploy": "gh-pages -d dist",
