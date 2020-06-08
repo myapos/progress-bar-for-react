@@ -1,24 +1,11 @@
 version: 2.1
 orbs:
+  # "cypress-io/cypress@1" installs the latest published
+  # version "1.x.y" of the orb. We recommend you then use
+  # the strict explicit version "cypress-io/cypress@1.x.y"
+  # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1
-  node: circleci/node@2.0.2
-jobs:
-  test:
-    docker:
-      - image: circleci/node:12.16.3
-    steps:
-      - checkout
-      - run: node --version
-      - run: npm --version
-      - run: npm install
-      - run: npm run test:react:headless
 workflows:
-  install_and_test:
+  build:
     jobs:
-      # first, run a single job to install dependencies and Cypress
-      - cypress/install:
-          name: Install
-      - test:
-          name: Run all tests for react components
-          requires:
-            - Install
+      - cypress/run # "run" job comes from "cypress" orb
