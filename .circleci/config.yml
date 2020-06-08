@@ -18,14 +18,14 @@ workflows:
           name: Install
           post-steps:
             - run:
-                name: install latest git
-                command: sudo apt-get update && sudo apt-get install git
+                name: Install latest GIT
+                command: apt-get update && apt-get install git
       - check_environment:
           name: Print environment tool versions
           requires:
             - Install
-      - cypress/run:
-          name: Run all tests for react components
-          command: npm run test:react:headless
-          requires:
-            - Install
+      # - cypress/run:
+      #     name: Run all tests for react components
+      #     command: npm run test:react:headless
+      #     requires:
+      #       - Install
