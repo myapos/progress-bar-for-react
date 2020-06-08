@@ -77,6 +77,9 @@ This project is tested with Cypress with two ways. The first approach is the com
 issue with this approach related to coverage. Since the storybook is loaded inside iframes the code cannot be instrumented properly in order to produce the code coverage report through the `window.__coverage__` variable.
 It is basic usage is as a quick testing local tool.
 
+The second approach uses the demo app which loads every example in this project and makes assertions about
+each test case.
+
 #### Coverage report
 
 [Report](https://138-262743557-gh.circle-artifacts.com/0/coverage/lcov-report/index.html)
