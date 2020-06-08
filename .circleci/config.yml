@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1
+  cypress: cypress-io/cypress@1 #https://github.com/cypress-io/circleci-orb
 jobs:
   check_environment:
     docker:
@@ -16,7 +16,8 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          build: "npm install" # run a custom app build step
+          build: npm run transpile
+          #build: "npm install" # run a custom app build step
           name: Install
       - check_environment:
           name: Print environment tool versions
