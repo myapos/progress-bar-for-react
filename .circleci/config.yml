@@ -10,14 +10,13 @@ jobs:
       - run: node --version
       - run: npm --version
       - run: git --version
+      - run: npm run test:react:headless
       #- run: npm install
-      #- run: npm run test:react:headless
 workflows:
   build:
     jobs:
       - cypress/install:
-          build: npm run transpile
-          #build: "npm install" # run a custom app build step
+          build: "npm install" # run a custom app build step
           name: Install
       - check_environment:
           name: Print environment tool versions
