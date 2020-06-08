@@ -16,6 +16,10 @@ workflows:
       - cypress/install:
           build: "npm install" # run a custom app build step
           name: Install
+          post-steps:
+            - run:
+                name: install latest git
+                command: sudo apt-get update && sudo apt-get install git
       - check_environment:
           name: Print environment tool versions
           requires:
