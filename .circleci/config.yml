@@ -10,8 +10,6 @@ jobs:
       - run: node --version
       - run: npm --version
       - run: git --version
-      #- run: npm run test:react:headless
-      #- run: npm install
 workflows:
   build:
     jobs:
@@ -27,7 +25,3 @@ workflows:
           command: npm run test:react:headless
           requires:
             - Install
-      # - test:
-      #     name: Run all tests for react components
-      #     requires:
-      #       - Install
