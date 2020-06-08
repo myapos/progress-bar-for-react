@@ -2,22 +2,26 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
 jobs:
-  test:
+  check/environment:
     docker:
       - image: circleci/node:12.16.3
     steps:
       - checkout
       - run: node --version
       - run: npm --version
+      - run: git --version
       #- run: npm install
-      - run: npm run test:react:headless
+      #- run: npm run test:react:headless
 workflows:
   build:
     jobs:
       - cypress/install:
           build: "npm install" # run a custom app build step
           name: Install
-      - test:
-          name: Run all tests for react components
-          requires:
-            - Install
+
+      - check/environment:
+          name: Will print environment tool versions
+      # - test:
+      #     name: Run all tests for react components
+      #     requires:
+      #       - Install
