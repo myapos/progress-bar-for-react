@@ -18,9 +18,10 @@ workflows:
       - cypress/install:
           build: "npm install" # run a custom app build step
           name: Install
-
       - check/environment:
-          name: Will print environment tool versions
+          name: Print environment tool versions
+          requires:
+            - Install
       # - test:
       #     name: Run all tests for react components
       #     requires:
