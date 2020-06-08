@@ -10,13 +10,14 @@ jobs:
       - run: node --version
       - run: npm --version
       - run: git --version
-      - run: npm run test:react:headless
+      #- run: npm run test:react:headless
       #- run: npm install
 workflows:
   build:
     jobs:
       - cypress/install:
           install-command: npm install --frozen-lockfile
+          verify-command: npm run cypress verify
           # build: "npm install" # run a custom app build step
           name: Install
       - check_environment:
