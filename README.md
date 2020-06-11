@@ -16,7 +16,7 @@ Myron Apostolakis
 
 ### Import
 
-`import ProgressBar from "./ProgressBar";`
+`import ProgressBar from "progress_bar_for_react";`
 
 ### Usage
 
