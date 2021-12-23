@@ -69,16 +69,11 @@ Use command `npm run dist:demo`
 
 ### Testing and Code coverage
 
-This project is tested with Cypress with two ways. The first approach is the combination of cypress and storybook. The storybook is the application that is loaded and used to navigate between stories. There is an
-issue with this approach related to coverage. Since the storybook is loaded inside iframes the code cannot be instrumented properly in order to produce the code coverage report through the `window.__coverage__` variable.
-It is basic usage is as a quick testing local tool.
-
-The second approach uses the demo app which loads every example in this project and makes assertions about
-each test case.
+This component is tested with Cypress.
 
 #### Coverage report
 
-[Report](https://138-262743557-gh.circle-artifacts.com/0/coverage/lcov-report/index.html)
+[Report](https://265-262743557-gh.circle-artifacts.com/0/coverage/lcov-report/index.html)
 
 ### License
 
