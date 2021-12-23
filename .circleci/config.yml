@@ -22,7 +22,7 @@ workflows:
             - Install
       - cypress/run:
           name: Run all tests for react components
-          command: npm run test:react:headless
+          command: npm run test:react:headless:ci
           requires:
             - Install
           post-steps:
