@@ -11,10 +11,10 @@ jobs:
       - run: npm --version
       - run: git --version
 workflows:
-  install:
+  build:
     jobs:
       - cypress/install:
-          install: 'npm run clean:install' # run a custom app build step
+          build: 'npm run clean:install' # run a custom app build step
           name: Install
       - check_environment:
           name: Print environment tool versions
