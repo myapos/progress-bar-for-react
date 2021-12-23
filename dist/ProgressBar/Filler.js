@@ -3,45 +3,42 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require("prop-types");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+var Filler = function Filler(_ref) {
+  var percentage = _ref.percentage,
+      fillerExtraStyles = _ref.fillerExtraStyles,
+      classes = _ref.classes;
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-const Filler = _ref => {
-  let {
-    percentage,
-    fillerExtraStyles,
-    classes
-  } = _ref;
-  const options = {
+  var options = {
     className: classes.filler,
     style: {
-      width: "".concat(percentage, "%")
+      width: percentage + "%"
     }
   };
 
   if (fillerExtraStyles) {
-    options.style = _objectSpread(_objectSpread({}, options.style), fillerExtraStyles);
+    options.style = _extends({}, options.style, fillerExtraStyles);
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", options);
+  return _react2.default.createElement("div", options);
 };
 
 Filler.propTypes = {
-  percentage: _propTypes.default.number,
-  backgroundColor: _propTypes.default.string,
-  classes: _propTypes.default.object,
-  fillerExtraStyles: _propTypes.default.object
+  percentage: _propTypes2.default.number,
+  backgroundColor: _propTypes2.default.string,
+  classes: _propTypes2.default.object,
+  fillerExtraStyles: _propTypes2.default.object
 };
-var _default = Filler;
-exports.default = _default;
+exports.default = Filler;
