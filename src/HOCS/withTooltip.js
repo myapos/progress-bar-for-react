@@ -7,8 +7,6 @@ import getDisplayName from '../utils/getDisplayName';
 const withToolTip = (BaseComponent) => {
   const WrappedComponent = (props) => {
     const { tooltipContent, ...restProps } = props;
-    // console.log('tooltipContent', tooltipContent);
-
     // add tooltip if there is something to show
     if (tooltipContent && tooltipContent.length) {
       return (

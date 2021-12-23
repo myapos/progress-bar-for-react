@@ -15,7 +15,7 @@
 
 import '@cypress/code-coverage/support';
 
-import 'cypress-react-unit-test/support';
+// import 'cypress-react-unit-test/support';
 
 // Import commands.js using ES2015 syntax:
 import './commands';

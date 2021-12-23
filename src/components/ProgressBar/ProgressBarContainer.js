@@ -47,7 +47,7 @@ const ProgressBarContainer = ({
     } else if (hasChanged && hasSetOnPercentageChange && savedOnpercentage) {
       window.top.onPercentageChange(percentage);
     }
-  }, [percentage]);
+  }, [percentage, onPercentageChange, previousValue, savedOnpercentage]);
 
   const classes = useStyles();
 

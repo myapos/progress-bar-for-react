@@ -8,7 +8,7 @@ describe('On percentage change', () => {
 
   before(() => {
     cy.viewport(1200, 600);
-    cy.visit('http://localhost:2222');
+    cy.visit('http://localhost:3000');
   });
 
   it('progress bar container on percentage change calls', () => {

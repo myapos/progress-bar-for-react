@@ -1,8 +1,9 @@
 describe('Tooltip', () => {
   before(() => {
     cy.viewport(1200, 600);
-    cy.visit('http://localhost:2222');
+    cy.visit('http://localhost:3000');
   });
+
   it('should assert that true is equal to true', () => {
     expect(true).to.equal(true);
   });
@@ -16,15 +17,11 @@ describe('Tooltip', () => {
     );
   });
 
-  it('tooltip must be shown on hover', () => {
+  it.only('tooltip must be shown on hover', () => {
     cy.get('[class^=progressBar]')
-      .then((l) => l[1])
+      .first()
       .trigger('mouseenter') // trigger mouse hover to show tooltip
       .get('[data-id^=tooltip]')
-      .then((l) => {
-        classList = l[0].classList.toString();
-
-        expect(classList).to.include('show');
-      });
+      .should('have.class', 'show');
   });
 });
