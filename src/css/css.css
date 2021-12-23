@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(45deg, #92baac 45px, transparent 45px) 64px 64px,
+    linear-gradient(
+      45deg,
+      #92baac 45px,
+      transparent 45px,
+      transparent 91px,
+      #e1ebbd 91px,
+      #e1ebbd 135px,
+      transparent 135px
+    ),
+    linear-gradient(
+      -45deg,
+      #92baac 23px,
+      transparent 23px,
+      transparent 68px,
+      #92baac 68px,
+      #92baac 113px,
+      transparent 113px,
+      transparent 158px,
+      #92baac 158px
+    );
+  background-color: #e1ebbd;
+  background-size: 128px 128px;
+
+  display: flex;
+  justify-content: center;
+  height: 1000px;
+}
+
+#root {
+  opacity: 0.9;
+  background-color: #808080;
+  display: flex;
+  justify-content: center;
+
+  width: 50%;
+  align-self: center;
+}
+
+#app-container {
+  padding: 5px;
+}
+
+.example {
+  margin: 1rem;
+}
+
+.example-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
