@@ -1250,10 +1250,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 var PropTypes = propTypes.exports;
 
-function Test(props) {
-  return /*#__PURE__*/React__default["default"].createElement("div", null, "test");
-}
-
 var getDisplayName = function getDisplayName(WrappedComponent) {
   var nativeName = WrappedComponent.displayName || WrappedComponent.name || "Component";
   return "withHOC-".concat(nativeName);
@@ -1279,6 +1275,15 @@ var withToolTip = function withToolTip(BaseComponent) {
 
   WrappedComponent.displayName = getDisplayName(BaseComponent);
   return WrappedComponent;
+};
+
+var usePrevious = function usePrevious(_ref) {
+  var percentage = _ref.percentage,
+      ref = _ref.ref;
+  React.useEffect(function () {
+    ref.current = percentage;
+  });
+  return ref.current;
 };
 
 var Filler = function Filler(_ref) {
@@ -1357,56 +1362,66 @@ var styles = function styles(theme) {
   };
 };
 
-reactJss.createUseStyles(styles);
-withToolTip(ProgressBar);
+var useStyles = reactJss.createUseStyles(styles);
+var TooltipedProgressBar = withToolTip(ProgressBar);
 
 var ProgressBarContainer = function ProgressBarContainer(_ref) {
-  var percentage = _ref.percentage;
-      _ref.fillerExtraStyles;
-      _ref.progressBarExtraStyles;
-      _ref.tooltip;
-      _ref.onPercentageChange;
+  var percentage = _ref.percentage,
+      fillerExtraStyles = _ref.fillerExtraStyles,
+      progressBarExtraStyles = _ref.progressBarExtraStyles,
+      tooltip = _ref.tooltip,
+      onPercentageChange = _ref.onPercentageChange;
+  var ref = React.useRef(); // inspired source
+  // https://stackoverflow.com/questions/53446020/how-to-compare-oldvalues-and-newvalues-on-react-hooks-useeffect
 
-  var _useState = React.useState(),
-      _useState2 = _slicedToArray(_useState, 2);
-      _useState2[0];
-      _useState2[1]; // const [savedOnpercentage, setSaveOnPercentage] = useState(false);
-  // useEffect(() => {
-  //   const hasChanged = previousValue && previousValue.percentage !== percentage;
-  //   const hasSetOnPercentageChange =
-  //     onPercentageChange && typeof onPercentageChange === 'function';
-  //   if (hasChanged && hasSetOnPercentageChange && !savedOnpercentage) {
-  //     // process here
-  //     onPercentageChange(percentage);
-  //   } else if (hasChanged && hasSetOnPercentageChange && savedOnpercentage) {
-  //     window.top.onPercentageChange(percentage);
-  //   }
-  // }, [percentage, onPercentageChange, previousValue, savedOnpercentage]);
-  // if (window.top && window.top.Cypress && !savedOnpercentage) {
-  //   console.log('loaded');
-  //   // keep reference for testing with cypresss
-  //   window.top.onPercentageChange = onPercentageChange;
-  //   setSaveOnPercentage(true);
-  // }
-  // const classes = useStyles();
+  var previousValue = usePrevious({
+    percentage: percentage,
+    ref: ref
+  });
+
+  var _useState = React.useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      savedOnpercentage = _useState2[0],
+      setSaveOnPercentage = _useState2[1];
+
+  var ProgressBarToUse = ProgressBar;
+  var hasTooltip = tooltip && tooltip.length > 0;
+  React.useEffect(function () {
+    var hasChanged = previousValue && previousValue.percentage !== percentage;
+    var hasSetOnPercentageChange = onPercentageChange && typeof onPercentageChange === 'function';
+
+    if (hasChanged && hasSetOnPercentageChange && !savedOnpercentage) {
+      // process here
+      onPercentageChange(percentage);
+    } else if (hasChanged && hasSetOnPercentageChange && savedOnpercentage) {
+      window.top.onPercentageChange(percentage);
+    }
+  }, [percentage, onPercentageChange, previousValue, savedOnpercentage]);
+
+  if (window.top && window.top.Cypress && !savedOnpercentage) {
+    console.log('loaded'); // keep reference for testing with cypresss
+
+    window.top.onPercentageChange = onPercentageChange;
+    setSaveOnPercentage(true);
+  }
+
+  var classes = useStyles();
 
   if (percentage === 100) {
     return null;
-  } // if (hasTooltip) {
-  //   ProgressBarToUse = TooltipedProgressBar;
-  // }
-  // return (
-  //   <ProgressBarToUse
-  //     percentage={percentage}
-  //     fillerExtraStyles={fillerExtraStyles}
-  //     progressBarExtraStyles={progressBarExtraStyles}
-  //     tooltipContent={tooltip}
-  //     classes={classes}
-  //   />
-  // );
+  }
 
+  if (hasTooltip) {
+    ProgressBarToUse = TooltipedProgressBar;
+  }
 
-  return /*#__PURE__*/React__default["default"].createElement(Test, null);
+  return /*#__PURE__*/React__default["default"].createElement(ProgressBarToUse, {
+    percentage: percentage,
+    fillerExtraStyles: fillerExtraStyles,
+    progressBarExtraStyles: progressBarExtraStyles,
+    tooltipContent: tooltip,
+    classes: classes
+  });
 };
 
 ProgressBarContainer.propTypes = {
