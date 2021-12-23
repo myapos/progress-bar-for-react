@@ -1,5 +1,5 @@
-import React from "react";
-import ProgressBar from "../components/ProgressBar";
+import React from 'react';
+import ProgressBar from '../components/ProgressBar';
 
 const Complex = () => (
   <div id="container">
@@ -7,14 +7,14 @@ const Complex = () => (
       percentage={50}
       tooltip="this is a long text tooltip example"
       fillerExtraStyles={{
-        backgroundColor: "blue",
+        backgroundColor: 'blue',
       }}
       progressBarExtraStyles={{
-        position: "relative",
-        height: "5px",
-        width: "200px",
-        borderRadius: "1px",
-        border: "1px solid blue",
+        position: 'relative',
+        height: '5px',
+        width: '200px',
+        borderRadius: '1px',
+        border: '1px solid blue',
       }}
     />
   </div>

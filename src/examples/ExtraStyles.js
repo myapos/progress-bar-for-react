@@ -1,12 +1,12 @@
-import React from "react";
-import ProgressBar from "../components/ProgressBar";
+import React from 'react';
+import ProgressBar from '../components/ProgressBar';
 
 const ExtraStyles = () => (
   <div id="container">
     <ProgressBar
       percentage={50}
       fillerExtraStyles={{
-        backgroundColor: "red",
+        backgroundColor: 'red',
       }}
     />
   </div>

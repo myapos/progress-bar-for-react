@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import ProgressBar from "../components/ProgressBar";
+import ProgressBar from '../components/ProgressBar';
 
 const ClockedProgressBar = () => {
   let [percentage, setPercentage] = useState(0);
@@ -21,14 +21,14 @@ const ClockedProgressBar = () => {
         percentage={percentage}
         tooltip={`${percentage}%`}
         fillerExtraStyles={{
-          backgroundColor: "blue",
+          backgroundColor: 'blue',
         }}
         progressBarExtraStyles={{
-          position: "relative",
-          height: "5px",
-          width: "200px",
-          borderRadius: "1px",
-          border: "1px solid blue",
+          position: 'relative',
+          height: '5px',
+          width: '200px',
+          borderRadius: '1px',
+          border: '1px solid blue',
         }}
       />
     </div>
