@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import ReactTooltip from 'react-tooltip';
-import getDisplayName from '../utils/getDisplayName';
+import getDisplayName from 'utils/getDisplayName';
 
 /* It provides a tooltip to the base component with same styling */
 

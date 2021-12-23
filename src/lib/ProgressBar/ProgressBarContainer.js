@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { createUseStyles } from 'react-jss';
 
 import ProgressBar from './ProgressBar';
-import withTooltip from '../../HOCS/withTooltip';
+import withTooltip from 'HOCS/withTooltip';
 
 import styles from './styles';
 

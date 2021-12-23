@@ -58,10 +58,6 @@ Use command `npm start` and visit `http://localhost:2222`. Every example in the 
 
 Use command `npm run dist:demo`
 
-### Storybook
-
-Use command `npm run storybook`
-
 ### Codesandbox
 
 - [Simple](https://codesandbox.io/s/green-shadow-3370g?file=/src/Simple.js)

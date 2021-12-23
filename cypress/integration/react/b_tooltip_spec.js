@@ -17,7 +17,7 @@ describe('Tooltip', () => {
     );
   });
 
-  it.only('tooltip must be shown on hover', () => {
+  it('tooltip must be shown on hover', () => {
     cy.get('[class^=progressBar]')
       .first()
       .trigger('mouseenter') // trigger mouse hover to show tooltip
