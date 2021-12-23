@@ -18,8 +18,7 @@
     "cypress:open:react:headless": "cypress run --config integrationFolder=./cypress/integration/react/ video=false --browser chrome",
     "cypress:headless": "cypress run",
     "test:react": "start-server-and-test start http://localhost:3000 cypress:open:react --browser chrome",
-    "test:react:headless": "start-server-and-test start http://localhost:3000 cypress:open:react:headless --browser chrome",
-    "test:react:headless:ci": "start-server-and-test start http://localhost:3000 cypress:open:react:headless",
+    "test:react:headless": "start-server-and-test start http://localhost:3000 cypress:open:react:headless",
     "report:summary": "nyc report --reporter=text-summary"
   },
   "repository": {
