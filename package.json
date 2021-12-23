@@ -1,6 +1,6 @@
 {
   "name": "progress_bar_for_react",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "This is a simple fully customizable react progress bar component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -11,7 +11,6 @@
     "publish": "npm run dist && npm publish",
     "preghdeploy": "npm run scripts:build",
     "ghdeploy": "gh-pages -d dist",
-    "postghdeploy": "npm run npm:publish:dist",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install",
     "cypress:open:react:headless": "cypress run --config integrationFolder=./cypress/integration/react/ video=false",
