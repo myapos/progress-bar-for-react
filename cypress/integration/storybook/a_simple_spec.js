@@ -10,31 +10,34 @@ describe('Simple', () => {
   before(() => {
     cy.viewport(1200, 600);
     cy.visit('http://localhost:2233');
-    cy.get('a[title="Simple"]').click();
+    cy.get('#simple--simple').click();
   });
 
+  // expect(true).to.equal(true);
   it('progress bar container css', () => {
-    cy.get('#storybook-preview-iframe').then(($iframe) => {
-      const doc = $iframe.contents();
+    cy.get('#storybook-preview-iframe')
+      .should('exist')
+      .then(($iframe) => {
+        const doc = $iframe.contents();
 
-      iget(doc, '#container > div').then((div) => {
-        const element = div[0];
+        iget(doc, '#container > div').then((div) => {
+          const element = div[0];
 
-        const className = element.className;
+          const className = element.className;
 
-        expect(className).to.match(/progressBarContainer-/);
+          expect(className).to.match(/progressBarContainer-/);
 
-        const styles = window.getComputedStyle(element, null);
-        const display = styles.getPropertyValue('display');
-        const alignItems = styles.getPropertyValue('align-items');
-        const justifyContent = styles.getPropertyValue('justify-content');
+          const styles = window.getComputedStyle(element, null);
+          const display = styles.getPropertyValue('display');
+          const alignItems = styles.getPropertyValue('align-items');
+          const justifyContent = styles.getPropertyValue('justify-content');
 
-        // test css styling
-        expect(display).to.include('flex');
-        expect(alignItems).to.include('center');
-        expect(justifyContent).to.include('center');
+          // test css styling
+          expect(display).to.include('flex');
+          expect(alignItems).to.include('center');
+          expect(justifyContent).to.include('center');
+        });
       });
-    });
   });
 
   it('progress bar css', () => {

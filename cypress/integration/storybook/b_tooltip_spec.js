@@ -8,7 +8,7 @@ describe('Tooltip', () => {
   before(() => {
     cy.viewport(1200, 600);
     cy.visit('http://localhost:2233');
-    cy.get('a[title="Tooltip"]').click();
+    cy.get('#tooltip').click();
   });
 
   it('progress bar container css', () => {
@@ -33,11 +33,7 @@ describe('Tooltip', () => {
           .then((l) => l[1])
           .trigger('mouseenter') // trigger mouse hover to show tooltip
           .get('[data-id^=tooltip]')
-          .then((l) => {
-            classList = l[0].classList.toString();
-
-            expect(classList).to.include('show');
-          });
+          .should('have.class', 'show');
       });
     });
   });

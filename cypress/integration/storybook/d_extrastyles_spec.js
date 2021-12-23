@@ -6,7 +6,7 @@ describe('Extrastyles', () => {
   before(() => {
     cy.viewport(1200, 600);
     cy.visit('http://localhost:2233');
-    cy.get('a[title="ExtraStyles"]').click();
+    cy.get('#extrastyles').click();
   });
 
   it('extra filler css', () => {

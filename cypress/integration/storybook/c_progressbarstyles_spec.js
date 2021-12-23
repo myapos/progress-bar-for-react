@@ -6,7 +6,7 @@ describe('Progress bar styles', () => {
   before(() => {
     cy.viewport(1200, 600);
     cy.visit('http://localhost:2233');
-    cy.get('a[title="ProgressBarStyles"]').click();
+    cy.get('#progressbarstyles').click();
   });
 
   it('progress bar container filler css', () => {
