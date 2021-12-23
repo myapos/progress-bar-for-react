@@ -11,7 +11,7 @@ jobs:
       - run: npm --version
       - run: git --version
 workflows:
-  build:
+  install:
     jobs:
       - cypress/install:
           install: 'npm run clean:install' # run a custom app build step
