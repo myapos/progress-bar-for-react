@@ -1,60 +1,70 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
 
-require("core-js/modules/web.dom-collections.iterator.js");
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = require('react');
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+var _react2 = _interopRequireDefault(_react);
 
-var _reactJss = require("react-jss");
+var _propTypes = require('prop-types');
 
-var _ProgressBar = _interopRequireDefault(require("./ProgressBar"));
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _withTooltip = _interopRequireDefault(require("HOCS/withTooltip"));
+var _reactJss = require('react-jss');
 
-var _styles = _interopRequireDefault(require("./styles"));
+var _ProgressBar = require('./ProgressBar');
+
+var _ProgressBar2 = _interopRequireDefault(_ProgressBar);
+
+var _withTooltip = require('HOCS/withTooltip');
+
+var _withTooltip2 = _interopRequireDefault(_withTooltip);
+
+var _styles = require('./styles');
+
+var _styles2 = _interopRequireDefault(_styles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+var useStyles = (0, _reactJss.createUseStyles)(_styles2.default);
 
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var TooltipedProgressBar = (0, _withTooltip2.default)(_ProgressBar2.default);
 
-const useStyles = (0, _reactJss.createUseStyles)(_styles.default);
-const TooltipedProgressBar = (0, _withTooltip.default)(_ProgressBar.default);
-
-const usePrevious = value => {
-  const ref = (0, _react.useRef)();
-  (0, _react.useEffect)(() => {
+var usePrevious = function usePrevious(value) {
+  var ref = (0, _react.useRef)();
+  (0, _react.useEffect)(function () {
     ref.current = value;
   });
   return ref.current;
 };
 
-const ProgressBarContainer = _ref => {
-  let {
-    percentage,
-    fillerExtraStyles,
-    progressBarExtraStyles,
-    tooltip,
-    onPercentageChange
-  } = _ref;
-  let ProgressBarToUse = _ProgressBar.default;
-  const hasTooltip = tooltip && tooltip.length > 0;
-  const [savedOnpercentage, setSaveOnPercentage] = (0, _react.useState)(false); // inspired source
+var ProgressBarContainer = function ProgressBarContainer(_ref) {
+  var percentage = _ref.percentage,
+      fillerExtraStyles = _ref.fillerExtraStyles,
+      progressBarExtraStyles = _ref.progressBarExtraStyles,
+      tooltip = _ref.tooltip,
+      onPercentageChange = _ref.onPercentageChange;
+
+  var ProgressBarToUse = _ProgressBar2.default;
+  var hasTooltip = tooltip && tooltip.length > 0;
+
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      savedOnpercentage = _useState2[0],
+      setSaveOnPercentage = _useState2[1];
+  // inspired source
   // https://stackoverflow.com/questions/53446020/how-to-compare-oldvalues-and-newvalues-on-react-hooks-useeffect
 
-  const previousValue = usePrevious({
-    percentage
-  });
-  (0, _react.useEffect)(() => {
-    const hasChanged = previousValue && previousValue.percentage !== percentage;
-    const hasSetOnPercentageChange = onPercentageChange && typeof onPercentageChange === 'function';
+
+  var previousValue = usePrevious({ percentage: percentage });
+
+  (0, _react.useEffect)(function () {
+    var hasChanged = previousValue && previousValue.percentage !== percentage;
+    var hasSetOnPercentageChange = onPercentageChange && typeof onPercentageChange === 'function';
 
     if (hasChanged && hasSetOnPercentageChange && !savedOnpercentage) {
       // process here
@@ -65,13 +75,13 @@ const ProgressBarContainer = _ref => {
   }, [percentage, onPercentageChange, previousValue, savedOnpercentage]);
 
   if (window.top && window.top.Cypress && !savedOnpercentage) {
-    console.log('loaded'); // keep reference for testing with cypresss
-
+    console.log('loaded');
+    // keep reference for testing with cypresss
     window.top.onPercentageChange = onPercentageChange;
     setSaveOnPercentage(true);
   }
 
-  const classes = useStyles();
+  var classes = useStyles();
 
   if (percentage === 100) {
     return null;
@@ -81,7 +91,7 @@ const ProgressBarContainer = _ref => {
     ProgressBarToUse = TooltipedProgressBar;
   }
 
-  return /*#__PURE__*/_react.default.createElement(ProgressBarToUse, {
+  return _react2.default.createElement(ProgressBarToUse, {
     percentage: percentage,
     fillerExtraStyles: fillerExtraStyles,
     progressBarExtraStyles: progressBarExtraStyles,
@@ -91,11 +101,11 @@ const ProgressBarContainer = _ref => {
 };
 
 ProgressBarContainer.propTypes = {
-  percentage: _propTypes.default.number,
-  backgroundColor: _propTypes.default.string,
-  classes: _propTypes.default.object,
-  fillerExtraStyles: _propTypes.default.object,
-  progressBarExtraStyles: _propTypes.default.object
+  percentage: _propTypes2.default.number,
+  backgroundColor: _propTypes2.default.string,
+  classes: _propTypes2.default.object,
+  fillerExtraStyles: _propTypes2.default.object,
+  progressBarExtraStyles: _propTypes2.default.object
 };
-var _default = ProgressBarContainer;
-exports.default = _default;
+
+exports.default = ProgressBarContainer;

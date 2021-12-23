@@ -6,7 +6,7 @@
   "scripts": {
     "start": "FAST_REFRESH=false BROWSER=none react-scripts -r @cypress/instrument-cra start",
     "scripts:build": "react-scripts build",
-    "dist": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+    "dist": "NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src/lib --out-dir dist --copy-files",
     "publish": "npm run dist && npm publish",
     "preghdeploy": "npm run scripts:build",
     "ghdeploy": "gh-pages -d dist",
@@ -38,7 +38,6 @@
     "url": "https://github.com/myapos/progress-bar-for-react/issues"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-jss": "^10.9.0",
@@ -48,11 +47,12 @@
   },
   "homepage": "https://myapos.github.io/progress-bar-for-react",
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.5",
-    "@babel/preset-env": "^7.16.5",
     "@cypress/code-coverage": "^3.9.12",
     "@cypress/instrument-cra": "^1.4.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "chalk": "^5.0.0",
     "cross-env": "^7.0.3",
     "cypress": "^9.2.0",
@@ -75,6 +75,13 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env",
+      "stage-2"
     ]
   },
   "browserslist": {
