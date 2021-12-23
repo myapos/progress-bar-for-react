@@ -52,7 +52,7 @@ Please follow the instructions from `https://help.github.com/en/github/getting-s
 
 ### Development
 
-Use command `npm start` and visit `http://localhost:2222`. Every example in the Examples folder will load.
+Use command `npm start` and visit `http://localhost:3000`. Every example in the Examples folder will load.
 
 ### Build
 
