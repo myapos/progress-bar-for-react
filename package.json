@@ -15,7 +15,7 @@
     "postghdeploy": "npm run npm:publish:dist",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install",
-    "cypress:open:react:headless": "cypress run --config integrationFolder=./cypress/integration/react/ video=false --browser chrome",
+    "cypress:open:react:headless": "cypress run --config integrationFolder=./cypress/integration/react/ video=false",
     "cypress:headless": "cypress run",
     "test:react": "start-server-and-test start http://localhost:3000 cypress:open:react --browser chrome",
     "test:react:headless": "start-server-and-test start http://localhost:3000 cypress:open:react:headless",
