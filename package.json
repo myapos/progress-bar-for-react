@@ -5,12 +5,11 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "FAST_REFRESH=false BROWSER=none react-scripts -r @cypress/instrument-cra start",
-    "build": "react-scripts build",
-    "dist:demo": "PRODUCTION=true webpack --mode production --config webpack.prod.js ",
-    "npm:publish:dist": "PRODUCTION=true webpack --mode production --config webpack.publish.js && npm publish",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+    "npm:publish:dist": "npm run build && npm publish",
     "prenpm:publish:dist": "node ./buildVersion.js && git commit -am 'update version' && git push",
     "postnpm:publish:dist": "git checkout .",
-    "preghdeploy": "npm run dist:demo",
+    "preghdeploy": "npm run build",
     "ghdeploy": "gh-pages -d dist",
     "postghdeploy": "npm run npm:publish:dist",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
@@ -46,6 +45,7 @@
     "url": "https://github.com/myapos/progress-bar-for-react/issues"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-jss": "^10.9.0",
@@ -55,6 +55,9 @@
   },
   "homepage": "https://myapos.github.io/progress-bar-for-react",
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
     "@cypress/code-coverage": "^3.9.12",
     "@cypress/instrument-cra": "^1.4.0",
     "@storybook/addon-actions": "^6.4.9",
