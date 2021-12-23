@@ -15,7 +15,7 @@ var _reactJss = require("react-jss");
 
 var _ProgressBar = _interopRequireDefault(require("./ProgressBar"));
 
-var _withTooltip = _interopRequireDefault(require("../../HOCS/withTooltip"));
+var _withTooltip = _interopRequireDefault(require("HOCS/withTooltip"));
 
 var _styles = _interopRequireDefault(require("./styles"));
 
