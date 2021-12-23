@@ -73,7 +73,7 @@ This component is tested with Cypress.
 
 #### Coverage report
 
-[Report](https://138-262743557-gh.circle-artifacts.com/0/coverage/lcov-report/index.html)
+[Report](https://265-262743557-gh.circle-artifacts.com/0/coverage/lcov-report/index.html)
 
 ### License
 
