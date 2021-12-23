@@ -4,7 +4,7 @@
   "description": "This is a simple fully customizable react progress bar component",
   "main": "dist/index.js",
   "scripts": {
-    "start": "FAST_REFRESH=false BROWSER=none react-scripts start",
+    "start": "FAST_REFRESH=false BROWSER=none react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
     "dist:demo": "PRODUCTION=true webpack --mode production --config webpack.prod.js ",
     "npm:publish:dist": "PRODUCTION=true webpack --mode production --config webpack.publish.js && npm publish",
