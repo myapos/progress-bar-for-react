@@ -1,4 +1,474 @@
 {
+  "/home/myros/projects/progress-bar-for-react/src/lib/utils/getDisplayName.js": {
+    "path": "/home/myros/projects/progress-bar-for-react/src/lib/utils/getDisplayName.js",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 1,
+          "column": 23
+        },
+        "end": {
+          "line": 6,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 3,
+          "column": 4
+        },
+        "end": {
+          "line": 3,
+          "column": 72
+        }
+      },
+      "2": {
+        "start": {
+          "line": 5,
+          "column": 2
+        },
+        "end": {
+          "line": 5,
+          "column": 33
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 1,
+            "column": 23
+          },
+          "end": {
+            "line": 1,
+            "column": 24
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 45
+          },
+          "end": {
+            "line": 6,
+            "column": 1
+          }
+        },
+        "line": 1
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 4
+          },
+          "end": {
+            "line": 3,
+            "column": 72
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 3,
+              "column": 4
+            },
+            "end": {
+              "line": 3,
+              "column": 32
+            }
+          },
+          {
+            "start": {
+              "line": 3,
+              "column": 36
+            },
+            "end": {
+              "line": 3,
+              "column": 57
+            }
+          },
+          {
+            "start": {
+              "line": 3,
+              "column": 61
+            },
+            "end": {
+              "line": 3,
+              "column": 72
+            }
+          }
+        ],
+        "line": 3
+      }
+    },
+    "s": {
+      "0": 9,
+      "1": 9,
+      "2": 9
+    },
+    "f": {
+      "0": 9
+    },
+    "b": {
+      "0": [
+        9,
+        9,
+        0
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "582dded5eeef3b7992bad74988944cb19919a249"
+  },
+  "/home/myros/projects/progress-bar-for-react/src/lib/HOCS/withTooltip.js": {
+    "path": "/home/myros/projects/progress-bar-for-react/src/lib/HOCS/withTooltip.js",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 7,
+          "column": 20
+        },
+        "end": {
+          "line": 28,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 8,
+          "column": 27
+        },
+        "end": {
+          "line": 23,
+          "column": 3
+        }
+      },
+      "2": {
+        "start": {
+          "line": 9,
+          "column": 45
+        },
+        "end": {
+          "line": 9,
+          "column": 50
+        }
+      },
+      "3": {
+        "start": {
+          "line": 11,
+          "column": 4
+        },
+        "end": {
+          "line": 20,
+          "column": 5
+        }
+      },
+      "4": {
+        "start": {
+          "line": 12,
+          "column": 6
+        },
+        "end": {
+          "line": 19,
+          "column": 8
+        }
+      },
+      "5": {
+        "start": {
+          "line": 22,
+          "column": 4
+        },
+        "end": {
+          "line": 22,
+          "column": 44
+        }
+      },
+      "6": {
+        "start": {
+          "line": 25,
+          "column": 2
+        },
+        "end": {
+          "line": 25,
+          "column": 63
+        }
+      },
+      "7": {
+        "start": {
+          "line": 27,
+          "column": 2
+        },
+        "end": {
+          "line": 27,
+          "column": 26
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 7,
+            "column": 20
+          },
+          "end": {
+            "line": 7,
+            "column": 21
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 39
+          },
+          "end": {
+            "line": 28,
+            "column": 1
+          }
+        },
+        "line": 7
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 8,
+            "column": 27
+          },
+          "end": {
+            "line": 8,
+            "column": 28
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 38
+          },
+          "end": {
+            "line": 23,
+            "column": 3
+          }
+        },
+        "line": 8
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 11,
+            "column": 4
+          },
+          "end": {
+            "line": 20,
+            "column": 5
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 11,
+              "column": 4
+            },
+            "end": {
+              "line": 20,
+              "column": 5
+            }
+          },
+          {
+            "start": {
+              "line": 11,
+              "column": 4
+            },
+            "end": {
+              "line": 20,
+              "column": 5
+            }
+          }
+        ],
+        "line": 11
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 11,
+            "column": 8
+          },
+          "end": {
+            "line": 11,
+            "column": 47
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 11,
+              "column": 8
+            },
+            "end": {
+              "line": 11,
+              "column": 22
+            }
+          },
+          {
+            "start": {
+              "line": 11,
+              "column": 26
+            },
+            "end": {
+              "line": 11,
+              "column": 47
+            }
+          }
+        ],
+        "line": 11
+      }
+    },
+    "s": {
+      "0": 9,
+      "1": 9,
+      "2": 36,
+      "3": 36,
+      "4": 36,
+      "5": 0,
+      "6": 9,
+      "7": 9
+    },
+    "f": {
+      "0": 9,
+      "1": 36
+    },
+    "b": {
+      "0": [
+        36,
+        0
+      ],
+      "1": [
+        36,
+        36
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "0335ac80def18c38b5658517a276aa43464def88"
+  },
+  "/home/myros/projects/progress-bar-for-react/src/lib/HOCS/usePrevious.js": {
+    "path": "/home/myros/projects/progress-bar-for-react/src/lib/HOCS/usePrevious.js",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 3,
+          "column": 20
+        },
+        "end": {
+          "line": 8,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 4,
+          "column": 2
+        },
+        "end": {
+          "line": 6,
+          "column": 5
+        }
+      },
+      "2": {
+        "start": {
+          "line": 5,
+          "column": 4
+        },
+        "end": {
+          "line": 5,
+          "column": 29
+        }
+      },
+      "3": {
+        "start": {
+          "line": 7,
+          "column": 2
+        },
+        "end": {
+          "line": 7,
+          "column": 21
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 3,
+            "column": 20
+          },
+          "end": {
+            "line": 3,
+            "column": 21
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 45
+          },
+          "end": {
+            "line": 8,
+            "column": 1
+          }
+        },
+        "line": 3
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 4,
+            "column": 12
+          },
+          "end": {
+            "line": 4,
+            "column": 13
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 18
+          },
+          "end": {
+            "line": 6,
+            "column": 3
+          }
+        },
+        "line": 4
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 9,
+      "1": 126,
+      "2": 63,
+      "3": 126
+    },
+    "f": {
+      "0": 126,
+      "1": 63
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "7bdccd68eb3b3769365e7ed33b733f9b175b4120"
+  },
   "/home/myros/projects/progress-bar-for-react/src/lib/ProgressBar/Filler.js": {
     "path": "/home/myros/projects/progress-bar-for-react/src/lib/ProgressBar/Filler.js",
     "statementMap": {
@@ -231,367 +701,6 @@
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
     "hash": "99e5dd3198e0f26c86e50758e68d21b5f57f79ed"
   },
-  "/home/myros/projects/progress-bar-for-react/src/utils/getDisplayName.js": {
-    "path": "/home/myros/projects/progress-bar-for-react/src/utils/getDisplayName.js",
-    "statementMap": {
-      "0": {
-        "start": {
-          "line": 1,
-          "column": 23
-        },
-        "end": {
-          "line": 6,
-          "column": 1
-        }
-      },
-      "1": {
-        "start": {
-          "line": 3,
-          "column": 4
-        },
-        "end": {
-          "line": 3,
-          "column": 72
-        }
-      },
-      "2": {
-        "start": {
-          "line": 5,
-          "column": 2
-        },
-        "end": {
-          "line": 5,
-          "column": 33
-        }
-      }
-    },
-    "fnMap": {
-      "0": {
-        "name": "(anonymous_0)",
-        "decl": {
-          "start": {
-            "line": 1,
-            "column": 23
-          },
-          "end": {
-            "line": 1,
-            "column": 24
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 1,
-            "column": 45
-          },
-          "end": {
-            "line": 6,
-            "column": 1
-          }
-        },
-        "line": 1
-      }
-    },
-    "branchMap": {
-      "0": {
-        "loc": {
-          "start": {
-            "line": 3,
-            "column": 4
-          },
-          "end": {
-            "line": 3,
-            "column": 72
-          }
-        },
-        "type": "binary-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 3,
-              "column": 4
-            },
-            "end": {
-              "line": 3,
-              "column": 32
-            }
-          },
-          {
-            "start": {
-              "line": 3,
-              "column": 36
-            },
-            "end": {
-              "line": 3,
-              "column": 57
-            }
-          },
-          {
-            "start": {
-              "line": 3,
-              "column": 61
-            },
-            "end": {
-              "line": 3,
-              "column": 72
-            }
-          }
-        ],
-        "line": 3
-      }
-    },
-    "s": {
-      "0": 9,
-      "1": 9,
-      "2": 9
-    },
-    "f": {
-      "0": 9
-    },
-    "b": {
-      "0": [
-        9,
-        9,
-        0
-      ]
-    },
-    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "eeffbe756a2ded3d588277abac234353e0e720b7"
-  },
-  "/home/myros/projects/progress-bar-for-react/src/HOCS/withTooltip.js": {
-    "path": "/home/myros/projects/progress-bar-for-react/src/HOCS/withTooltip.js",
-    "statementMap": {
-      "0": {
-        "start": {
-          "line": 7,
-          "column": 20
-        },
-        "end": {
-          "line": 28,
-          "column": 1
-        }
-      },
-      "1": {
-        "start": {
-          "line": 8,
-          "column": 27
-        },
-        "end": {
-          "line": 23,
-          "column": 3
-        }
-      },
-      "2": {
-        "start": {
-          "line": 9,
-          "column": 45
-        },
-        "end": {
-          "line": 9,
-          "column": 50
-        }
-      },
-      "3": {
-        "start": {
-          "line": 11,
-          "column": 4
-        },
-        "end": {
-          "line": 20,
-          "column": 5
-        }
-      },
-      "4": {
-        "start": {
-          "line": 12,
-          "column": 6
-        },
-        "end": {
-          "line": 19,
-          "column": 8
-        }
-      },
-      "5": {
-        "start": {
-          "line": 22,
-          "column": 4
-        },
-        "end": {
-          "line": 22,
-          "column": 44
-        }
-      },
-      "6": {
-        "start": {
-          "line": 25,
-          "column": 2
-        },
-        "end": {
-          "line": 25,
-          "column": 63
-        }
-      },
-      "7": {
-        "start": {
-          "line": 27,
-          "column": 2
-        },
-        "end": {
-          "line": 27,
-          "column": 26
-        }
-      }
-    },
-    "fnMap": {
-      "0": {
-        "name": "(anonymous_0)",
-        "decl": {
-          "start": {
-            "line": 7,
-            "column": 20
-          },
-          "end": {
-            "line": 7,
-            "column": 21
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 7,
-            "column": 39
-          },
-          "end": {
-            "line": 28,
-            "column": 1
-          }
-        },
-        "line": 7
-      },
-      "1": {
-        "name": "(anonymous_1)",
-        "decl": {
-          "start": {
-            "line": 8,
-            "column": 27
-          },
-          "end": {
-            "line": 8,
-            "column": 28
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 8,
-            "column": 38
-          },
-          "end": {
-            "line": 23,
-            "column": 3
-          }
-        },
-        "line": 8
-      }
-    },
-    "branchMap": {
-      "0": {
-        "loc": {
-          "start": {
-            "line": 11,
-            "column": 4
-          },
-          "end": {
-            "line": 20,
-            "column": 5
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 11,
-              "column": 4
-            },
-            "end": {
-              "line": 20,
-              "column": 5
-            }
-          },
-          {
-            "start": {
-              "line": 11,
-              "column": 4
-            },
-            "end": {
-              "line": 20,
-              "column": 5
-            }
-          }
-        ],
-        "line": 11
-      },
-      "1": {
-        "loc": {
-          "start": {
-            "line": 11,
-            "column": 8
-          },
-          "end": {
-            "line": 11,
-            "column": 47
-          }
-        },
-        "type": "binary-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 11,
-              "column": 8
-            },
-            "end": {
-              "line": 11,
-              "column": 22
-            }
-          },
-          {
-            "start": {
-              "line": 11,
-              "column": 26
-            },
-            "end": {
-              "line": 11,
-              "column": 47
-            }
-          }
-        ],
-        "line": 11
-      }
-    },
-    "s": {
-      "0": 9,
-      "1": 9,
-      "2": 36,
-      "3": 36,
-      "4": 36,
-      "5": 0,
-      "6": 9,
-      "7": 9
-    },
-    "f": {
-      "0": 9,
-      "1": 36
-    },
-    "b": {
-      "0": [
-        36,
-        0
-      ],
-      "1": [
-        36,
-        36
-      ]
-    },
-    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b2227fde810149f5cf08441520b7f80c3ec3412d"
-  },
   "/home/myros/projects/progress-bar-for-react/src/lib/ProgressBar/styles.js": {
     "path": "/home/myros/projects/progress-bar-for-react/src/lib/ProgressBar/styles.js",
     "statementMap": {
@@ -659,142 +768,142 @@
     "statementMap": {
       "0": {
         "start": {
-          "line": 10,
+          "line": 12,
           "column": 18
         },
         "end": {
-          "line": 10,
+          "line": 12,
           "column": 41
         }
       },
       "1": {
         "start": {
-          "line": 12,
+          "line": 14,
           "column": 29
         },
         "end": {
-          "line": 12,
+          "line": 14,
           "column": 53
         }
       },
       "2": {
         "start": {
-          "line": 14,
-          "column": 20
+          "line": 16,
+          "column": 29
         },
         "end": {
-          "line": 20,
+          "line": 70,
           "column": 1
         }
       },
       "3": {
         "start": {
-          "line": 15,
+          "line": 23,
           "column": 14
         },
         "end": {
-          "line": 15,
+          "line": 23,
           "column": 22
         }
       },
       "4": {
         "start": {
-          "line": 16,
-          "column": 2
+          "line": 26,
+          "column": 24
         },
         "end": {
-          "line": 18,
-          "column": 5
+          "line": 26,
+          "column": 56
         }
       },
       "5": {
         "start": {
-          "line": 17,
-          "column": 4
+          "line": 27,
+          "column": 51
         },
         "end": {
-          "line": 17,
-          "column": 24
+          "line": 27,
+          "column": 66
         }
       },
       "6": {
         "start": {
-          "line": 19,
-          "column": 2
+          "line": 28,
+          "column": 25
         },
         "end": {
-          "line": 19,
-          "column": 21
+          "line": 28,
+          "column": 36
         }
       },
       "7": {
         "start": {
-          "line": 22,
-          "column": 29
+          "line": 29,
+          "column": 21
         },
         "end": {
-          "line": 76,
-          "column": 1
+          "line": 29,
+          "column": 50
         }
       },
       "8": {
         "start": {
-          "line": 29,
-          "column": 25
+          "line": 31,
+          "column": 2
         },
         "end": {
-          "line": 29,
-          "column": 36
+          "line": 42,
+          "column": 73
         }
       },
       "9": {
         "start": {
-          "line": 30,
-          "column": 21
+          "line": 32,
+          "column": 23
         },
         "end": {
-          "line": 30,
-          "column": 50
+          "line": 32,
+          "column": 79
         }
       },
       "10": {
         "start": {
-          "line": 32,
-          "column": 51
+          "line": 34,
+          "column": 6
         },
         "end": {
-          "line": 32,
-          "column": 66
+          "line": 34,
+          "column": 68
         }
       },
       "11": {
         "start": {
-          "line": 35,
-          "column": 24
+          "line": 36,
+          "column": 4
         },
         "end": {
-          "line": 35,
-          "column": 51
+          "line": 41,
+          "column": 5
         }
       },
       "12": {
         "start": {
-          "line": 37,
-          "column": 2
+          "line": 38,
+          "column": 6
         },
         "end": {
-          "line": 48,
-          "column": 73
+          "line": 38,
+          "column": 37
         }
       },
       "13": {
         "start": {
-          "line": 38,
-          "column": 23
+          "line": 39,
+          "column": 11
         },
         "end": {
-          "line": 38,
-          "column": 79
+          "line": 41,
+          "column": 5
         }
       },
       "14": {
@@ -804,52 +913,62 @@
         },
         "end": {
           "line": 40,
-          "column": 68
+          "column": 48
         }
       },
       "15": {
         "start": {
-          "line": 42,
-          "column": 4
+          "line": 44,
+          "column": 2
         },
         "end": {
-          "line": 47,
-          "column": 5
+          "line": 49,
+          "column": 3
         }
       },
       "16": {
         "start": {
-          "line": 44,
-          "column": 6
+          "line": 45,
+          "column": 4
         },
         "end": {
-          "line": 44,
-          "column": 37
+          "line": 45,
+          "column": 26
         }
       },
       "17": {
         "start": {
-          "line": 45,
-          "column": 11
+          "line": 47,
+          "column": 4
         },
         "end": {
           "line": 47,
-          "column": 5
+          "column": 55
         }
       },
       "18": {
         "start": {
-          "line": 46,
-          "column": 6
+          "line": 48,
+          "column": 4
         },
         "end": {
-          "line": 46,
-          "column": 48
+          "line": 48,
+          "column": 30
         }
       },
       "19": {
         "start": {
-          "line": 50,
+          "line": 51,
+          "column": 18
+        },
+        "end": {
+          "line": 51,
+          "column": 29
+        }
+      },
+      "20": {
+        "start": {
+          "line": 53,
           "column": 2
         },
         "end": {
@@ -857,103 +976,53 @@
           "column": 3
         }
       },
-      "20": {
-        "start": {
-          "line": 51,
-          "column": 4
-        },
-        "end": {
-          "line": 51,
-          "column": 26
-        }
-      },
       "21": {
         "start": {
-          "line": 53,
+          "line": 54,
           "column": 4
         },
         "end": {
-          "line": 53,
-          "column": 55
+          "line": 54,
+          "column": 16
         }
       },
       "22": {
         "start": {
-          "line": 54,
-          "column": 4
+          "line": 57,
+          "column": 2
         },
         "end": {
-          "line": 54,
-          "column": 30
+          "line": 59,
+          "column": 3
         }
       },
       "23": {
         "start": {
-          "line": 57,
-          "column": 18
+          "line": 58,
+          "column": 4
         },
         "end": {
-          "line": 57,
-          "column": 29
+          "line": 58,
+          "column": 44
         }
       },
       "24": {
         "start": {
-          "line": 59,
+          "line": 61,
           "column": 2
         },
         "end": {
-          "line": 61,
-          "column": 3
+          "line": 69,
+          "column": 4
         }
       },
       "25": {
         "start": {
-          "line": 60,
-          "column": 4
-        },
-        "end": {
-          "line": 60,
-          "column": 16
-        }
-      },
-      "26": {
-        "start": {
-          "line": 63,
-          "column": 2
-        },
-        "end": {
-          "line": 65,
-          "column": 3
-        }
-      },
-      "27": {
-        "start": {
-          "line": 64,
-          "column": 4
-        },
-        "end": {
-          "line": 64,
-          "column": 44
-        }
-      },
-      "28": {
-        "start": {
-          "line": 67,
-          "column": 2
-        },
-        "end": {
-          "line": 75,
-          "column": 4
-        }
-      },
-      "29": {
-        "start": {
-          "line": 78,
+          "line": 72,
           "column": 0
         },
         "end": {
-          "line": 84,
+          "line": 78,
           "column": 2
         }
       }
@@ -963,108 +1032,60 @@
         "name": "(anonymous_0)",
         "decl": {
           "start": {
-            "line": 14,
-            "column": 20
-          },
-          "end": {
-            "line": 14,
-            "column": 21
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 14,
-            "column": 31
-          },
-          "end": {
-            "line": 20,
-            "column": 1
-          }
-        },
-        "line": 14
-      },
-      "1": {
-        "name": "(anonymous_1)",
-        "decl": {
-          "start": {
             "line": 16,
-            "column": 12
-          },
-          "end": {
-            "line": 16,
-            "column": 13
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 16,
-            "column": 18
-          },
-          "end": {
-            "line": 18,
-            "column": 3
-          }
-        },
-        "line": 16
-      },
-      "2": {
-        "name": "(anonymous_2)",
-        "decl": {
-          "start": {
-            "line": 22,
             "column": 29
           },
           "end": {
-            "line": 22,
+            "line": 16,
             "column": 30
           }
         },
         "loc": {
           "start": {
-            "line": 28,
+            "line": 22,
             "column": 6
           },
           "end": {
-            "line": 76,
+            "line": 70,
             "column": 1
           }
         },
-        "line": 28
+        "line": 22
       },
-      "3": {
-        "name": "(anonymous_3)",
+      "1": {
+        "name": "(anonymous_1)",
         "decl": {
           "start": {
-            "line": 37,
+            "line": 31,
             "column": 12
           },
           "end": {
-            "line": 37,
+            "line": 31,
             "column": 13
           }
         },
         "loc": {
           "start": {
-            "line": 37,
+            "line": 31,
             "column": 18
           },
           "end": {
-            "line": 48,
+            "line": 42,
             "column": 3
           }
         },
-        "line": 37
+        "line": 31
       }
     },
     "branchMap": {
       "0": {
         "loc": {
           "start": {
-            "line": 30,
+            "line": 29,
             "column": 21
           },
           "end": {
-            "line": 30,
+            "line": 29,
             "column": 50
           }
         },
@@ -1072,35 +1093,35 @@
         "locations": [
           {
             "start": {
-              "line": 30,
+              "line": 29,
               "column": 21
             },
             "end": {
-              "line": 30,
+              "line": 29,
               "column": 28
             }
           },
           {
             "start": {
-              "line": 30,
+              "line": 29,
               "column": 32
             },
             "end": {
-              "line": 30,
+              "line": 29,
               "column": 50
             }
           }
         ],
-        "line": 30
+        "line": 29
       },
       "1": {
         "loc": {
           "start": {
-            "line": 38,
+            "line": 32,
             "column": 23
           },
           "end": {
-            "line": 38,
+            "line": 32,
             "column": 79
           }
         },
@@ -1108,35 +1129,35 @@
         "locations": [
           {
             "start": {
-              "line": 38,
+              "line": 32,
               "column": 23
             },
             "end": {
-              "line": 38,
+              "line": 32,
               "column": 36
             }
           },
           {
             "start": {
-              "line": 38,
+              "line": 32,
               "column": 40
             },
             "end": {
-              "line": 38,
+              "line": 32,
               "column": 79
             }
           }
         ],
-        "line": 38
+        "line": 32
       },
       "2": {
         "loc": {
           "start": {
-            "line": 40,
+            "line": 34,
             "column": 6
           },
           "end": {
-            "line": 40,
+            "line": 34,
             "column": 68
           }
         },
@@ -1144,35 +1165,35 @@
         "locations": [
           {
             "start": {
-              "line": 40,
+              "line": 34,
               "column": 6
             },
             "end": {
-              "line": 40,
+              "line": 34,
               "column": 24
             }
           },
           {
             "start": {
-              "line": 40,
+              "line": 34,
               "column": 28
             },
             "end": {
-              "line": 40,
+              "line": 34,
               "column": 68
             }
           }
         ],
-        "line": 40
+        "line": 34
       },
       "3": {
         "loc": {
           "start": {
-            "line": 42,
+            "line": 36,
             "column": 4
           },
           "end": {
-            "line": 47,
+            "line": 41,
             "column": 5
           }
         },
@@ -1180,35 +1201,35 @@
         "locations": [
           {
             "start": {
-              "line": 42,
+              "line": 36,
               "column": 4
             },
             "end": {
-              "line": 47,
+              "line": 41,
               "column": 5
             }
           },
           {
             "start": {
-              "line": 42,
+              "line": 36,
               "column": 4
             },
             "end": {
-              "line": 47,
+              "line": 41,
               "column": 5
             }
           }
         ],
-        "line": 42
+        "line": 36
       },
       "4": {
         "loc": {
           "start": {
-            "line": 42,
+            "line": 36,
             "column": 8
           },
           "end": {
-            "line": 42,
+            "line": 36,
             "column": 68
           }
         },
@@ -1216,45 +1237,45 @@
         "locations": [
           {
             "start": {
-              "line": 42,
+              "line": 36,
               "column": 8
             },
             "end": {
-              "line": 42,
+              "line": 36,
               "column": 18
             }
           },
           {
             "start": {
-              "line": 42,
+              "line": 36,
               "column": 22
             },
             "end": {
-              "line": 42,
+              "line": 36,
               "column": 46
             }
           },
           {
             "start": {
-              "line": 42,
+              "line": 36,
               "column": 50
             },
             "end": {
-              "line": 42,
+              "line": 36,
               "column": 68
             }
           }
         ],
-        "line": 42
+        "line": 36
       },
       "5": {
         "loc": {
           "start": {
-            "line": 45,
+            "line": 39,
             "column": 11
           },
           "end": {
-            "line": 47,
+            "line": 41,
             "column": 5
           }
         },
@@ -1262,35 +1283,35 @@
         "locations": [
           {
             "start": {
-              "line": 45,
+              "line": 39,
               "column": 11
             },
             "end": {
-              "line": 47,
+              "line": 41,
               "column": 5
             }
           },
           {
             "start": {
-              "line": 45,
+              "line": 39,
               "column": 11
             },
             "end": {
-              "line": 47,
+              "line": 41,
               "column": 5
             }
           }
         ],
-        "line": 45
+        "line": 39
       },
       "6": {
         "loc": {
           "start": {
-            "line": 45,
+            "line": 39,
             "column": 15
           },
           "end": {
-            "line": 45,
+            "line": 39,
             "column": 74
           }
         },
@@ -1298,41 +1319,123 @@
         "locations": [
           {
             "start": {
-              "line": 45,
+              "line": 39,
               "column": 15
             },
             "end": {
-              "line": 45,
+              "line": 39,
               "column": 25
             }
           },
           {
             "start": {
-              "line": 45,
+              "line": 39,
               "column": 29
             },
             "end": {
-              "line": 45,
+              "line": 39,
               "column": 53
             }
           },
           {
             "start": {
-              "line": 45,
+              "line": 39,
               "column": 57
             },
             "end": {
-              "line": 45,
+              "line": 39,
               "column": 74
             }
           }
         ],
-        "line": 45
+        "line": 39
       },
       "7": {
         "loc": {
           "start": {
-            "line": 50,
+            "line": 44,
+            "column": 2
+          },
+          "end": {
+            "line": 49,
+            "column": 3
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 44,
+              "column": 2
+            },
+            "end": {
+              "line": 49,
+              "column": 3
+            }
+          },
+          {
+            "start": {
+              "line": 44,
+              "column": 2
+            },
+            "end": {
+              "line": 49,
+              "column": 3
+            }
+          }
+        ],
+        "line": 44
+      },
+      "8": {
+        "loc": {
+          "start": {
+            "line": 44,
+            "column": 6
+          },
+          "end": {
+            "line": 44,
+            "column": 60
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 44,
+              "column": 6
+            },
+            "end": {
+              "line": 44,
+              "column": 16
+            }
+          },
+          {
+            "start": {
+              "line": 44,
+              "column": 20
+            },
+            "end": {
+              "line": 44,
+              "column": 38
+            }
+          },
+          {
+            "start": {
+              "line": 44,
+              "column": 42
+            },
+            "end": {
+              "line": 44,
+              "column": 60
+            }
+          }
+        ],
+        "line": 44
+      },
+      "9": {
+        "loc": {
+          "start": {
+            "line": 53,
             "column": 2
           },
           "end": {
@@ -1344,7 +1447,7 @@
         "locations": [
           {
             "start": {
-              "line": 50,
+              "line": 53,
               "column": 2
             },
             "end": {
@@ -1354,7 +1457,7 @@
           },
           {
             "start": {
-              "line": 50,
+              "line": 53,
               "column": 2
             },
             "end": {
@@ -1363,98 +1466,16 @@
             }
           }
         ],
-        "line": 50
-      },
-      "8": {
-        "loc": {
-          "start": {
-            "line": 50,
-            "column": 6
-          },
-          "end": {
-            "line": 50,
-            "column": 60
-          }
-        },
-        "type": "binary-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 50,
-              "column": 6
-            },
-            "end": {
-              "line": 50,
-              "column": 16
-            }
-          },
-          {
-            "start": {
-              "line": 50,
-              "column": 20
-            },
-            "end": {
-              "line": 50,
-              "column": 38
-            }
-          },
-          {
-            "start": {
-              "line": 50,
-              "column": 42
-            },
-            "end": {
-              "line": 50,
-              "column": 60
-            }
-          }
-        ],
-        "line": 50
-      },
-      "9": {
-        "loc": {
-          "start": {
-            "line": 59,
-            "column": 2
-          },
-          "end": {
-            "line": 61,
-            "column": 3
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 59,
-              "column": 2
-            },
-            "end": {
-              "line": 61,
-              "column": 3
-            }
-          },
-          {
-            "start": {
-              "line": 59,
-              "column": 2
-            },
-            "end": {
-              "line": 61,
-              "column": 3
-            }
-          }
-        ],
-        "line": 59
+        "line": 53
       },
       "10": {
         "loc": {
           "start": {
-            "line": 63,
+            "line": 57,
             "column": 2
           },
           "end": {
-            "line": 65,
+            "line": 59,
             "column": 3
           }
         },
@@ -1462,26 +1483,26 @@
         "locations": [
           {
             "start": {
-              "line": 63,
+              "line": 57,
               "column": 2
             },
             "end": {
-              "line": 65,
+              "line": 59,
               "column": 3
             }
           },
           {
             "start": {
-              "line": 63,
+              "line": 57,
               "column": 2
             },
             "end": {
-              "line": 65,
+              "line": 59,
               "column": 3
             }
           }
         ],
-        "line": 63
+        "line": 57
       }
     },
     "s": {
@@ -1490,37 +1511,31 @@
       "2": 9,
       "3": 126,
       "4": 126,
-      "5": 63,
+      "5": 126,
       "6": 126,
-      "7": 9,
+      "7": 126,
       "8": 126,
-      "9": 126,
-      "10": 126,
-      "11": 126,
-      "12": 126,
+      "9": 63,
+      "10": 63,
+      "11": 63,
+      "12": 0,
       "13": 63,
-      "14": 63,
-      "15": 63,
-      "16": 0,
+      "14": 0,
+      "15": 126,
+      "16": 63,
       "17": 63,
-      "18": 0,
+      "18": 63,
       "19": 126,
-      "20": 63,
-      "21": 63,
-      "22": 63,
-      "23": 126,
+      "20": 126,
+      "21": 0,
+      "22": 126,
+      "23": 72,
       "24": 126,
-      "25": 0,
-      "26": 126,
-      "27": 72,
-      "28": 126,
-      "29": 9
+      "25": 9
     },
     "f": {
       "0": 126,
-      "1": 63,
-      "2": 126,
-      "3": 63
+      "1": 63
     },
     "b": {
       "0": [
@@ -1572,7 +1587,7 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9b683492ddb01ce8cfcc73c46fbaa5ecfd64d092"
+    "hash": "a64d4bafe217f52aac7aba12d7ca4acf387c5bd3"
   },
   "/home/myros/projects/progress-bar-for-react/src/lib/ProgressBar/index.js": {
     "path": "/home/myros/projects/progress-bar-for-react/src/lib/ProgressBar/index.js",

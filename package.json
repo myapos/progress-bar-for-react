@@ -1,12 +1,13 @@
 {
   "name": "progress_bar_for_react",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "This is a simple fully customizable react progress bar component",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "scripts": {
     "start": "FAST_REFRESH=false BROWSER=none react-scripts -r @cypress/instrument-cra start",
     "scripts:build": "react-scripts build",
-    "dist": "NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src/lib --out-dir dist --copy-files",
+    "dist": "rollup -c",
     "publish": "npm run dist && npm publish",
     "preghdeploy": "npm run scripts:build",
     "ghdeploy": "gh-pages -d dist",
@@ -14,6 +15,7 @@
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install",
     "cypress:open:react:headless": "cypress run --config integrationFolder=./cypress/integration/react/ video=false",
+    "cypress:open:react": "cypress open --config integrationFolder=./cypress/integration/react/ video=false",
     "cypress:headless": "cypress run",
     "test:react": "start-server-and-test start http://localhost:3000 cypress:open:react --browser chrome",
     "test:react:headless": "start-server-and-test start http://localhost:3000 cypress:open:react:headless",
@@ -38,21 +40,30 @@
     "url": "https://github.com/myapos/progress-bar-for-react/issues"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-jss": "^10.9.0",
-    "react-scripts": "^5.0.0",
-    "react-tooltip": "^4.2.21",
+    "@babel/polyfill": "^7.12.1",
     "web-vitals": "^2.1.2"
   },
   "homepage": "https://myapos.github.io/progress-bar-for-react",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-jss": "^10.9.0",
+    "react-tooltip": "^4.2.21"
+  },
   "devDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-jss": "^10.9.0",
+    "react-tooltip": "^4.2.21",
+    "react-scripts": "^5.0.0",
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
     "@cypress/code-coverage": "^3.9.12",
     "@cypress/instrument-cra": "^1.4.0",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-image": "^2.1.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
     "chalk": "^5.0.0",
     "cross-env": "^7.0.3",
     "cypress": "^9.2.0",
@@ -64,24 +75,22 @@
     "platform": "^1.3.6",
     "prettier": "^2.5.1",
     "prop-types": "^15.8.0",
+    "rollup": "^2.61.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-visualizer": "^5.5.2",
     "start-server-and-test": "^1.14.0",
     "versiony": "^2.0.1",
     "whatwg-fetch": "^3.6.2"
   },
   "files": [
-    "dist"
+    "dist/*"
   ],
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react",
-      "env",
-      "stage-2"
     ]
   },
   "browserslist": {
