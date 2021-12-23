@@ -9,6 +9,8 @@ import styles from './styles';
 
 const useStyles = createUseStyles(styles);
 
+const TooltipedProgressBar = withTooltip(ProgressBar);
+
 const usePrevious = (value) => {
   const ref = useRef();
   useEffect(() => {
@@ -24,17 +26,13 @@ const ProgressBarContainer = ({
   tooltip,
   onPercentageChange,
 }) => {
+  let ProgressBarToUse = ProgressBar;
+  const hasTooltip = tooltip && tooltip.length > 0;
+
   const [savedOnpercentage, setSaveOnPercentage] = useState(false);
   // inspired source
   // https://stackoverflow.com/questions/53446020/how-to-compare-oldvalues-and-newvalues-on-react-hooks-useeffect
   const previousValue = usePrevious({ percentage });
-
-  if (window.top && window.top.Cypress && !savedOnpercentage) {
-    console.log('loaded');
-    // keep reference for testing with cypresss
-    window.top.onPercentageChange = onPercentageChange;
-    setSaveOnPercentage(true);
-  }
 
   useEffect(() => {
     const hasChanged = previousValue && previousValue.percentage !== percentage;
@@ -49,16 +47,21 @@ const ProgressBarContainer = ({
     }
   }, [percentage, onPercentageChange, previousValue, savedOnpercentage]);
 
+  if (window.top && window.top.Cypress && !savedOnpercentage) {
+    console.log('loaded');
+    // keep reference for testing with cypresss
+    window.top.onPercentageChange = onPercentageChange;
+    setSaveOnPercentage(true);
+  }
+
   const classes = useStyles();
 
   if (percentage === 100) {
     return null;
   }
 
-  let ProgressBarToUse = ProgressBar;
-
-  if (tooltip && tooltip.length > 0) {
-    ProgressBarToUse = withTooltip(ProgressBar);
+  if (hasTooltip) {
+    ProgressBarToUse = TooltipedProgressBar;
   }
 
   return (
