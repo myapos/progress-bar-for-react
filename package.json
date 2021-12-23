@@ -15,6 +15,7 @@
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install",
     "cypress:open:react:headless": "cypress run --config integrationFolder=./cypress/integration/react/ video=false",
+    "cypress:open:react": "cypress open --config integrationFolder=./cypress/integration/react/ video=false",
     "cypress:headless": "cypress run",
     "test:react": "start-server-and-test start http://localhost:3000 cypress:open:react --browser chrome",
     "test:react:headless": "start-server-and-test start http://localhost:3000 cypress:open:react:headless",
@@ -39,12 +40,12 @@
     "url": "https://github.com/myapos/progress-bar-for-react/issues"
   },
   "dependencies": {
+    "react-scripts": "^5.0.0",
     "@babel/polyfill": "^7.12.1",
     "web-vitals": "^2.1.2"
   },
   "homepage": "https://myapos.github.io/progress-bar-for-react",
   "peerDependencies": {
-    "react-scripts": "^5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-jss": "^10.9.0",
