@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgressBar from '../components/ProgressBar';
+import ProgressBar from '../lib/ProgressBar';
 
 const Simple = () => (
   <div id="container">

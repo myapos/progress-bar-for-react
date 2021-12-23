@@ -1,6 +1,6 @@
 import React from 'react';
-import * as Examples from '../examples';
-import '../css/css.css';
+import * as Examples from './examples';
+import './css/css.css';
 
 const App = () => {
   return (

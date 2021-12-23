@@ -1,7 +1,7 @@
-import ReactDOM from "react-dom";
-import App from "./components/App";
+import ReactDOM from 'react-dom';
+import App from './App';
 
-const element = document.getElementById("root");
+const element = document.getElementById('root');
 
 const myMainComponent = App();
 

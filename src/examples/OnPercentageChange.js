@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ProgressBar from '../components/ProgressBar';
+import ProgressBar from '../lib/ProgressBar';
 
 const OnPercentageChange = () => {
   let [percentage, setPercentage] = useState(0);
