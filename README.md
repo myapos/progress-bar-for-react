@@ -42,7 +42,7 @@ It will be triggered when a new percentage is received. Please see examples
 
 ### Demo
 
-You can see a demo in the following [link](https://myapos.github.io/progress-bar-for-react/)
+You can see a demo in the following [link](https://compassionate-shockley-ed598b.netlify.app/)
 
 ### Fork instructions
 
