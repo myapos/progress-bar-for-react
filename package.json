@@ -1,6 +1,6 @@
 {
   "name": "progress_bar_for_react",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "This is a simple fully customizable react progress bar component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -38,13 +38,13 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "web-vitals": "^2.1.2"
+    "web-vitals": "^2.1.2",
+    "react-jss": "^10.9.0",
+    "react-tooltip": "^4.2.21"
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-jss": "^10.9.0",
-    "react-tooltip": "^4.2.21"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
