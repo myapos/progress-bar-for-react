@@ -1,6 +1,6 @@
 {
   "name": "progress_bar_for_react",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "This is a simple fully customizable react progress bar component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
