@@ -21,10 +21,7 @@ workflows:
           requires:
             - Install
       - cypress/run:
-          name: Run all tests for react components
-          command: npm run test:react:headless
+          name: Run all tests for components
+          command: npm run test:headless
           requires:
             - Install
-          post-steps:
-            - store_artifacts:
-                path: coverage
