@@ -4,11 +4,11 @@ import { ProgressBarContainer as ProgressBar } from '../components/ProgressBarCo
 
 export const stories = storiesOf('ProgressBar', module);
 
-// stories.add('Simple', () => {
-//   return <ProgressBar percentage={50} />;
-// });
+stories.add('Simple', () => {
+  return <ProgressBar percentage={50} />;
+});
 
-stories.add('Extra styles', () => {
+/* stories.add('Extra styles', () => {
   return (
     <ProgressBar
       percentage={80}
@@ -18,7 +18,7 @@ stories.add('Extra styles', () => {
     />
   );
 });
-/* 
+
 stories.add('Complex', () => {
   return (
     <ProgressBar

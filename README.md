@@ -16,7 +16,7 @@ Myron Apostolakis
 
 ### Import
 
-`import ProgressBar from "progress_bar_for_react";`
+`import { ProgressBarContainer as ProgressBar } from '../components/ProgressBarContainer';`
 
 ### Usage
 
