@@ -1,36 +1,52 @@
 import babel from 'rollup-plugin-babel';
-import commonjs from '@rollup/plugin-commonjs';
-import external from 'rollup-plugin-peer-deps-external';
-import postcss from 'rollup-plugin-postcss';
 import resolve from '@rollup/plugin-node-resolve';
-import image from '@rollup/plugin-image';
-import visualizer from 'rollup-plugin-visualizer';
-import pkg from './package.json';
+import external from 'rollup-plugin-peer-deps-external';
+import { terser } from 'rollup-plugin-terser';
+import postcss from 'rollup-plugin-postcss';
+import commonjs from 'rollup-plugin-commonjs';
 
-const config = {
-  input: './src/lib/ProgressBar',
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-    },
-    {
-      file: pkg.module,
-      format: 'esm',
-    },
-  ],
-  plugins: [
-    external(),
-    postcss(),
-    babel({
-      exclude: 'node_modules/**',
-    }),
-    resolve(),
-    commonjs(),
-    image(),
-    visualizer(),
-  ],
-  external: ['react', 'react-dom', 'react-tooltip', 'react-jss'],
-};
+export default [
+  {
+    input: 'src/index.js',
+    output: [
+      {
+        file: 'dist/index.js',
+        format: 'cjs',
+      },
+      {
+        file: 'dist/index.es.js',
+        format: 'es',
+        exports: 'named',
+      },
+    ],
+    plugins: [
+      postcss({
+        plugins: [],
+        minimize: true,
+      }),
 
-export default config;
+      resolve(),
+      commonjs({
+        namedExports: {
+          'node_modules/react-js/index.js': ['isValidElementType'],
+        },
+        include: [
+          /node_modules\/react-display-name/,
+          /node_modules\/hoist-non-react-statics/,
+          /node_modules\/invariant/,
+          /node_modules\/react-is/,
+          /node_modules\/warning/,
+        ],
+      }),
+      //   commonjs({
+      //     include: /node_modules/,
+      //   }),
+      babel({
+        exclude: /node_modules/,
+        presets: ['@babel/preset-react'],
+      }),
+      external(),
+      terser(),
+    ],
+  },
+];

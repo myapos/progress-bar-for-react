@@ -1,10 +1,12 @@
-import React from 'react';
-import ProgressBar from 'lib/ProgressBar';
+import React, { useEffect, useState } from 'react';
+import { ProgressBarContainer as ProgressBar } from '../components/ProgressBarContainer';
 
-const Simple = () => (
-  <div id="container">
-    <ProgressBar percentage={50} />
-  </div>
-);
+const Simple = () => {
+  return (
+    <div id="container">
+      <ProgressBar percentage={50} />
+    </div>
+  );
+};
 
 export default Simple;

@@ -16,7 +16,15 @@ Myron Apostolakis
 
 ### Import
 
+Since the latest version (1.0.43) the import directive has changed from
+
 `import ProgressBar from "progress_bar_for_react";`
+
+to
+
+`import { ProgressBarContainer as ProgressBar } from 'progress_bar_for_react';`
+
+Please feel free to update your code accordingly.
 
 ### Usage
 
@@ -50,30 +58,19 @@ You can fork this repository for your own modifications following the bellow ste
 
 Please follow the instructions from `https://help.github.com/en/github/getting-started-with-github/fork-a-repo`
 
-### Development
+### Development - Storybook
 
-Use command `npm start` and visit `http://localhost:3000`. Every example in the Examples folder will load.
+Use command `npm run storybook` and visit `http://localhost:6006`. The stories folder exists in the path `src/stories`.
+You can view the storybook online [here](https://622e55013e5eac003a9669be-uavmohiioj.chromatic.com/?path=/story/progressbar--simple)
 
-### Build
+### Testing
 
-Use command `npm run dist:demo`
+This component is tested using Cypress and storybook
 
-### Codesandbox
+You can use the following commands
 
-- [Simple](https://codesandbox.io/s/green-shadow-3370g?file=/src/Simple.js)
-- [Extra Styles](https://codesandbox.io/s/compassionate-sara-friwc?file=/src/App.js)
-- [Complex](https://codesandbox.io/s/compassionate-firefly-ofstl?file=/src/App.js)
-- [ProgressBarStyles](https://codesandbox.io/s/practical-sanne-zidqd?file=/src/App.js)
-- [ToolTip](https://codesandbox.io/s/winter-silence-30mox?file=/src/App.js)
-- [ClockedProgressBar](https://codesandbox.io/s/intelligent-taussig-19iz0?file=/src/App.js)
-
-### Testing and Code coverage
-
-This component is tested with Cypress.
-
-#### Coverage report
-
-[Report](https://265-262743557-gh.circle-artifacts.com/0/coverage/lcov-report/index.html)
+- `npm test` to run storybook and cypress in browser mode.
+- `npm run test:headless` to run storybook and cypress in headless mode.
 
 ### License
 

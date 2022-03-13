@@ -1,15 +1,17 @@
 import React from 'react';
-import ProgressBar from 'lib/ProgressBar';
+import { ProgressBarContainer as ProgressBar } from '../components/ProgressBarContainer';
 
-const ExtraStyles = () => (
-  <div id="container">
-    <ProgressBar
-      percentage={50}
-      fillerExtraStyles={{
-        backgroundColor: 'red',
-      }}
-    />
-  </div>
-);
+const ExtraStyles = () => {
+  return (
+    <div id="container">
+      <ProgressBar
+        percentage={80}
+        fillerExtraStyles={{
+          backgroundColor: 'blue',
+        }}
+      />
+    </div>
+  );
+};
 
 export default ExtraStyles;
