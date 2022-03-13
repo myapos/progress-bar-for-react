@@ -16,7 +16,15 @@ Myron Apostolakis
 
 ### Import
 
-`import { ProgressBarContainer as ProgressBar } from '../components/ProgressBarContainer';`
+Since the latest version (1.0.43) the import directive has changed from
+
+`import ProgressBar from "progress_bar_for_react";`
+
+to
+
+`import { ProgressBarContainer as ProgressBar } from 'progress_bar_for_react';`
+
+Please feel free to update your code accordingly.
 
 ### Usage
 
@@ -50,13 +58,18 @@ You can fork this repository for your own modifications following the bellow ste
 
 Please follow the instructions from `https://help.github.com/en/github/getting-started-with-github/fork-a-repo`
 
-### Development
+### Development - Storybook
 
-Use command `npm start` and visit `http://localhost:3000`. Every example in the Examples folder will load.
+Use command `npm run storybook` and visit `http://localhost:6006`. The stories folder exists in the path `src/stories`.
 
-### Storybook
+### Testing
 
-To load storybook with examples use command `npm run storybook`
+This component is tested using Cypress and storybook
+
+You can use the following commands
+
+- `npm test` to run storybook and cypress in browser mode.
+- `npm run test:headless` to run storybook and cypress in headless mode.
 
 ### License
 

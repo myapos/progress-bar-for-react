@@ -12,7 +12,6 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
-import { setGlobalConfig } from '@storybook/testing-react';
 import 'cypress-storybook/cypress';
 
 // setGlobalConfig(sbPreview);

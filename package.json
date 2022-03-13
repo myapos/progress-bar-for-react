@@ -7,16 +7,14 @@
     "dist"
   ],
   "scripts": {
-    "start": "FAST_REFRESH=false BROWSER=none react-scripts -r @cypress/instrument-cra start",
-    "scripts:build": "react-scripts build",
     "dist": "rollup -c",
     "publish": "npm run dist && npm publish",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install",
-    "cypress": "cypress open",
-    "cypress:open:react:headless": "cypress run --config integrationFolder=./cypress/integration video=false",
-    "test:react": "start-server-and-test start http://localhost:3000 cypress:open:react --browser chrome",
-    "test:react:headless": "start-server-and-test start http://localhost:3000 cypress:open:react:headless",
+    "cy": "cypress open",
+    "cy:headless": "cypress run --config video=false",
+    "test": "start-server-and-test storybook http://localhost:6006 cy --browser chrome",
+    "test:headless": "start-server-and-test storybook http://localhost:6006 cy:headless",
     "report:summary": "nyc report --reporter=text-summary",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -44,7 +42,6 @@
     "@babel/preset-react": "^7.12.10",
     "@cypress/code-coverage": "^3.9.12",
     "@cypress/instrument-cra": "^1.4.0",
-    "@cypress/react": "^5.12.4",
     "@cypress/webpack-dev-server": "^1.8.2",
     "@rollup/plugin-node-resolve": "^11.1.1",
     "@storybook/addon-actions": "^6.4.19",
@@ -54,7 +51,6 @@
     "@storybook/addons": "^6.4.19",
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "0.0.9",
-    "@storybook/testing-react": "^1.2.3",
     "babel-loader": "^8.2.3",
     "cypress": "^9.5.1",
     "cypress-storybook": "^0.5.1",
@@ -67,7 +63,8 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "start-server-and-test": "^1.14.0"
   },
   "peerDependencies": {
     "prop-types": "^15.8.1",
