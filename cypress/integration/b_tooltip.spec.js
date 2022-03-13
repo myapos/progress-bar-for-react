@@ -14,17 +14,17 @@ describe('Tooltip', () => {
 
   // ToolTip
   it('should contain tooltip', () => {
-    cy.get("[class*='progressBarContainer']")
-      .parent()
+    cy.get("[class*='tooltip']")
       .should('exist')
-      .should('have.attr', 'data-tip', 'demo text');
+      .contains('demo text')
+      .should('exist');
   });
 
-  it('tooltip must be shown on hover', () => {
-    cy.get('[class^=progressBar]')
-      .first()
-      .trigger('mouseenter') // trigger mouse hover to show tooltip
-      .get('[data-id^=tooltip]')
-      .should('have.class', 'show');
+  it('should show tooltip on hover', () => {
+    cy.get("[class*='progressBarContainer']").should('exist');
+
+    cy.get("[class*='progressBarContainer']").realHover();
+
+    cy.get("[class*='tooltiptext']").should('be.visible');
   });
 });

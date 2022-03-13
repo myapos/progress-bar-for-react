@@ -1,6 +1,6 @@
 {
   "name": "progress_bar_for_react",
-  "version": "1.0.44",
+  "version": "1.0.45",
   "description": "This is a simple fully customizable react progress bar component",
   "main": "dist/index.js",
   "files": [
@@ -55,6 +55,7 @@
     "babel-plugin-istanbul": "^6.1.1",
     "chromatic": "^6.5.2",
     "cypress": "^9.5.1",
+    "cypress-real-events": "^1.7.0",
     "cypress-storybook": "^0.5.1",
     "istanbul-lib-coverage": "^3.2.0",
     "nyc": "^15.1.0",
@@ -75,10 +76,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
-  "dependencies": {
-    "react-scripts": "^5.0.0",
-    "react-tooltip": "^4.2.21"
-  },
+  "dependencies": {},
   "browser": {
     "crypto": false
   }

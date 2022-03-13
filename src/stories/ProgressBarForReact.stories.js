@@ -33,7 +33,9 @@ stories.add('complex', () => {
         width: '200px',
         borderRadius: '1px',
         border: '1px solid blue',
+        marginTop: '5px',
       }}
+      tooltipStyle={{ marginTop: '30px' }}
     />
   );
 });
@@ -57,7 +59,13 @@ stories.add('progress_bar_styles', () => {
 });
 
 stories.add('tooltip', () => {
-  return <ProgressBar percentage={50} tooltip="demo text" />;
+  return (
+    <ProgressBar
+      percentage={50}
+      tooltip="demo text"
+      tooltipStyle={{ marginTop: '30px' }}
+    />
+  );
 });
 
 stories.add('clocked_progress_bar', () => {
@@ -77,6 +85,7 @@ stories.add('clocked_progress_bar', () => {
     <ProgressBar
       percentage={percentage}
       tooltip={`${percentage}%`}
+      tooltipStyle={{ marginTop: '30px' }}
       fillerExtraStyles={{
         backgroundColor: 'blue',
       }}
