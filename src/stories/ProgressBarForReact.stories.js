@@ -4,11 +4,11 @@ import { ProgressBarContainer as ProgressBar } from '../components/ProgressBarCo
 
 export const stories = storiesOf('ProgressBar', module);
 
-// stories.add('Simple', () => {
-//   return <ProgressBar percentage={50} />;
-// });
+stories.add('simple', () => {
+  return <ProgressBar percentage={50} />;
+});
 
-stories.add('Extra styles', () => {
+stories.add('extra_styles', () => {
   return (
     <ProgressBar
       percentage={80}
@@ -18,8 +18,8 @@ stories.add('Extra styles', () => {
     />
   );
 });
-/* 
-stories.add('Complex', () => {
+
+stories.add('complex', () => {
   return (
     <ProgressBar
       percentage={50}
@@ -38,7 +38,7 @@ stories.add('Complex', () => {
   );
 });
 
-stories.add('ProgressBarStyles', () => {
+stories.add('progress_bar_styles', () => {
   return (
     <ProgressBar
       percentage={50}
@@ -56,11 +56,11 @@ stories.add('ProgressBarStyles', () => {
   );
 });
 
-stories.add('ToolTip', () => {
+stories.add('tooltip', () => {
   return <ProgressBar percentage={50} tooltip="demo text" />;
 });
 
-stories.add('ClockedProgressBar', () => {
+stories.add('clocked_progress_bar', () => {
   let [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
@@ -89,6 +89,4 @@ stories.add('ClockedProgressBar', () => {
       }}
     />
   );
-}); */
-
-stories.storyName = 'stories';
+});
