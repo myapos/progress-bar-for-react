@@ -1,6 +1,6 @@
 {
   "name": "progress_bar_for_react",
-  "version": "1.0.45",
+  "version": "1.0.46",
   "description": "This is a simple fully customizable react progress bar component",
   "main": "dist/index.js",
   "files": [
