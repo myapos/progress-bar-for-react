@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import ProgressBar from '../components/ProgressBarContainer';
+import { ProgressBarContainer as ProgressBar } from '../components/ProgressBarContainer';
 
 const stories = storiesOf('ProgressBar', module);
 

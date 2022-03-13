@@ -1,1 +1,1 @@
-export { default } from './components/ProgressBarContainer';
+export * from './components/ProgressBarContainer';

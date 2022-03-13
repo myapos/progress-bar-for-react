@@ -24,16 +24,29 @@ export default [
         plugins: [],
         minimize: true,
       }),
+
+      resolve(),
       commonjs({
-        include: /node_modules/, // Default: undefined
+        namedExports: {
+          'node_modules/react-js/index.js': ['isValidElementType'],
+        },
+        include: [
+          /node_modules\/react-display-name/,
+          /node_modules\/hoist-non-react-statics/,
+          /node_modules\/invariant/,
+          /node_modules\/react-is/,
+          /node_modules\/warning/,
+        ],
       }),
+      //   commonjs({
+      //     include: /node_modules/,
+      //   }),
       babel({
         exclude: /node_modules/,
         presets: ['@babel/preset-react'],
       }),
       external(),
-      resolve(),
-      //   terser(),
+      terser(),
     ],
   },
 ];

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Filler = ({ percentage, fillerExtraStyles, classes }) => {
+export const Filler = ({ percentage, fillerExtraStyles, classes }) => {
   const options = {
     className: classes.filler,
     style: {
@@ -25,4 +25,4 @@ Filler.propTypes = {
   classes: PropTypes.object,
   fillerExtraStyles: PropTypes.object,
 };
-export default Filler;
+// export default Filler;

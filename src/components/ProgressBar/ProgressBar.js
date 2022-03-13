@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Filler from "../Filler";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Filler } from '../Filler';
 
-const ProgressBar = ({
+export const ProgressBar = ({
   percentage,
   fillerExtraStyles,
   progressBarExtraStyles,
@@ -33,4 +33,4 @@ ProgressBar.propTypes = {
   fillerExtraStyles: PropTypes.object,
   progressBarExtraStyles: PropTypes.object,
 };
-export default ProgressBar;
+// export default ProgressBar;

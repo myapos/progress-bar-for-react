@@ -1,19 +1,19 @@
-import React, { useRef, useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { createUseStyles } from "react-jss";
+import React, { useRef, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { createUseStyles } from 'react-jss';
 
-import withTooltip from "../HOCS/withTooltip";
-import usePrevious from "../HOCS/usePrevious";
+import withTooltip from '../HOCS/withTooltip';
+import usePrevious from '../HOCS/usePrevious';
 
-import ProgressBar from "../ProgressBar";
+import { ProgressBar } from '../ProgressBar';
 
-import styles from "./styles";
+import styles from './styles';
 
 const useStyles = createUseStyles(styles);
 
 const TooltipedProgressBar = withTooltip(ProgressBar);
 
-const ProgressBarContainer = ({
+export const ProgressBarContainer = ({
   percentage,
   fillerExtraStyles,
   progressBarExtraStyles,
@@ -31,7 +31,7 @@ const ProgressBarContainer = ({
   useEffect(() => {
     const hasChanged = previousValue && previousValue.percentage !== percentage;
     const hasSetOnPercentageChange =
-      onPercentageChange && typeof onPercentageChange === "function";
+      onPercentageChange && typeof onPercentageChange === 'function';
 
     if (hasChanged && hasSetOnPercentageChange && !savedOnpercentage) {
       // process here
@@ -42,7 +42,7 @@ const ProgressBarContainer = ({
   }, [percentage, onPercentageChange, previousValue, savedOnpercentage]);
 
   if (window.top && window.top.Cypress && !savedOnpercentage) {
-    console.log("loaded");
+    console.log('loaded');
     // keep reference for testing with cypresss
     window.top.onPercentageChange = onPercentageChange;
     setSaveOnPercentage(true);
@@ -77,4 +77,4 @@ ProgressBarContainer.propTypes = {
   progressBarExtraStyles: PropTypes.object,
 };
 
-export default ProgressBarContainer;
+// export default ProgressBarContainer;

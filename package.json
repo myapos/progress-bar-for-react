@@ -1,6 +1,6 @@
 {
   "name": "progress_bar_for_react",
-  "version": "1.0.35",
+  "version": "1.0.43",
   "description": "This is a simple fully customizable react progress bar component",
   "main": "dist/index.js",
   "files": [
@@ -10,7 +10,7 @@
     "start": "FAST_REFRESH=false BROWSER=none react-scripts -r @cypress/instrument-cra start",
     "scripts:build": "react-scripts build",
     "dist": "rollup -c",
-    "publish": "npm publish",
+    "publish": "npm run dist && npm publish",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "update:packages:ncu": "ncu -u && npm update && npm run clean:install",
     "cypress:open:react:headless": "cypress run --config integrationFolder=./cypress/integration/react/ video=false",
@@ -64,9 +64,13 @@
   },
   "peerDependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "prop-types": "^15.8.1"
   },
   "dependencies": {
     "react-tooltip": "^4.2.21"
+  },
+  "browser": {
+    "crypto": false
   }
 }

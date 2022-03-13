@@ -54,26 +54,9 @@ Please follow the instructions from `https://help.github.com/en/github/getting-s
 
 Use command `npm start` and visit `http://localhost:3000`. Every example in the Examples folder will load.
 
-### Build
+### Storybook
 
-Use command `npm run dist:demo`
-
-### Codesandbox
-
-- [Simple](https://codesandbox.io/s/green-shadow-3370g?file=/src/Simple.js)
-- [Extra Styles](https://codesandbox.io/s/compassionate-sara-friwc?file=/src/App.js)
-- [Complex](https://codesandbox.io/s/compassionate-firefly-ofstl?file=/src/App.js)
-- [ProgressBarStyles](https://codesandbox.io/s/practical-sanne-zidqd?file=/src/App.js)
-- [ToolTip](https://codesandbox.io/s/winter-silence-30mox?file=/src/App.js)
-- [ClockedProgressBar](https://codesandbox.io/s/intelligent-taussig-19iz0?file=/src/App.js)
-
-### Testing and Code coverage
-
-This component is tested with Cypress.
-
-#### Coverage report
-
-[Report](https://265-262743557-gh.circle-artifacts.com/0/coverage/lcov-report/index.html)
+To load storybook with examples use command `npm run storybook`
 
 ### License
 
