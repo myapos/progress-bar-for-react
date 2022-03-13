@@ -19,6 +19,7 @@ export const ProgressBarContainer = ({
   progressBarExtraStyles,
   tooltip,
   onPercentageChange,
+  tooltipStyle,
 }) => {
   const ref = useRef();
   // inspired source
@@ -47,7 +48,6 @@ export const ProgressBarContainer = ({
     !savedOnpercentage &&
     onPercentageChange
   ) {
-    console.log('loaded');
     // keep reference for testing with cypresss
     window.top.onPercentageChange = onPercentageChange;
     setSaveOnPercentage(true);
@@ -55,12 +55,15 @@ export const ProgressBarContainer = ({
 
   const classes = useStyles();
 
+  let extraOptions = {};
+
   if (percentage === 100) {
     return null;
   }
 
   if (hasTooltip) {
     ProgressBarToUse = TooltipedProgressBar;
+    extraOptions = { ...extraOptions, tooltipStyle };
   }
 
   return (
@@ -70,6 +73,7 @@ export const ProgressBarContainer = ({
       progressBarExtraStyles={progressBarExtraStyles}
       tooltipContent={tooltip}
       classes={classes}
+      {...extraOptions}
     />
   );
 };

@@ -75,3 +75,7 @@ You can use the following commands
 ### License
 
 This repo is licensed under GNU General Public License v3.0
+
+### Changelog
+
+1.0.45 Removed third party dependency of `react-tooltip` package
