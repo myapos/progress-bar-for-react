@@ -87,6 +87,9 @@ stories.add('clocked_progress_bar', () => {
         borderRadius: '1px',
         border: '1px solid blue',
       }}
+      onPercentageChange={() => {
+        console.log('custom event triggered');
+      }}
     />
   );
 });

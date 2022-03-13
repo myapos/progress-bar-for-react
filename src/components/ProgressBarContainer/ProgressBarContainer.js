@@ -41,7 +41,12 @@ export const ProgressBarContainer = ({
     }
   }, [percentage, onPercentageChange, previousValue, savedOnpercentage]);
 
-  if (window.top && window.top.Cypress && !savedOnpercentage) {
+  if (
+    window.top &&
+    window.top.Cypress &&
+    !savedOnpercentage &&
+    onPercentageChange
+  ) {
     console.log('loaded');
     // keep reference for testing with cypresss
     window.top.onPercentageChange = onPercentageChange;
