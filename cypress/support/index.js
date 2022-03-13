@@ -13,6 +13,7 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 import 'cypress-storybook/cypress';
+import '@cypress/code-coverage/support';
 
 // setGlobalConfig(sbPreview);
 
