@@ -15,22 +15,42 @@
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
-    "clean:install": "rm -rf node_modules && npm cache clean --force && npm install"
+    "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
+    "cy": "cypress open",
+    "cy:headless": "cypress run --config video=false",
+    "test": "start-server-and-test storybook http://localhost:6006 cy --browser chrome",
+    "test:headless": "start-server-and-test storybook http://localhost:6006 cy:headless",
+    "storybook": "start-storybook -p 6006 @cypress/instrument-cra",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": "^16.0.0",
     "react-jss": "^10.9.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@cypress/code-coverage": "^3.9.12",
+    "@cypress/instrument-cra": "^1.4.0",
+    "@cypress/webpack-dev-server": "^1.8.2",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/addons": "^6.4.19",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "0.0.9",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.2.3",
     "cross-env": "^7.0.2",
+    "cypress": "^9.5.2",
+    "cypress-real-events": "^1.7.0",
+    "cypress-storybook": "^0.5.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
@@ -48,9 +68,11 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-jss": "^10.9.0",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "start-server-and-test": "^1.14.0"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {}
 }
