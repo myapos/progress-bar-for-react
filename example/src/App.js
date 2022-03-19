@@ -1,10 +1,21 @@
 import React from 'react'
-
-import { ExampleComponent } from 'progress_bar_for_react'
-import 'progress_bar_for_react/dist/index.css'
+import * as SettingExamples from './setting_examples'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  console.log(SettingExamples)
+  return (
+    <div id='examples'>
+      {Object.keys(SettingExamples).map((key) => {
+        const ExampleToRender = SettingExamples[key]
+        return (
+          <div>
+            <h3 style={{ textAlign: 'center' }}>{key}</h3>
+            <ExampleToRender />
+          </div>
+        )
+      })}
+    </div>
+  )
 }
 
 export default App

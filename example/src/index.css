@@ -1,14 +1,42 @@
 body {
+  background: linear-gradient(45deg, #92baac 45px, transparent 0) 64px 64px,
+    linear-gradient(
+      45deg,
+      #92baac 45px,
+      transparent 0,
+      transparent 91px,
+      #e1ebbd 0,
+      #e1ebbd 135px,
+      transparent 0
+    ),
+    linear-gradient(
+      -45deg,
+      #92baac 23px,
+      transparent 0,
+      transparent 68px,
+      #92baac 0,
+      #92baac 113px,
+      transparent 0,
+      transparent 158px,
+      #92baac 0
+    );
+  background-color: #e1ebbd;
+  background-size: 128px 128px;
+  height: 1000px;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#examples {
+  background-color: grey;
+  opacity: 0.9;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem;
+  margin-top: 1rem;
 }

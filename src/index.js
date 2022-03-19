@@ -1,6 +1,7 @@
 import React from 'react'
-import styles from './styles.module.css'
+import { ProgressBarContainer as ProgressBar } from './components/ProgressBarContainer/ProgressBarContainer'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+export const ProgressBarContainer = (props) => {
+  const { children, ...restProps } = props
+  return <ProgressBar {...restProps}> {children} </ProgressBar>
 }
