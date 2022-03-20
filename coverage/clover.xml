@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1640299167719" clover="3.2.0">
+  <project timestamp="1640299167719" name="All files">
+    <metrics statements="88" coveredstatements="81" conditionals="38" coveredconditionals="26" methods="26" coveredmethods="23" elements="152" coveredelements="130" complexity="0" loc="88" ncloc="88" packages="5" files="18" classes="18"/>
+    <package name="src">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="App.js" path="/home/myros/projects/progress-bar-for-react/src/App.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="9" count="63" type="stmt"/>
+        <line num="11" count="63" type="stmt"/>
+      </file>
+      <file name="index.js" path="/home/myros/projects/progress-bar-for-react/src/index.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.examples">
+      <metrics statements="29" coveredstatements="26" conditionals="4" coveredconditionals="2" methods="14" coveredmethods="11"/>
+      <file name="Clocked.js" path="/home/myros/projects/progress-bar-for-react/src/examples/Clocked.js">
+        <metrics statements="9" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="3"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="9" type="stmt"/>
+        <line num="18" count="9" type="stmt"/>
+      </file>
+      <file name="Complex.js" path="/home/myros/projects/progress-bar-for-react/src/examples/Complex.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+      </file>
+      <file name="ExtraStyles.js" path="/home/myros/projects/progress-bar-for-react/src/examples/ExtraStyles.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+      </file>
+      <file name="OnPercentageChange.js" path="/home/myros/projects/progress-bar-for-react/src/examples/OnPercentageChange.js">
+        <metrics statements="10" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="3"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+      </file>
+      <file name="ProgressBarStyles.js" path="/home/myros/projects/progress-bar-for-react/src/examples/ProgressBarStyles.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+      </file>
+      <file name="Simple.js" path="/home/myros/projects/progress-bar-for-react/src/examples/Simple.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+      </file>
+      <file name="ToolTip.js" path="/home/myros/projects/progress-bar-for-react/src/examples/ToolTip.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+      </file>
+      <file name="index.js" path="/home/myros/projects/progress-bar-for-react/src/examples/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.lib.HOCS">
+      <metrics statements="12" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="4"/>
+      <file name="usePrevious.js" path="/home/myros/projects/progress-bar-for-react/src/lib/HOCS/usePrevious.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="126" type="stmt"/>
+        <line num="5" count="63" type="stmt"/>
+        <line num="7" count="126" type="stmt"/>
+      </file>
+      <file name="withTooltip.js" path="/home/myros/projects/progress-bar-for-react/src/lib/HOCS/withTooltip.js">
+        <metrics statements="8" coveredstatements="7" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="9" count="36" type="stmt"/>
+        <line num="11" count="36" type="cond" truecount="3" falsecount="1"/>
+        <line num="12" count="36" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="9" type="stmt"/>
+        <line num="27" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.lib.ProgressBar">
+      <metrics statements="37" coveredstatements="34" conditionals="27" coveredconditionals="19" methods="5" coveredmethods="5"/>
+      <file name="Filler.js" path="/home/myros/projects/progress-bar-for-react/src/lib/ProgressBar/Filler.js">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="63" type="stmt"/>
+        <line num="12" count="63" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="45" type="stmt"/>
+        <line num="19" count="63" type="stmt"/>
+        <line num="22" count="9" type="stmt"/>
+      </file>
+      <file name="ProgressBar.js" path="/home/myros/projects/progress-bar-for-react/src/lib/ProgressBar/ProgressBar.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="11" count="63" type="stmt"/>
+        <line num="12" count="63" type="stmt"/>
+        <line num="29" count="9" type="stmt"/>
+      </file>
+      <file name="ProgressBarContainer.js" path="/home/myros/projects/progress-bar-for-react/src/lib/ProgressBar/ProgressBarContainer.js">
+        <metrics statements="26" coveredstatements="23" conditionals="25" coveredconditionals="17" methods="2" coveredmethods="2"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+        <line num="23" count="126" type="stmt"/>
+        <line num="26" count="126" type="stmt"/>
+        <line num="27" count="126" type="stmt"/>
+        <line num="28" count="126" type="stmt"/>
+        <line num="29" count="126" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="126" type="stmt"/>
+        <line num="32" count="63" type="cond" truecount="1" falsecount="1"/>
+        <line num="34" count="63" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="63" type="cond" truecount="2" falsecount="3"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="63" type="cond" truecount="2" falsecount="3"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="44" count="126" type="cond" truecount="5" falsecount="0"/>
+        <line num="45" count="63" type="stmt"/>
+        <line num="47" count="63" type="stmt"/>
+        <line num="48" count="63" type="stmt"/>
+        <line num="51" count="126" type="stmt"/>
+        <line num="53" count="126" type="cond" truecount="1" falsecount="1"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="57" count="126" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="72" type="stmt"/>
+        <line num="61" count="126" type="stmt"/>
+        <line num="72" count="9" type="stmt"/>
+      </file>
+      <file name="index.js" path="/home/myros/projects/progress-bar-for-react/src/lib/ProgressBar/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="styles.js" path="/home/myros/projects/progress-bar-for-react/src/lib/ProgressBar/styles.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.lib.utils">
+      <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="getDisplayName.js" path="/home/myros/projects/progress-bar-for-react/src/lib/utils/getDisplayName.js">
+        <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="3" count="9" type="cond" truecount="2" falsecount="1"/>
+        <line num="5" count="9" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

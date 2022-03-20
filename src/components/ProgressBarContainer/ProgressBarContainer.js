@@ -1,17 +1,17 @@
-import React, { useRef, useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
-import { createUseStyles } from 'react-jss'
+import React, { useRef, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { createUseStyles } from 'react-jss';
 
-import withTooltip from '../HOCS/withTooltip'
-import usePrevious from '../HOCS/usePrevious'
+import withTooltip from '../HOCS/withTooltip';
+import usePrevious from '../HOCS/usePrevious';
 
-import { ProgressBar } from '../ProgressBar/ProgressBar'
+import { ProgressBar } from '../ProgressBar';
 
-import styles from './styles'
+import styles from './styles';
 
-const useStyles = createUseStyles(styles)
+const useStyles = createUseStyles(styles);
 
-const TooltipedProgressBar = withTooltip(ProgressBar)
+const TooltipedProgressBar = withTooltip(ProgressBar);
 
 export const ProgressBarContainer = ({
   percentage,
@@ -19,28 +19,28 @@ export const ProgressBarContainer = ({
   progressBarExtraStyles,
   tooltip,
   onPercentageChange,
-  tooltipStyle
+  tooltipStyle,
 }) => {
-  const ref = useRef()
+  const ref = useRef();
   // inspired source
   // https://stackoverflow.com/questions/53446020/how-to-compare-oldvalues-and-newvalues-on-react-hooks-useeffect
-  const previousValue = usePrevious({ percentage, ref })
-  const [savedOnpercentage, setSaveOnPercentage] = useState(false)
-  let ProgressBarToUse = ProgressBar
-  const hasTooltip = tooltip && tooltip.length > 0
+  const previousValue = usePrevious({ percentage, ref });
+  const [savedOnpercentage, setSaveOnPercentage] = useState(false);
+  let ProgressBarToUse = ProgressBar;
+  const hasTooltip = tooltip && tooltip.length > 0;
 
   useEffect(() => {
-    const hasChanged = previousValue && previousValue.percentage !== percentage
+    const hasChanged = previousValue && previousValue.percentage !== percentage;
     const hasSetOnPercentageChange =
-      onPercentageChange && typeof onPercentageChange === 'function'
+      onPercentageChange && typeof onPercentageChange === 'function';
 
     if (hasChanged && hasSetOnPercentageChange && !savedOnpercentage) {
       // process here
-      onPercentageChange(percentage)
+      onPercentageChange(percentage);
     } else if (hasChanged && hasSetOnPercentageChange && savedOnpercentage) {
-      window.top.onPercentageChange(percentage)
+      window.top.onPercentageChange(percentage);
     }
-  }, [percentage, onPercentageChange, previousValue, savedOnpercentage])
+  }, [percentage, onPercentageChange, previousValue, savedOnpercentage]);
 
   if (
     window.top &&
@@ -49,21 +49,21 @@ export const ProgressBarContainer = ({
     onPercentageChange
   ) {
     // keep reference for testing with cypresss
-    window.top.onPercentageChange = onPercentageChange
-    setSaveOnPercentage(true)
+    window.top.onPercentageChange = onPercentageChange;
+    setSaveOnPercentage(true);
   }
 
-  const classes = useStyles()
+  const classes = useStyles();
 
-  let extraOptions = {}
+  let extraOptions = {};
 
   if (percentage === 100) {
-    return null
+    return null;
   }
 
   if (hasTooltip) {
-    ProgressBarToUse = TooltipedProgressBar
-    extraOptions = { ...extraOptions, tooltipStyle }
+    ProgressBarToUse = TooltipedProgressBar;
+    extraOptions = { ...extraOptions, tooltipStyle };
   }
 
   return (
@@ -75,17 +75,15 @@ export const ProgressBarContainer = ({
       classes={classes}
       {...extraOptions}
     />
-  )
-
-  // return <div>test</div>
-}
+  );
+};
 
 ProgressBarContainer.propTypes = {
   percentage: PropTypes.number,
   backgroundColor: PropTypes.string,
   classes: PropTypes.object,
   fillerExtraStyles: PropTypes.object,
-  progressBarExtraStyles: PropTypes.object
-}
+  progressBarExtraStyles: PropTypes.object,
+};
 
 // export default ProgressBarContainer;

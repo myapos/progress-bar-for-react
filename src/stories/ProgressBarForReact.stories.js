@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import { storiesOf } from '@storybook/react'
-import { ProgressBarContainer as ProgressBar } from '../components/ProgressBarContainer/ProgressBarContainer'
+import React, { useEffect, useState } from 'react';
+import { storiesOf } from '@storybook/react';
+import { ProgressBarContainer as ProgressBar } from '../components/ProgressBarContainer/ProgressBarContainer';
 
-export const stories = storiesOf('ProgressBar', module)
+export const stories = storiesOf('ProgressBar', module);
 
 stories.add('simple', () => {
-  return <ProgressBar percentage={50} />
-})
+  return <ProgressBar percentage={50} />;
+});
 
 stories.add('extra_styles', () => {
   return (
     <ProgressBar
       percentage={80}
       fillerExtraStyles={{
-        backgroundColor: 'blue'
+        backgroundColor: 'blue',
       }}
     />
-  )
-})
+  );
+});
 
 stories.add('complex', () => {
   return (
     <ProgressBar
       percentage={50}
-      tooltip='this is a long text tooltip example'
+      tooltip="this is a long text tooltip example"
       fillerExtraStyles={{
-        backgroundColor: 'blue'
+        backgroundColor: 'blue',
       }}
       progressBarExtraStyles={{
         position: 'relative',
@@ -33,53 +33,53 @@ stories.add('complex', () => {
         width: '200px',
         borderRadius: '1px',
         border: '1px solid blue',
-        marginTop: '5px'
+        marginTop: '5px',
       }}
       tooltipStyle={{ marginTop: '30px' }}
     />
-  )
-})
+  );
+});
 
 stories.add('progress_bar_styles', () => {
   return (
     <ProgressBar
       percentage={50}
       fillerExtraStyles={{
-        backgroundColor: 'blue'
+        backgroundColor: 'blue',
       }}
       progressBarExtraStyles={{
         position: 'relative',
         height: '50px',
         width: '200px',
         borderRadius: '1px',
-        border: '1px solid blue'
+        border: '1px solid blue',
       }}
     />
-  )
-})
+  );
+});
 
 stories.add('tooltip', () => {
   return (
     <ProgressBar
       percentage={50}
-      tooltip='demo text'
+      tooltip="demo text"
       tooltipStyle={{ marginTop: '30px' }}
     />
-  )
-})
+  );
+});
 
 stories.add('clocked_progress_bar', () => {
-  let [percentage, setPercentage] = useState(0)
+  let [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPercentage(percentage++)
+      setPercentage(percentage++);
       if (percentage === 100) {
-        setPercentage(0)
+        setPercentage(0);
       }
-    }, 100)
-    return () => clearInterval(interval)
-  }, [percentage])
+    }, 100);
+    return () => clearInterval(interval);
+  }, [percentage]);
 
   return (
     <ProgressBar
@@ -87,18 +87,18 @@ stories.add('clocked_progress_bar', () => {
       tooltip={`${percentage}%`}
       tooltipStyle={{ marginTop: '30px' }}
       fillerExtraStyles={{
-        backgroundColor: 'blue'
+        backgroundColor: 'blue',
       }}
       progressBarExtraStyles={{
         position: 'relative',
         height: '5px',
         width: '200px',
         borderRadius: '1px',
-        border: '1px solid blue'
+        border: '1px solid blue',
       }}
       onPercentageChange={() => {
-        console.log('custom event triggered')
+        console.log('custom event triggered');
       }}
     />
-  )
-})
+  );
+});
