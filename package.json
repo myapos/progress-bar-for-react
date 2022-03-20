@@ -30,8 +30,7 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-jss": "^10.9.0"
+    "react": "^16.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -66,7 +65,6 @@
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-jss": "^10.9.0",
     "react-scripts": "^5.0.0",
     "start-server-and-test": "^1.14.0"
   },

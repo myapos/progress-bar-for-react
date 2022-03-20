@@ -1,6 +1,39 @@
 import * as React from 'react';
 import React__default, { forwardRef, useContext, createContext, createElement, Fragment as Fragment$1, useEffect, useRef, useState } from 'react';
 
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
@@ -1100,8 +1133,8 @@ if (process.env.NODE_ENV !== 'production') {
 }
 });
 
-function _extends() {
-  _extends = Object.assign || function (target) {
+function _extends$1() {
+  _extends$1 = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
 
@@ -1115,7 +1148,7 @@ function _extends() {
     return target;
   };
 
-  return _extends.apply(this, arguments);
+  return _extends$1.apply(this, arguments);
 }
 
 function memoize(fn) {
@@ -2697,7 +2730,7 @@ var createStyled = function createStyled(tag, options) {
     });
 
     Styled.withComponent = function (nextTag, nextOptions) {
-      return createStyled(nextTag, _extends({}, options, nextOptions, {
+      return createStyled(nextTag, _extends$1({}, options, nextOptions, {
         shouldForwardProp: composeShouldForwardProps(Styled, nextOptions, true)
       })).apply(void 0, styles);
     };
@@ -2708,7 +2741,7 @@ var createStyled = function createStyled(tag, options) {
 
 function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 
-const StyledSpan = createStyled("span", process.env.NODE_ENV === "production" ? {
+var StyledSpan = createStyled("span", process.env.NODE_ENV === "production" ? {
   target: "e8ix98b1"
 } : {
   target: "e8ix98b1",
@@ -2723,23 +2756,21 @@ const StyledSpan = createStyled("span", process.env.NODE_ENV === "production" ? 
   toString: _EMOTION_STRINGIFIED_CSS_ERROR__
 });
 
-const TooltipContainer = createStyled("div", process.env.NODE_ENV === "production" ? {
+var TooltipContainer = createStyled("div", process.env.NODE_ENV === "production" ? {
   target: "e8ix98b0"
 } : {
   target: "e8ix98b0",
   label: "TooltipContainer"
 })("display:flex;position:relative;min-width:150px;align-items:center;justify-content:center;&:hover ", StyledSpan, "{display:block;}" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlRvb2x0aXAuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBMEJtQyIsImZpbGUiOiJUb29sdGlwLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJztcblxuY29uc3QgU3R5bGVkU3BhbiA9IHN0eWxlZC5zcGFuYFxuICBjb2xvcjogI2ZmZjtcbiAgd2lkdGg6IGF1dG87XG4gIGJvdHRvbTogMTUwJTtcbiAgZGlzcGxheTogbm9uZTtcbiAgcGFkZGluZzogNXB4O1xuICB6LWluZGV4OiAxO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzIyMjtcbiAgJjphZnRlciB7XG4gICAgdG9wOiAxMDAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICBjb250ZW50OiAnICc7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG1hcmdpbi1sZWZ0OiAtNXB4O1xuICAgIGJvcmRlci1jb2xvcjogYmxhY2sgdHJhbnNwYXJlbnQgdHJhbnNwYXJlbnQgdHJhbnNwYXJlbnQ7XG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcbiAgICBib3JkZXItd2lkdGg6IDVweDtcbiAgfVxuYDtcblxuY29uc3QgVG9vbHRpcENvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGZsZXg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICY6aG92ZXIgJHtTdHlsZWRTcGFufSB7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gIH1cbmA7XG5cbi8qKkl0IHdpbGwgYWNjZXB0IGEgdG9vbHRpcCBjb250ZW50IG1lc3NhZ2UuXG4gKiBBbnkgY2hpbGRyZW4gY29tcG9uZW50IHRoYXQgaXMgcGFzc2VkIHdpbGwgYmUgdG9vbHRpcGVkIHdpdGggdGhlIGRlZmluZWQgY29udGVudC5cbiAqIFRoZW4gdGhlIHJlYWN0IGNvbXBvbmVudCB3aWxsIGJlIHJlbmRlcmVkIGFuZCBhIHRvb2x0aXAgd2lsbCBiZVxuICogZGlzcGxheWVkIG9uIG1vdXNlIGhvdmVyICovXG5cbmV4cG9ydCBjb25zdCBUb29sdGlwID0gKHsgdG9vbHRpcENvbnRlbnQsIGNoaWxkcmVuLCBzdHlsZSB9KSA9PiB7XG4gIGxldCB0b29sdGlwU3R5bGUgPSB7fTtcblxuICBpZiAoc3R5bGUpIHtcbiAgICB0b29sdGlwU3R5bGUgPSB7IC4uLnN0eWxlIH07XG4gIH1cbiAgcmV0dXJuIChcbiAgICA8VG9vbHRpcENvbnRhaW5lciBzdHlsZT17dG9vbHRpcFN0eWxlfT5cbiAgICAgIHtjaGlsZHJlbn1cbiAgICAgIDxTdHlsZWRTcGFuPnt0b29sdGlwQ29udGVudH08L1N0eWxlZFNwYW4+XG4gICAgPC9Ub29sdGlwQ29udGFpbmVyPlxuICApO1xufTtcbiJdfQ== */"));
 
-const Tooltip = ({
-  tooltipContent,
-  children,
-  style
-}) => {
-  let tooltipStyle = {};
+var Tooltip = function Tooltip(_ref) {
+  var tooltipContent = _ref.tooltipContent,
+      children = _ref.children,
+      style = _ref.style;
+  var tooltipStyle = {};
 
   if (style) {
-    tooltipStyle = { ...style
-    };
+    tooltipStyle = _extends({}, style);
   }
 
   return /*#__PURE__*/React__default.createElement(TooltipContainer, {
@@ -2747,18 +2778,18 @@ const Tooltip = ({
   }, children, /*#__PURE__*/React__default.createElement(StyledSpan, null, tooltipContent));
 };
 
-const getDisplayName = WrappedComponent => {
-  const nativeName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
-  return `withHOC-${nativeName}`;
+var getDisplayName = function getDisplayName(WrappedComponent) {
+  var nativeName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
+  return "withHOC-" + nativeName;
 };
 
-const withToolTip = BaseComponent => {
-  const WrappedComponent = props => {
-    const {
-      tooltipContent,
-      tooltipStyle,
-      ...restProps
-    } = props;
+var _excluded = ["tooltipContent", "tooltipStyle"];
+
+var withToolTip = function withToolTip(BaseComponent) {
+  var WrappedComponent = function WrappedComponent(props) {
+    var tooltipContent = props.tooltipContent,
+        tooltipStyle = props.tooltipStyle,
+        restProps = _objectWithoutPropertiesLoose(props, _excluded);
 
     if (tooltipContent && tooltipContent.length) {
       return /*#__PURE__*/React__default.createElement(Fragment$1, null, /*#__PURE__*/React__default.createElement(Tooltip, {
@@ -2774,37 +2805,35 @@ const withToolTip = BaseComponent => {
   return WrappedComponent;
 };
 
-const usePrevious = ({
-  percentage,
-  ref
-}) => {
-  useEffect(() => {
+var usePrevious = function usePrevious(_ref) {
+  var percentage = _ref.percentage,
+      ref = _ref.ref;
+  useEffect(function () {
     ref.current = percentage;
   });
   return ref.current;
 };
 
-const FillerContainer = createStyled("div", process.env.NODE_ENV === "production" ? {
+var FillerContainer = createStyled("div", process.env.NODE_ENV === "production" ? {
   target: "e4qvdx30"
 } : {
   target: "e4qvdx30",
   label: "FillerContainer"
-})("background:black;height:100%;border-radius:inherit;transition:width 0.2s ease-in;width:", ({
-  percentage
-}) => `${percentage}%`, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZpbGxlci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJa0MiLCJmaWxlIjoiRmlsbGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBQcm9wVHlwZXMgZnJvbSAncHJvcC10eXBlcyc7XG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCc7XG5cbmNvbnN0IEZpbGxlckNvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIGJhY2tncm91bmQ6IGJsYWNrO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJvcmRlci1yYWRpdXM6IGluaGVyaXQ7XG4gIHRyYW5zaXRpb246IHdpZHRoIDAuMnMgZWFzZS1pbjtcbiAgd2lkdGg6ICR7KHsgcGVyY2VudGFnZSB9KSA9PiBgJHtwZXJjZW50YWdlfSVgfTtcbmA7XG5cbmV4cG9ydCBjb25zdCBGaWxsZXIgPSAoeyBwZXJjZW50YWdlLCBmaWxsZXJFeHRyYVN0eWxlcyB9KSA9PiB7XG4gIGNvbnN0IG9wdGlvbnMgPSB7fTtcblxuICBpZiAoZmlsbGVyRXh0cmFTdHlsZXMpIHtcbiAgICBvcHRpb25zLnN0eWxlID0ge1xuICAgICAgLi4uZmlsbGVyRXh0cmFTdHlsZXMsXG4gICAgfTtcbiAgfVxuXG4gIHJldHVybiA8RmlsbGVyQ29udGFpbmVyIHsuLi5vcHRpb25zfSBwZXJjZW50YWdlPXtwZXJjZW50YWdlfSAvPjtcbn07XG5cbkZpbGxlci5wcm9wVHlwZXMgPSB7XG4gIHBlcmNlbnRhZ2U6IFByb3BUeXBlcy5udW1iZXIsXG4gIGJhY2tncm91bmRDb2xvcjogUHJvcFR5cGVzLnN0cmluZyxcbiAgZmlsbGVyRXh0cmFTdHlsZXM6IFByb3BUeXBlcy5vYmplY3QsXG59O1xuIl19 */"));
+})("background:black;height:100%;border-radius:inherit;transition:width 0.2s ease-in;width:", function (_ref) {
+  var percentage = _ref.percentage;
+  return percentage + "%";
+}, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZpbGxlci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJa0MiLCJmaWxlIjoiRmlsbGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBQcm9wVHlwZXMgZnJvbSAncHJvcC10eXBlcyc7XG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCc7XG5cbmNvbnN0IEZpbGxlckNvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIGJhY2tncm91bmQ6IGJsYWNrO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJvcmRlci1yYWRpdXM6IGluaGVyaXQ7XG4gIHRyYW5zaXRpb246IHdpZHRoIDAuMnMgZWFzZS1pbjtcbiAgd2lkdGg6ICR7KHsgcGVyY2VudGFnZSB9KSA9PiBgJHtwZXJjZW50YWdlfSVgfTtcbmA7XG5cbmV4cG9ydCBjb25zdCBGaWxsZXIgPSAoeyBwZXJjZW50YWdlLCBmaWxsZXJFeHRyYVN0eWxlcyB9KSA9PiB7XG4gIGNvbnN0IG9wdGlvbnMgPSB7fTtcblxuICBpZiAoZmlsbGVyRXh0cmFTdHlsZXMpIHtcbiAgICBvcHRpb25zLnN0eWxlID0ge1xuICAgICAgLi4uZmlsbGVyRXh0cmFTdHlsZXMsXG4gICAgfTtcbiAgfVxuXG4gIHJldHVybiA8RmlsbGVyQ29udGFpbmVyIHsuLi5vcHRpb25zfSBwZXJjZW50YWdlPXtwZXJjZW50YWdlfSAvPjtcbn07XG5cbkZpbGxlci5wcm9wVHlwZXMgPSB7XG4gIHBlcmNlbnRhZ2U6IFByb3BUeXBlcy5udW1iZXIsXG4gIGJhY2tncm91bmRDb2xvcjogUHJvcFR5cGVzLnN0cmluZyxcbiAgZmlsbGVyRXh0cmFTdHlsZXM6IFByb3BUeXBlcy5vYmplY3QsXG59O1xuIl19 */"));
 
-const Filler = ({
-  percentage,
-  fillerExtraStyles
-}) => {
-  const options = {};
+var Filler = function Filler(_ref2) {
+  var percentage = _ref2.percentage,
+      fillerExtraStyles = _ref2.fillerExtraStyles;
+  var options = {};
 
   if (fillerExtraStyles) {
-    options.style = { ...fillerExtraStyles
-    };
+    options.style = _extends({}, fillerExtraStyles);
   }
 
-  return /*#__PURE__*/React__default.createElement(FillerContainer, Object.assign({}, options, {
+  return /*#__PURE__*/React__default.createElement(FillerContainer, _extends({}, options, {
     percentage: percentage
   }));
 };
@@ -2816,7 +2845,7 @@ Filler.propTypes = {
 
 function _EMOTION_STRINGIFIED_CSS_ERROR__$1() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 
-const Container = createStyled("div", process.env.NODE_ENV === "production" ? {
+var Container = createStyled("div", process.env.NODE_ENV === "production" ? {
   target: "e1gig5tz1"
 } : {
   target: "e1gig5tz1",
@@ -2831,7 +2860,7 @@ const Container = createStyled("div", process.env.NODE_ENV === "production" ? {
   toString: _EMOTION_STRINGIFIED_CSS_ERROR__$1
 });
 
-const ProgressBarDiv = createStyled("div", process.env.NODE_ENV === "production" ? {
+var ProgressBarDiv = createStyled("div", process.env.NODE_ENV === "production" ? {
   target: "e1gig5tz0"
 } : {
   target: "e1gig5tz0",
@@ -2846,15 +2875,13 @@ const ProgressBarDiv = createStyled("div", process.env.NODE_ENV === "production"
   toString: _EMOTION_STRINGIFIED_CSS_ERROR__$1
 });
 
-const ProgressBar = ({
-  percentage,
-  fillerExtraStyles,
-  progressBarExtraStyles
-}) => {
-  const opt = progressBarExtraStyles;
+var ProgressBar = function ProgressBar(_ref) {
+  var percentage = _ref.percentage,
+      fillerExtraStyles = _ref.fillerExtraStyles,
+      progressBarExtraStyles = _ref.progressBarExtraStyles;
+  var opt = progressBarExtraStyles;
   return /*#__PURE__*/React__default.createElement(Container, null, /*#__PURE__*/React__default.createElement(ProgressBarDiv, {
-    style: { ...opt
-    }
+    style: _extends({}, opt)
   }, /*#__PURE__*/React__default.createElement(Filler, {
     percentage: percentage,
     fillerExtraStyles: fillerExtraStyles
@@ -2867,26 +2894,29 @@ ProgressBar.propTypes = {
   progressBarExtraStyles: propTypes.object
 };
 
-const TooltipedProgressBar = withToolTip(ProgressBar);
-const ProgressBarContainer = ({
-  percentage,
-  fillerExtraStyles,
-  progressBarExtraStyles,
-  tooltip,
-  onPercentageChange,
-  tooltipStyle
-}) => {
-  const ref = useRef();
-  const previousValue = usePrevious({
-    percentage,
-    ref
+var TooltipedProgressBar = withToolTip(ProgressBar);
+var ProgressBarContainer = function ProgressBarContainer(_ref) {
+  var percentage = _ref.percentage,
+      fillerExtraStyles = _ref.fillerExtraStyles,
+      progressBarExtraStyles = _ref.progressBarExtraStyles,
+      tooltip = _ref.tooltip,
+      onPercentageChange = _ref.onPercentageChange,
+      tooltipStyle = _ref.tooltipStyle;
+  var ref = useRef();
+  var previousValue = usePrevious({
+    percentage: percentage,
+    ref: ref
   });
-  const [savedOnpercentage, setSaveOnPercentage] = useState(false);
-  let ProgressBarToUse = ProgressBar;
-  const hasTooltip = tooltip && tooltip.length > 0;
-  useEffect(() => {
-    const hasChanged = previousValue && previousValue.percentage !== percentage;
-    const hasSetOnPercentageChange = onPercentageChange && typeof onPercentageChange === 'function';
+
+  var _useState = useState(false),
+      savedOnpercentage = _useState[0],
+      setSaveOnPercentage = _useState[1];
+
+  var ProgressBarToUse = ProgressBar;
+  var hasTooltip = tooltip && tooltip.length > 0;
+  useEffect(function () {
+    var hasChanged = previousValue && previousValue.percentage !== percentage;
+    var hasSetOnPercentageChange = onPercentageChange && typeof onPercentageChange === 'function';
 
     if (hasChanged && hasSetOnPercentageChange && !savedOnpercentage) {
       onPercentageChange(percentage);
@@ -2900,7 +2930,7 @@ const ProgressBarContainer = ({
     setSaveOnPercentage(true);
   }
 
-  let extraOptions = {};
+  var extraOptions = {};
 
   if (percentage === 100) {
     return null;
@@ -2908,12 +2938,12 @@ const ProgressBarContainer = ({
 
   if (hasTooltip) {
     ProgressBarToUse = TooltipedProgressBar;
-    extraOptions = { ...extraOptions,
-      tooltipStyle
-    };
+    extraOptions = _extends({}, extraOptions, {
+      tooltipStyle: tooltipStyle
+    });
   }
 
-  return /*#__PURE__*/React__default.createElement(ProgressBarToUse, Object.assign({
+  return /*#__PURE__*/React__default.createElement(ProgressBarToUse, _extends({
     percentage: percentage,
     fillerExtraStyles: fillerExtraStyles,
     progressBarExtraStyles: progressBarExtraStyles,
@@ -2927,11 +2957,11 @@ ProgressBarContainer.propTypes = {
   progressBarExtraStyles: propTypes.object
 };
 
-const ProgressBarContainer$1 = props => {
-  const {
-    children,
-    ...restProps
-  } = props;
+var _excluded$1 = ["children"];
+var ProgressBarContainer$1 = function ProgressBarContainer$1(props) {
+  var children = props.children,
+      restProps = _objectWithoutPropertiesLoose(props, _excluded$1);
+
   return /*#__PURE__*/React__default.createElement(ProgressBarContainer, restProps, " ", children, " ");
 };
 
