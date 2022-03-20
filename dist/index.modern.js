@@ -1,6 +1,5 @@
 import * as React from 'react';
-import React__default, { Fragment as Fragment$1, useEffect, forwardRef, useContext, createContext, createElement, useRef, useState } from 'react';
-import { createUseStyles } from 'react-jss';
+import React__default, { forwardRef, useContext, createContext, createElement, Fragment as Fragment$1, useEffect, useRef, useState } from 'react';
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -1100,103 +1099,6 @@ if (process.env.NODE_ENV !== 'production') {
   module.exports = factoryWithThrowingShims();
 }
 });
-
-const styles = {
-  tooltip: {
-    position: 'relative',
-    display: 'flex',
-    minWidth: '150px',
-    justifyContent: 'center',
-    alignItems: 'center',
-    '&:hover': {
-      '& $tooltiptext': {
-        display: 'block'
-      }
-    }
-  },
-  tooltiptext: {
-    display: 'none',
-    width: 'auto',
-    backgroundColor: '#222',
-    color: '#fff',
-    textAlign: 'left',
-    borderRadius: '6px',
-    padding: '5px',
-    bottom: '150%',
-    position: 'absolute',
-    zIndex: 1,
-    '&::after': {
-      content: "' '",
-      position: 'absolute',
-      top: '100%',
-      left: '50%',
-      marginLeft: '-5px',
-      borderWidth: '5px',
-      borderStyle: 'solid',
-      borderColor: 'black transparent transparent transparent'
-    }
-  }
-};
-
-const useStyles = createUseStyles({ ...styles
-});
-const Tooltip = ({
-  tooltipContent,
-  children,
-  style
-}) => {
-  const classes = useStyles();
-  let tooltipStyle = {};
-
-  if (style) {
-    tooltipStyle = { ...style
-    };
-  }
-
-  return /*#__PURE__*/React__default.createElement("div", {
-    className: classes.tooltip,
-    style: tooltipStyle
-  }, children, /*#__PURE__*/React__default.createElement("span", {
-    className: classes.tooltiptext
-  }, tooltipContent));
-};
-
-const getDisplayName = WrappedComponent => {
-  const nativeName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
-  return `withHOC-${nativeName}`;
-};
-
-const withToolTip = BaseComponent => {
-  const WrappedComponent = props => {
-    const {
-      tooltipContent,
-      tooltipStyle,
-      ...restProps
-    } = props;
-
-    if (tooltipContent && tooltipContent.length) {
-      return /*#__PURE__*/React__default.createElement(Fragment$1, null, /*#__PURE__*/React__default.createElement(Tooltip, {
-        tooltipContent: tooltipContent,
-        style: tooltipStyle
-      }, /*#__PURE__*/React__default.createElement(BaseComponent, restProps)));
-    }
-
-    return /*#__PURE__*/React__default.createElement(BaseComponent, restProps);
-  };
-
-  WrappedComponent.displayName = getDisplayName(BaseComponent);
-  return WrappedComponent;
-};
-
-const usePrevious = ({
-  percentage,
-  ref
-}) => {
-  useEffect(() => {
-    ref.current = percentage;
-  });
-  return ref.current;
-};
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -2804,32 +2706,101 @@ var createStyled = function createStyled(tag, options) {
   };
 };
 
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+const StyledSpan = createStyled("span", process.env.NODE_ENV === "production" ? {
+  target: "e8ix98b1"
+} : {
+  target: "e8ix98b1",
+  label: "StyledSpan"
+})(process.env.NODE_ENV === "production" ? {
+  name: "1ea33yd",
+  styles: "color:#fff;width:auto;bottom:150%;display:none;padding:5px;z-index:1;position:absolute;text-align:left;border-radius:6px;background-color:#222;&:after{top:100%;left:50%;content:' ';position:absolute;margin-left:-5px;border-color:black transparent transparent transparent;border-style:solid;border-width:5px;}"
+} : {
+  name: "1ea33yd",
+  styles: "color:#fff;width:auto;bottom:150%;display:none;padding:5px;z-index:1;position:absolute;text-align:left;border-radius:6px;background-color:#222;&:after{top:100%;left:50%;content:' ';position:absolute;margin-left:-5px;border-color:black transparent transparent transparent;border-style:solid;border-width:5px;}",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlRvb2x0aXAuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRzhCIiwiZmlsZSI6IlRvb2x0aXAuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHN0eWxlZCBmcm9tICdAZW1vdGlvbi9zdHlsZWQnO1xuXG5jb25zdCBTdHlsZWRTcGFuID0gc3R5bGVkLnNwYW5gXG4gIGNvbG9yOiAjZmZmO1xuICB3aWR0aDogYXV0bztcbiAgYm90dG9tOiAxNTAlO1xuICBkaXNwbGF5OiBub25lO1xuICBwYWRkaW5nOiA1cHg7XG4gIHotaW5kZXg6IDE7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjIyO1xuICAmOmFmdGVyIHtcbiAgICB0b3A6IDEwMCU7XG4gICAgbGVmdDogNTAlO1xuICAgIGNvbnRlbnQ6ICcgJztcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgbWFyZ2luLWxlZnQ6IC01cHg7XG4gICAgYm9yZGVyLWNvbG9yOiBibGFjayB0cmFuc3BhcmVudCB0cmFuc3BhcmVudCB0cmFuc3BhcmVudDtcbiAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xuICAgIGJvcmRlci13aWR0aDogNXB4O1xuICB9XG5gO1xuXG5jb25zdCBUb29sdGlwQ29udGFpbmVyID0gc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogZmxleDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBtaW4td2lkdGg6IDE1MHB4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgJjpob3ZlciAke1N0eWxlZFNwYW59IHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgfVxuYDtcblxuLyoqSXQgd2lsbCBhY2NlcHQgYSB0b29sdGlwIGNvbnRlbnQgbWVzc2FnZS5cbiAqIEFueSBjaGlsZHJlbiBjb21wb25lbnQgdGhhdCBpcyBwYXNzZWQgd2lsbCBiZSB0b29sdGlwZWQgd2l0aCB0aGUgZGVmaW5lZCBjb250ZW50LlxuICogVGhlbiB0aGUgcmVhY3QgY29tcG9uZW50IHdpbGwgYmUgcmVuZGVyZWQgYW5kIGEgdG9vbHRpcCB3aWxsIGJlXG4gKiBkaXNwbGF5ZWQgb24gbW91c2UgaG92ZXIgKi9cblxuZXhwb3J0IGNvbnN0IFRvb2x0aXAgPSAoeyB0b29sdGlwQ29udGVudCwgY2hpbGRyZW4sIHN0eWxlIH0pID0+IHtcbiAgbGV0IHRvb2x0aXBTdHlsZSA9IHt9O1xuXG4gIGlmIChzdHlsZSkge1xuICAgIHRvb2x0aXBTdHlsZSA9IHsgLi4uc3R5bGUgfTtcbiAgfVxuICByZXR1cm4gKFxuICAgIDxUb29sdGlwQ29udGFpbmVyIHN0eWxlPXt0b29sdGlwU3R5bGV9PlxuICAgICAge2NoaWxkcmVufVxuICAgICAgPFN0eWxlZFNwYW4+e3Rvb2x0aXBDb250ZW50fTwvU3R5bGVkU3Bhbj5cbiAgICA8L1Rvb2x0aXBDb250YWluZXI+XG4gICk7XG59O1xuIl19 */",
+  toString: _EMOTION_STRINGIFIED_CSS_ERROR__
+});
+
+const TooltipContainer = createStyled("div", process.env.NODE_ENV === "production" ? {
+  target: "e8ix98b0"
+} : {
+  target: "e8ix98b0",
+  label: "TooltipContainer"
+})("display:flex;position:relative;min-width:150px;align-items:center;justify-content:center;&:hover ", StyledSpan, "{display:block;}" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlRvb2x0aXAuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBMEJtQyIsImZpbGUiOiJUb29sdGlwLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJztcblxuY29uc3QgU3R5bGVkU3BhbiA9IHN0eWxlZC5zcGFuYFxuICBjb2xvcjogI2ZmZjtcbiAgd2lkdGg6IGF1dG87XG4gIGJvdHRvbTogMTUwJTtcbiAgZGlzcGxheTogbm9uZTtcbiAgcGFkZGluZzogNXB4O1xuICB6LWluZGV4OiAxO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzIyMjtcbiAgJjphZnRlciB7XG4gICAgdG9wOiAxMDAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICBjb250ZW50OiAnICc7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG1hcmdpbi1sZWZ0OiAtNXB4O1xuICAgIGJvcmRlci1jb2xvcjogYmxhY2sgdHJhbnNwYXJlbnQgdHJhbnNwYXJlbnQgdHJhbnNwYXJlbnQ7XG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcbiAgICBib3JkZXItd2lkdGg6IDVweDtcbiAgfVxuYDtcblxuY29uc3QgVG9vbHRpcENvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGZsZXg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICY6aG92ZXIgJHtTdHlsZWRTcGFufSB7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gIH1cbmA7XG5cbi8qKkl0IHdpbGwgYWNjZXB0IGEgdG9vbHRpcCBjb250ZW50IG1lc3NhZ2UuXG4gKiBBbnkgY2hpbGRyZW4gY29tcG9uZW50IHRoYXQgaXMgcGFzc2VkIHdpbGwgYmUgdG9vbHRpcGVkIHdpdGggdGhlIGRlZmluZWQgY29udGVudC5cbiAqIFRoZW4gdGhlIHJlYWN0IGNvbXBvbmVudCB3aWxsIGJlIHJlbmRlcmVkIGFuZCBhIHRvb2x0aXAgd2lsbCBiZVxuICogZGlzcGxheWVkIG9uIG1vdXNlIGhvdmVyICovXG5cbmV4cG9ydCBjb25zdCBUb29sdGlwID0gKHsgdG9vbHRpcENvbnRlbnQsIGNoaWxkcmVuLCBzdHlsZSB9KSA9PiB7XG4gIGxldCB0b29sdGlwU3R5bGUgPSB7fTtcblxuICBpZiAoc3R5bGUpIHtcbiAgICB0b29sdGlwU3R5bGUgPSB7IC4uLnN0eWxlIH07XG4gIH1cbiAgcmV0dXJuIChcbiAgICA8VG9vbHRpcENvbnRhaW5lciBzdHlsZT17dG9vbHRpcFN0eWxlfT5cbiAgICAgIHtjaGlsZHJlbn1cbiAgICAgIDxTdHlsZWRTcGFuPnt0b29sdGlwQ29udGVudH08L1N0eWxlZFNwYW4+XG4gICAgPC9Ub29sdGlwQ29udGFpbmVyPlxuICApO1xufTtcbiJdfQ== */"));
+
+const Tooltip = ({
+  tooltipContent,
+  children,
+  style
+}) => {
+  let tooltipStyle = {};
+
+  if (style) {
+    tooltipStyle = { ...style
+    };
+  }
+
+  return /*#__PURE__*/React__default.createElement(TooltipContainer, {
+    style: tooltipStyle
+  }, children, /*#__PURE__*/React__default.createElement(StyledSpan, null, tooltipContent));
+};
+
+const getDisplayName = WrappedComponent => {
+  const nativeName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
+  return `withHOC-${nativeName}`;
+};
+
+const withToolTip = BaseComponent => {
+  const WrappedComponent = props => {
+    const {
+      tooltipContent,
+      tooltipStyle,
+      ...restProps
+    } = props;
+
+    if (tooltipContent && tooltipContent.length) {
+      return /*#__PURE__*/React__default.createElement(Fragment$1, null, /*#__PURE__*/React__default.createElement(Tooltip, {
+        tooltipContent: tooltipContent,
+        style: tooltipStyle
+      }, /*#__PURE__*/React__default.createElement(BaseComponent, restProps)));
+    }
+
+    return /*#__PURE__*/React__default.createElement(BaseComponent, restProps);
+  };
+
+  WrappedComponent.displayName = getDisplayName(BaseComponent);
+  return WrappedComponent;
+};
+
+const usePrevious = ({
+  percentage,
+  ref
+}) => {
+  useEffect(() => {
+    ref.current = percentage;
+  });
+  return ref.current;
+};
+
 const FillerContainer = createStyled("div", process.env.NODE_ENV === "production" ? {
   target: "e4qvdx30"
 } : {
   target: "e4qvdx30",
   label: "FillerContainer"
 })("background:black;height:100%;border-radius:inherit;transition:width 0.2s ease-in;width:", ({
-  percentage,
-  ...rest
-}) => {
-  console.log('rest', rest, ' percentage', percentage);
-  return `${percentage}%`;
-}, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZpbGxlci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFja0MiLCJmaWxlIjoiRmlsbGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBQcm9wVHlwZXMgZnJvbSAncHJvcC10eXBlcyc7XG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCc7XG4vLyBpbXBvcnQgeyBkZWNhbWVsaXplIH0gZnJvbSAnY29tcG9uZW50cy91dGlscy9kZWNhbWVsaXplJztcblxuLypcbmZpbGxlcjoge1xuICAgIGJhY2tncm91bmQ6ICdibGFjaycsIC8vIGRlZmF1bHQgYmFja2dyb3VuZCBjb2xvclxuICAgIGhlaWdodDogJzEwMCUnLFxuICAgIGJvcmRlclJhZGl1czogJ2luaGVyaXQnLFxuICAgIHRyYW5zaXRpb246ICd3aWR0aCAuMnMgZWFzZS1pbicsXG4gIH0sXG4qL1xuXG5jb25zdCBGaWxsZXJDb250YWluZXIgPSBzdHlsZWQuZGl2YFxuICBiYWNrZ3JvdW5kOiBibGFjaztcbiAgaGVpZ2h0OiAxMDAlO1xuICBib3JkZXItcmFkaXVzOiBpbmhlcml0O1xuICB0cmFuc2l0aW9uOiB3aWR0aCAwLjJzIGVhc2UtaW47XG4gIHdpZHRoOiAkeyh7IHBlcmNlbnRhZ2UsIC4uLnJlc3QgfSkgPT4ge1xuICAgIGNvbnNvbGUubG9nKCdyZXN0JywgcmVzdCwgJyBwZXJjZW50YWdlJywgcGVyY2VudGFnZSk7XG5cbiAgICByZXR1cm4gYCR7cGVyY2VudGFnZX0lYDtcbiAgfX07XG5gO1xuXG5leHBvcnQgY29uc3QgRmlsbGVyID0gKHsgcGVyY2VudGFnZSwgZmlsbGVyRXh0cmFTdHlsZXMgfSkgPT4ge1xuICBjb25zdCBvcHRpb25zID0ge1xuICAgIHN0eWxlOiB7XG4gICAgICB3aWR0aDogYCR7cGVyY2VudGFnZX0lYCxcbiAgICB9LFxuICB9O1xuXG4gIGlmIChmaWxsZXJFeHRyYVN0eWxlcykge1xuICAgIG9wdGlvbnMuc3R5bGUgPSB7XG4gICAgICAuLi5vcHRpb25zLnN0eWxlLFxuICAgICAgLi4uZmlsbGVyRXh0cmFTdHlsZXMsXG4gICAgfTtcbiAgfVxuXG4gIHJldHVybiA8RmlsbGVyQ29udGFpbmVyIHsuLi5vcHRpb25zfSBwZXJjZW50YWdlPXtwZXJjZW50YWdlfSAvPjtcbn07XG5cbkZpbGxlci5wcm9wVHlwZXMgPSB7XG4gIHBlcmNlbnRhZ2U6IFByb3BUeXBlcy5udW1iZXIsXG4gIGJhY2tncm91bmRDb2xvcjogUHJvcFR5cGVzLnN0cmluZyxcbiAgY2xhc3NlczogUHJvcFR5cGVzLm9iamVjdCxcbiAgZmlsbGVyRXh0cmFTdHlsZXM6IFByb3BUeXBlcy5vYmplY3QsXG59O1xuIl19 */"));
+  percentage
+}) => `${percentage}%`, ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZpbGxlci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJa0MiLCJmaWxlIjoiRmlsbGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBQcm9wVHlwZXMgZnJvbSAncHJvcC10eXBlcyc7XG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCc7XG5cbmNvbnN0IEZpbGxlckNvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIGJhY2tncm91bmQ6IGJsYWNrO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJvcmRlci1yYWRpdXM6IGluaGVyaXQ7XG4gIHRyYW5zaXRpb246IHdpZHRoIDAuMnMgZWFzZS1pbjtcbiAgd2lkdGg6ICR7KHsgcGVyY2VudGFnZSB9KSA9PiBgJHtwZXJjZW50YWdlfSVgfTtcbmA7XG5cbmV4cG9ydCBjb25zdCBGaWxsZXIgPSAoeyBwZXJjZW50YWdlLCBmaWxsZXJFeHRyYVN0eWxlcyB9KSA9PiB7XG4gIGNvbnN0IG9wdGlvbnMgPSB7fTtcblxuICBpZiAoZmlsbGVyRXh0cmFTdHlsZXMpIHtcbiAgICBvcHRpb25zLnN0eWxlID0ge1xuICAgICAgLi4uZmlsbGVyRXh0cmFTdHlsZXMsXG4gICAgfTtcbiAgfVxuXG4gIHJldHVybiA8RmlsbGVyQ29udGFpbmVyIHsuLi5vcHRpb25zfSBwZXJjZW50YWdlPXtwZXJjZW50YWdlfSAvPjtcbn07XG5cbkZpbGxlci5wcm9wVHlwZXMgPSB7XG4gIHBlcmNlbnRhZ2U6IFByb3BUeXBlcy5udW1iZXIsXG4gIGJhY2tncm91bmRDb2xvcjogUHJvcFR5cGVzLnN0cmluZyxcbiAgZmlsbGVyRXh0cmFTdHlsZXM6IFByb3BUeXBlcy5vYmplY3QsXG59O1xuIl19 */"));
 
 const Filler = ({
   percentage,
   fillerExtraStyles
 }) => {
-  const options = {
-    style: {
-      width: `${percentage}%`
-    }
-  };
+  const options = {};
 
   if (fillerExtraStyles) {
-    options.style = { ...options.style,
-      ...fillerExtraStyles
+    options.style = { ...fillerExtraStyles
     };
   }
 
@@ -2840,11 +2811,10 @@ const Filler = ({
 Filler.propTypes = {
   percentage: propTypes.number,
   backgroundColor: propTypes.string,
-  classes: propTypes.object,
   fillerExtraStyles: propTypes.object
 };
 
-function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+function _EMOTION_STRINGIFIED_CSS_ERROR__$1() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 
 const Container = createStyled("div", process.env.NODE_ENV === "production" ? {
   target: "e1gig5tz1"
@@ -2857,8 +2827,8 @@ const Container = createStyled("div", process.env.NODE_ENV === "production" ? {
 } : {
   name: "1wnowod",
   styles: "display:flex;align-items:center;justify-content:center",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlByb2dyZXNzQmFyLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXNCNEIiLCJmaWxlIjoiUHJvZ3Jlc3NCYXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IFByb3BUeXBlcyBmcm9tICdwcm9wLXR5cGVzJztcbmltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJztcbmltcG9ydCB7IEZpbGxlciB9IGZyb20gJy4uL0ZpbGxlci9GaWxsZXInO1xuXG4vKlxucHJvZ3Jlc3NCYXJDb250YWluZXI6IHtcbiAgICBkaXNwbGF5OiAnZmxleCcsXG4gICAgYWxpZ25JdGVtczogJ2NlbnRlcicsXG4gICAganVzdGlmeUNvbnRlbnQ6ICdjZW50ZXInLFxuICB9LFxuXG5cbiAgIHByb2dyZXNzQmFyOiB7XG4gICAgcG9zaXRpb246ICdyZWxhdGl2ZScsXG4gICAgaGVpZ2h0OiAnMTVweCcsXG4gICAgd2lkdGg6ICc4NXB4JyxcbiAgICBib3JkZXJSYWRpdXM6ICcyMHB4JyxcbiAgICBib3JkZXI6ICcxcHggc29saWQgIzMzMycsXG4gIH0sXG4qL1xuXG5jb25zdCBDb250YWluZXIgPSBzdHlsZWQuZGl2YFxuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbmA7XG5cbmNvbnN0IFByb2dyZXNzQmFyRGl2ID0gc3R5bGVkLmRpdmBcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDE1cHg7XG4gIHdpZHRoOiA4NXB4O1xuICBib3JkZXItcmFkaXVzOiAyMHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjMzMzO1xuYDtcblxuZXhwb3J0IGNvbnN0IFByb2dyZXNzQmFyID0gKHtcbiAgcGVyY2VudGFnZSxcbiAgZmlsbGVyRXh0cmFTdHlsZXMsXG4gIHByb2dyZXNzQmFyRXh0cmFTdHlsZXMsXG4gIGNsYXNzZXMsXG59KSA9PiB7XG4gIGNvbnN0IG9wdCA9IHByb2dyZXNzQmFyRXh0cmFTdHlsZXM7XG4gIHJldHVybiAoXG4gICAgPENvbnRhaW5lcj5cbiAgICAgIDxQcm9ncmVzc0JhckRpdlxuICAgICAgICBzdHlsZT17e1xuICAgICAgICAgIC4uLm9wdCxcbiAgICAgICAgfX1cbiAgICAgID5cbiAgICAgICAgPEZpbGxlciBwZXJjZW50YWdlPXtwZXJjZW50YWdlfSBmaWxsZXJFeHRyYVN0eWxlcz17ZmlsbGVyRXh0cmFTdHlsZXN9IC8+XG4gICAgICA8L1Byb2dyZXNzQmFyRGl2PlxuICAgIDwvQ29udGFpbmVyPlxuICApO1xufTtcblByb2dyZXNzQmFyLnByb3BUeXBlcyA9IHtcbiAgcGVyY2VudGFnZTogUHJvcFR5cGVzLm51bWJlcixcbiAgYmFja2dyb3VuZENvbG9yOiBQcm9wVHlwZXMuc3RyaW5nLFxuICBjbGFzc2VzOiBQcm9wVHlwZXMub2JqZWN0LFxuICBmaWxsZXJFeHRyYVN0eWxlczogUHJvcFR5cGVzLm9iamVjdCxcbiAgcHJvZ3Jlc3NCYXJFeHRyYVN0eWxlczogUHJvcFR5cGVzLm9iamVjdCxcbn07XG4iXX0= */",
-  toString: _EMOTION_STRINGIFIED_CSS_ERROR__
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlByb2dyZXNzQmFyLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXNCNEIiLCJmaWxlIjoiUHJvZ3Jlc3NCYXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IFByb3BUeXBlcyBmcm9tICdwcm9wLXR5cGVzJztcbmltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJztcbmltcG9ydCB7IEZpbGxlciB9IGZyb20gJy4uL0ZpbGxlci9GaWxsZXInO1xuXG4vKlxucHJvZ3Jlc3NCYXJDb250YWluZXI6IHtcbiAgICBkaXNwbGF5OiAnZmxleCcsXG4gICAgYWxpZ25JdGVtczogJ2NlbnRlcicsXG4gICAganVzdGlmeUNvbnRlbnQ6ICdjZW50ZXInLFxuICB9LFxuXG5cbiAgIHByb2dyZXNzQmFyOiB7XG4gICAgcG9zaXRpb246ICdyZWxhdGl2ZScsXG4gICAgaGVpZ2h0OiAnMTVweCcsXG4gICAgd2lkdGg6ICc4NXB4JyxcbiAgICBib3JkZXJSYWRpdXM6ICcyMHB4JyxcbiAgICBib3JkZXI6ICcxcHggc29saWQgIzMzMycsXG4gIH0sXG4qL1xuXG5jb25zdCBDb250YWluZXIgPSBzdHlsZWQuZGl2YFxuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbmA7XG5cbmNvbnN0IFByb2dyZXNzQmFyRGl2ID0gc3R5bGVkLmRpdmBcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDE1cHg7XG4gIHdpZHRoOiA4NXB4O1xuICBib3JkZXItcmFkaXVzOiAyMHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjMzMzO1xuYDtcblxuZXhwb3J0IGNvbnN0IFByb2dyZXNzQmFyID0gKHtcbiAgcGVyY2VudGFnZSxcbiAgZmlsbGVyRXh0cmFTdHlsZXMsXG4gIHByb2dyZXNzQmFyRXh0cmFTdHlsZXMsXG59KSA9PiB7XG4gIGNvbnN0IG9wdCA9IHByb2dyZXNzQmFyRXh0cmFTdHlsZXM7XG4gIHJldHVybiAoXG4gICAgPENvbnRhaW5lcj5cbiAgICAgIDxQcm9ncmVzc0JhckRpdlxuICAgICAgICBzdHlsZT17e1xuICAgICAgICAgIC4uLm9wdCxcbiAgICAgICAgfX1cbiAgICAgID5cbiAgICAgICAgPEZpbGxlciBwZXJjZW50YWdlPXtwZXJjZW50YWdlfSBmaWxsZXJFeHRyYVN0eWxlcz17ZmlsbGVyRXh0cmFTdHlsZXN9IC8+XG4gICAgICA8L1Byb2dyZXNzQmFyRGl2PlxuICAgIDwvQ29udGFpbmVyPlxuICApO1xufTtcblByb2dyZXNzQmFyLnByb3BUeXBlcyA9IHtcbiAgcGVyY2VudGFnZTogUHJvcFR5cGVzLm51bWJlcixcbiAgYmFja2dyb3VuZENvbG9yOiBQcm9wVHlwZXMuc3RyaW5nLFxuICBmaWxsZXJFeHRyYVN0eWxlczogUHJvcFR5cGVzLm9iamVjdCxcbiAgcHJvZ3Jlc3NCYXJFeHRyYVN0eWxlczogUHJvcFR5cGVzLm9iamVjdCxcbn07XG4iXX0= */",
+  toString: _EMOTION_STRINGIFIED_CSS_ERROR__$1
 });
 
 const ProgressBarDiv = createStyled("div", process.env.NODE_ENV === "production" ? {
@@ -2872,15 +2842,14 @@ const ProgressBarDiv = createStyled("div", process.env.NODE_ENV === "production"
 } : {
   name: "fhgbou",
   styles: "position:relative;height:15px;width:85px;border-radius:20px;border:1px solid #333",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlByb2dyZXNzQmFyLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTRCaUMiLCJmaWxlIjoiUHJvZ3Jlc3NCYXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IFByb3BUeXBlcyBmcm9tICdwcm9wLXR5cGVzJztcbmltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJztcbmltcG9ydCB7IEZpbGxlciB9IGZyb20gJy4uL0ZpbGxlci9GaWxsZXInO1xuXG4vKlxucHJvZ3Jlc3NCYXJDb250YWluZXI6IHtcbiAgICBkaXNwbGF5OiAnZmxleCcsXG4gICAgYWxpZ25JdGVtczogJ2NlbnRlcicsXG4gICAganVzdGlmeUNvbnRlbnQ6ICdjZW50ZXInLFxuICB9LFxuXG5cbiAgIHByb2dyZXNzQmFyOiB7XG4gICAgcG9zaXRpb246ICdyZWxhdGl2ZScsXG4gICAgaGVpZ2h0OiAnMTVweCcsXG4gICAgd2lkdGg6ICc4NXB4JyxcbiAgICBib3JkZXJSYWRpdXM6ICcyMHB4JyxcbiAgICBib3JkZXI6ICcxcHggc29saWQgIzMzMycsXG4gIH0sXG4qL1xuXG5jb25zdCBDb250YWluZXIgPSBzdHlsZWQuZGl2YFxuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbmA7XG5cbmNvbnN0IFByb2dyZXNzQmFyRGl2ID0gc3R5bGVkLmRpdmBcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDE1cHg7XG4gIHdpZHRoOiA4NXB4O1xuICBib3JkZXItcmFkaXVzOiAyMHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjMzMzO1xuYDtcblxuZXhwb3J0IGNvbnN0IFByb2dyZXNzQmFyID0gKHtcbiAgcGVyY2VudGFnZSxcbiAgZmlsbGVyRXh0cmFTdHlsZXMsXG4gIHByb2dyZXNzQmFyRXh0cmFTdHlsZXMsXG4gIGNsYXNzZXMsXG59KSA9PiB7XG4gIGNvbnN0IG9wdCA9IHByb2dyZXNzQmFyRXh0cmFTdHlsZXM7XG4gIHJldHVybiAoXG4gICAgPENvbnRhaW5lcj5cbiAgICAgIDxQcm9ncmVzc0JhckRpdlxuICAgICAgICBzdHlsZT17e1xuICAgICAgICAgIC4uLm9wdCxcbiAgICAgICAgfX1cbiAgICAgID5cbiAgICAgICAgPEZpbGxlciBwZXJjZW50YWdlPXtwZXJjZW50YWdlfSBmaWxsZXJFeHRyYVN0eWxlcz17ZmlsbGVyRXh0cmFTdHlsZXN9IC8+XG4gICAgICA8L1Byb2dyZXNzQmFyRGl2PlxuICAgIDwvQ29udGFpbmVyPlxuICApO1xufTtcblByb2dyZXNzQmFyLnByb3BUeXBlcyA9IHtcbiAgcGVyY2VudGFnZTogUHJvcFR5cGVzLm51bWJlcixcbiAgYmFja2dyb3VuZENvbG9yOiBQcm9wVHlwZXMuc3RyaW5nLFxuICBjbGFzc2VzOiBQcm9wVHlwZXMub2JqZWN0LFxuICBmaWxsZXJFeHRyYVN0eWxlczogUHJvcFR5cGVzLm9iamVjdCxcbiAgcHJvZ3Jlc3NCYXJFeHRyYVN0eWxlczogUHJvcFR5cGVzLm9iamVjdCxcbn07XG4iXX0= */",
-  toString: _EMOTION_STRINGIFIED_CSS_ERROR__
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlByb2dyZXNzQmFyLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTRCaUMiLCJmaWxlIjoiUHJvZ3Jlc3NCYXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IFByb3BUeXBlcyBmcm9tICdwcm9wLXR5cGVzJztcbmltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJztcbmltcG9ydCB7IEZpbGxlciB9IGZyb20gJy4uL0ZpbGxlci9GaWxsZXInO1xuXG4vKlxucHJvZ3Jlc3NCYXJDb250YWluZXI6IHtcbiAgICBkaXNwbGF5OiAnZmxleCcsXG4gICAgYWxpZ25JdGVtczogJ2NlbnRlcicsXG4gICAganVzdGlmeUNvbnRlbnQ6ICdjZW50ZXInLFxuICB9LFxuXG5cbiAgIHByb2dyZXNzQmFyOiB7XG4gICAgcG9zaXRpb246ICdyZWxhdGl2ZScsXG4gICAgaGVpZ2h0OiAnMTVweCcsXG4gICAgd2lkdGg6ICc4NXB4JyxcbiAgICBib3JkZXJSYWRpdXM6ICcyMHB4JyxcbiAgICBib3JkZXI6ICcxcHggc29saWQgIzMzMycsXG4gIH0sXG4qL1xuXG5jb25zdCBDb250YWluZXIgPSBzdHlsZWQuZGl2YFxuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbmA7XG5cbmNvbnN0IFByb2dyZXNzQmFyRGl2ID0gc3R5bGVkLmRpdmBcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDE1cHg7XG4gIHdpZHRoOiA4NXB4O1xuICBib3JkZXItcmFkaXVzOiAyMHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjMzMzO1xuYDtcblxuZXhwb3J0IGNvbnN0IFByb2dyZXNzQmFyID0gKHtcbiAgcGVyY2VudGFnZSxcbiAgZmlsbGVyRXh0cmFTdHlsZXMsXG4gIHByb2dyZXNzQmFyRXh0cmFTdHlsZXMsXG59KSA9PiB7XG4gIGNvbnN0IG9wdCA9IHByb2dyZXNzQmFyRXh0cmFTdHlsZXM7XG4gIHJldHVybiAoXG4gICAgPENvbnRhaW5lcj5cbiAgICAgIDxQcm9ncmVzc0JhckRpdlxuICAgICAgICBzdHlsZT17e1xuICAgICAgICAgIC4uLm9wdCxcbiAgICAgICAgfX1cbiAgICAgID5cbiAgICAgICAgPEZpbGxlciBwZXJjZW50YWdlPXtwZXJjZW50YWdlfSBmaWxsZXJFeHRyYVN0eWxlcz17ZmlsbGVyRXh0cmFTdHlsZXN9IC8+XG4gICAgICA8L1Byb2dyZXNzQmFyRGl2PlxuICAgIDwvQ29udGFpbmVyPlxuICApO1xufTtcblByb2dyZXNzQmFyLnByb3BUeXBlcyA9IHtcbiAgcGVyY2VudGFnZTogUHJvcFR5cGVzLm51bWJlcixcbiAgYmFja2dyb3VuZENvbG9yOiBQcm9wVHlwZXMuc3RyaW5nLFxuICBmaWxsZXJFeHRyYVN0eWxlczogUHJvcFR5cGVzLm9iamVjdCxcbiAgcHJvZ3Jlc3NCYXJFeHRyYVN0eWxlczogUHJvcFR5cGVzLm9iamVjdCxcbn07XG4iXX0= */",
+  toString: _EMOTION_STRINGIFIED_CSS_ERROR__$1
 });
 
 const ProgressBar = ({
   percentage,
   fillerExtraStyles,
-  progressBarExtraStyles,
-  classes
+  progressBarExtraStyles
 }) => {
   const opt = progressBarExtraStyles;
   return /*#__PURE__*/React__default.createElement(Container, null, /*#__PURE__*/React__default.createElement(ProgressBarDiv, {
@@ -2894,33 +2863,10 @@ const ProgressBar = ({
 ProgressBar.propTypes = {
   percentage: propTypes.number,
   backgroundColor: propTypes.string,
-  classes: propTypes.object,
   fillerExtraStyles: propTypes.object,
   progressBarExtraStyles: propTypes.object
 };
 
-const styles$1 = theme => ({
-  progressBarContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  progressBar: {
-    position: 'relative',
-    height: '15px',
-    width: '85px',
-    borderRadius: '20px',
-    border: '1px solid #333'
-  },
-  filler: {
-    background: 'black',
-    height: '100%',
-    borderRadius: 'inherit',
-    transition: 'width .2s ease-in'
-  }
-});
-
-const useStyles$1 = createUseStyles(styles$1);
 const TooltipedProgressBar = withToolTip(ProgressBar);
 const ProgressBarContainer = ({
   percentage,
@@ -2954,7 +2900,6 @@ const ProgressBarContainer = ({
     setSaveOnPercentage(true);
   }
 
-  const classes = useStyles$1();
   let extraOptions = {};
 
   if (percentage === 100) {
@@ -2972,14 +2917,12 @@ const ProgressBarContainer = ({
     percentage: percentage,
     fillerExtraStyles: fillerExtraStyles,
     progressBarExtraStyles: progressBarExtraStyles,
-    tooltipContent: tooltip,
-    classes: classes
+    tooltipContent: tooltip
   }, extraOptions));
 };
 ProgressBarContainer.propTypes = {
   percentage: propTypes.number,
   backgroundColor: propTypes.string,
-  classes: propTypes.object,
   fillerExtraStyles: propTypes.object,
   progressBarExtraStyles: propTypes.object
 };

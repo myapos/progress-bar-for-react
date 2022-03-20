@@ -38,7 +38,6 @@ export const ProgressBar = ({
   percentage,
   fillerExtraStyles,
   progressBarExtraStyles,
-  classes,
 }) => {
   const opt = progressBarExtraStyles;
   return (
@@ -56,7 +55,6 @@ export const ProgressBar = ({
 ProgressBar.propTypes = {
   percentage: PropTypes.number,
   backgroundColor: PropTypes.string,
-  classes: PropTypes.object,
   fillerExtraStyles: PropTypes.object,
   progressBarExtraStyles: PropTypes.object,
 };

@@ -73,7 +73,6 @@ export const ProgressBarContainer = ({
 ProgressBarContainer.propTypes = {
   percentage: PropTypes.number,
   backgroundColor: PropTypes.string,
-  classes: PropTypes.object,
   fillerExtraStyles: PropTypes.object,
   progressBarExtraStyles: PropTypes.object,
 };
