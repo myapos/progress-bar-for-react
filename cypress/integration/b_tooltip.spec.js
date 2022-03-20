@@ -14,17 +14,17 @@ describe('Tooltip', () => {
 
   // ToolTip
   it('should contain tooltip', () => {
-    cy.get("[class*='tooltip']")
+    cy.findByTestId('tooltip')
       .should('exist')
       .contains('demo text')
       .should('exist');
   });
 
   it('should show tooltip on hover', () => {
-    cy.get("[class*='progressBarContainer']").should('exist');
+    cy.findByTestId('progress-bar').should('exist');
 
-    cy.get("[class*='progressBarContainer']").realHover();
+    cy.findByTestId('progress-bar').realHover();
 
-    cy.get("[class*='tooltiptext']").should('be.visible');
+    cy.findByTestId('tooltiptext').should('be.visible');
   });
 });

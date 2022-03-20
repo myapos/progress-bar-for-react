@@ -17,16 +17,9 @@ describe('Extrastyles', () => {
   });
 
   it('extra filler css', () => {
-    cy.get("[class*='progressBarContainer'] > div > div")
+    // cy.get("[class*='progressBarContainer'] > div > div")
+    cy.findByTestId('filler')
       .should('exist')
-      .then(([element, ...rest]) => {
-        const className = element.className;
-
-        const styles = window.getComputedStyle(element, null);
-        const backgroundColor = styles.getPropertyValue('background-color');
-
-        // test css styling
-        expect(backgroundColor).to.include('rgb(0, 0, 255)');
-      });
+      .should('have.css', 'background-color', 'rgb(0, 0, 255)');
   });
 });

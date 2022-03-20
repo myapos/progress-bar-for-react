@@ -19,7 +19,13 @@ export const Filler = ({ percentage, fillerExtraStyles }) => {
     };
   }
 
-  return <FillerContainer {...options} percentage={percentage} />;
+  return (
+    <FillerContainer
+      data-testid="filler"
+      {...options}
+      percentage={percentage}
+    />
+  );
 };
 
 Filler.propTypes = {

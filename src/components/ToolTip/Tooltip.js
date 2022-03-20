@@ -47,9 +47,9 @@ export const Tooltip = ({ tooltipContent, children, style }) => {
     tooltipStyle = { ...style };
   }
   return (
-    <TooltipContainer style={tooltipStyle}>
+    <TooltipContainer style={tooltipStyle} data-testid="tooltip">
       {children}
-      <StyledSpan>{tooltipContent}</StyledSpan>
+      <StyledSpan data-testid="tooltiptext">{tooltipContent}</StyledSpan>
     </TooltipContainer>
   );
 };
