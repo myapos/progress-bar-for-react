@@ -13,31 +13,17 @@ describe('Progress bar styles', () => {
   });
 
   it('progress bar container filler css', () => {
-    cy.get("[class*='progressBarContainer'] > div > div")
+    cy.findByTestId('filler')
       .should('exist')
-      .then(([element, ...rest]) => {
-        const styles = window.getComputedStyle(element, null);
-        const backgroundColor = styles.getPropertyValue('background-color');
-        // test css styling
-        expect(backgroundColor).to.include('rgb(0, 0, 255)');
-      });
+      .should('have.css', 'background-color', 'rgb(0, 0, 255)');
 
-    cy.get("[class*='progressBarContainer'] > div")
+    // cy.get("[class*='progressBarContainer'] > div")
+    cy.findByTestId('progress-bar-child')
       .should('exist')
-      .then(([element, ...rest]) => {
-        const styles = window.getComputedStyle(element, null);
-        const border = styles.getPropertyValue('border');
-        const borderRadius = styles.getPropertyValue('border-radius');
-        const width = styles.getPropertyValue('width');
-        const height = styles.getPropertyValue('height');
-        const position = styles.getPropertyValue('position');
-
-        // test css styling
-        expect(border).to.include('1px solid rgb(0, 0, 255)');
-        expect(borderRadius).to.include('1px');
-        expect(width).to.include('200px');
-        expect(height).to.include('50px');
-        expect(position).to.include('relative');
-      });
+      .should('have.css', 'border', '1px solid rgb(0, 0, 255)')
+      .should('have.css', 'border-radius', '1px')
+      .should('have.css', 'width', '200px')
+      .should('have.css', 'height', '50px')
+      .should('have.css', 'position', 'relative');
   });
 });
