@@ -1,9 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
+// import { decamelize } from 'components/utils/decamelize';
 
-export const Filler = ({ percentage, fillerExtraStyles, classes }) => {
+/*
+filler: {
+    background: 'black', // default background color
+    height: '100%',
+    borderRadius: 'inherit',
+    transition: 'width .2s ease-in',
+  },
+*/
+
+const FillerContainer = styled.div`
+  background: black;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.2s ease-in;
+  width: ${({ percentage, ...rest }) => {
+    console.log('rest', rest, ' percentage', percentage);
+
+    return `${percentage}%`;
+  }};
+`;
+
+export const Filler = ({ percentage, fillerExtraStyles }) => {
   const options = {
-    className: classes.filler,
     style: {
       width: `${percentage}%`,
     },
@@ -16,7 +38,7 @@ export const Filler = ({ percentage, fillerExtraStyles, classes }) => {
     };
   }
 
-  return <div {...options} />;
+  return <FillerContainer {...options} percentage={percentage} />;
 };
 
 Filler.propTypes = {
@@ -25,4 +47,3 @@ Filler.propTypes = {
   classes: PropTypes.object,
   fillerExtraStyles: PropTypes.object,
 };
-// export default Filler;

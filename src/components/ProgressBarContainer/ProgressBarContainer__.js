@@ -1,10 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { createUseStyles } from 'react-jss';
 
 import withTooltip from '../HOCS/withTooltip';
 import usePrevious from '../HOCS/usePrevious';
 
 import { ProgressBar } from '../ProgressBar';
+
+import styles from './styles';
+
+const useStyles = createUseStyles(styles);
 
 const TooltipedProgressBar = withTooltip(ProgressBar);
 
@@ -48,6 +53,8 @@ export const ProgressBarContainer = ({
     setSaveOnPercentage(true);
   }
 
+  const classes = useStyles();
+
   let extraOptions = {};
 
   if (percentage === 100) {
@@ -65,6 +72,7 @@ export const ProgressBarContainer = ({
       fillerExtraStyles={fillerExtraStyles}
       progressBarExtraStyles={progressBarExtraStyles}
       tooltipContent={tooltip}
+      classes={classes}
       {...extraOptions}
     />
   );
@@ -77,3 +85,5 @@ ProgressBarContainer.propTypes = {
   fillerExtraStyles: PropTypes.object,
   progressBarExtraStyles: PropTypes.object,
 };
+
+// export default ProgressBarContainer;
