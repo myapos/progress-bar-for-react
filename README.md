@@ -86,5 +86,6 @@ This repo is licensed under GNU General Public License v3.0
 
 ### Changelog
 
+- v1.0.52 --> Replaced react-jss with emotion
 - v1.0.51 --> Tested with node version > 16.13.1
 - v1.0.45 --> Removed third party dependency of `react-tooltip` package
