@@ -1,41 +1,5 @@
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var React = require('react');
-var React__default = _interopDefault(React);
-var reactJss = require('react-jss');
-
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
+import React, { Fragment as Fragment$1, useEffect, useRef, useState } from 'react';
+import { createUseStyles } from 'react-jss';
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -1136,7 +1100,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 });
 
-var styles = {
+const styles = {
   tooltip: {
     position: 'relative',
     display: 'flex',
@@ -1173,78 +1137,85 @@ var styles = {
   }
 };
 
-var useStyles = reactJss.createUseStyles(_extends({}, styles));
-var Tooltip = function Tooltip(_ref) {
-  var tooltipContent = _ref.tooltipContent,
-      children = _ref.children,
-      style = _ref.style;
-  var classes = useStyles();
-  var tooltipStyle = {};
+const useStyles = createUseStyles({ ...styles
+});
+const Tooltip = ({
+  tooltipContent,
+  children,
+  style
+}) => {
+  const classes = useStyles();
+  let tooltipStyle = {};
 
   if (style) {
-    tooltipStyle = _extends({}, style);
+    tooltipStyle = { ...style
+    };
   }
 
-  return /*#__PURE__*/React__default.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: classes.tooltip,
     style: tooltipStyle
-  }, children, /*#__PURE__*/React__default.createElement("span", {
+  }, children, /*#__PURE__*/React.createElement("span", {
     className: classes.tooltiptext
   }, tooltipContent));
 };
 
-var getDisplayName = function getDisplayName(WrappedComponent) {
-  var nativeName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
-  return "withHOC-" + nativeName;
+const getDisplayName = WrappedComponent => {
+  const nativeName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
+  return `withHOC-${nativeName}`;
 };
 
-var _excluded = ["tooltipContent", "tooltipStyle"];
-
-var withToolTip = function withToolTip(BaseComponent) {
-  var WrappedComponent = function WrappedComponent(props) {
-    var tooltipContent = props.tooltipContent,
-        tooltipStyle = props.tooltipStyle,
-        restProps = _objectWithoutPropertiesLoose(props, _excluded);
+const withToolTip = BaseComponent => {
+  const WrappedComponent = props => {
+    const {
+      tooltipContent,
+      tooltipStyle,
+      ...restProps
+    } = props;
 
     if (tooltipContent && tooltipContent.length) {
-      return /*#__PURE__*/React__default.createElement(React.Fragment, null, /*#__PURE__*/React__default.createElement(Tooltip, {
+      return /*#__PURE__*/React.createElement(Fragment$1, null, /*#__PURE__*/React.createElement(Tooltip, {
         tooltipContent: tooltipContent,
         style: tooltipStyle
-      }, /*#__PURE__*/React__default.createElement(BaseComponent, restProps)));
+      }, /*#__PURE__*/React.createElement(BaseComponent, restProps)));
     }
 
-    return /*#__PURE__*/React__default.createElement(BaseComponent, restProps);
+    return /*#__PURE__*/React.createElement(BaseComponent, restProps);
   };
 
   WrappedComponent.displayName = getDisplayName(BaseComponent);
   return WrappedComponent;
 };
 
-var usePrevious = function usePrevious(_ref) {
-  var percentage = _ref.percentage,
-      ref = _ref.ref;
-  React.useEffect(function () {
+const usePrevious = ({
+  percentage,
+  ref
+}) => {
+  useEffect(() => {
     ref.current = percentage;
   });
   return ref.current;
 };
 
-var Filler = function Filler(_ref) {
-  var percentage = _ref.percentage,
-      fillerExtraStyles = _ref.fillerExtraStyles,
-      classes = _ref.classes;
-  var options = {
+const Filler = ({
+  percentage,
+  fillerExtraStyles,
+  classes
+}) => {
+  const options = {
     className: classes.filler,
     style: {
-      width: percentage + "%"
+      width: `${percentage}%`
     }
   };
 
   if (fillerExtraStyles) {
-    options.style = _extends({}, options.style, fillerExtraStyles);
+    options.style = { ...options.style,
+      ...fillerExtraStyles
+    };
   }
 
-  return /*#__PURE__*/React__default.createElement("div", options);
+  return /*#__PURE__*/React.createElement("div", options);
 };
 Filler.propTypes = {
   percentage: propTypes.number,
@@ -1253,18 +1224,20 @@ Filler.propTypes = {
   fillerExtraStyles: propTypes.object
 };
 
-var ProgressBar = function ProgressBar(_ref) {
-  var percentage = _ref.percentage,
-      fillerExtraStyles = _ref.fillerExtraStyles,
-      progressBarExtraStyles = _ref.progressBarExtraStyles,
-      classes = _ref.classes;
-  var opt = progressBarExtraStyles;
-  return /*#__PURE__*/React__default.createElement("div", {
+const ProgressBar = ({
+  percentage,
+  fillerExtraStyles,
+  progressBarExtraStyles,
+  classes
+}) => {
+  const opt = progressBarExtraStyles;
+  return /*#__PURE__*/React.createElement("div", {
     className: classes.progressBarContainer
-  }, /*#__PURE__*/React__default.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: classes.progressBar,
-    style: _extends({}, opt)
-  }, /*#__PURE__*/React__default.createElement(Filler, {
+    style: { ...opt
+    }
+  }, /*#__PURE__*/React.createElement(Filler, {
     percentage: percentage,
     fillerExtraStyles: fillerExtraStyles,
     classes: classes
@@ -1278,53 +1251,48 @@ ProgressBar.propTypes = {
   progressBarExtraStyles: propTypes.object
 };
 
-var styles$1 = function styles(theme) {
-  return {
-    progressBarContainer: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
-    progressBar: {
-      position: 'relative',
-      height: '15px',
-      width: '85px',
-      borderRadius: '20px',
-      border: '1px solid #333'
-    },
-    filler: {
-      background: 'black',
-      height: '100%',
-      borderRadius: 'inherit',
-      transition: 'width .2s ease-in'
-    }
-  };
-};
+const styles$1 = theme => ({
+  progressBarContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  progressBar: {
+    position: 'relative',
+    height: '15px',
+    width: '85px',
+    borderRadius: '20px',
+    border: '1px solid #333'
+  },
+  filler: {
+    background: 'black',
+    height: '100%',
+    borderRadius: 'inherit',
+    transition: 'width .2s ease-in'
+  }
+});
 
-var useStyles$1 = reactJss.createUseStyles(styles$1);
-var TooltipedProgressBar = withToolTip(ProgressBar);
-var ProgressBarContainer = function ProgressBarContainer(_ref) {
-  var percentage = _ref.percentage,
-      fillerExtraStyles = _ref.fillerExtraStyles,
-      progressBarExtraStyles = _ref.progressBarExtraStyles,
-      tooltip = _ref.tooltip,
-      onPercentageChange = _ref.onPercentageChange,
-      tooltipStyle = _ref.tooltipStyle;
-  var ref = React.useRef();
-  var previousValue = usePrevious({
-    percentage: percentage,
-    ref: ref
+const useStyles$1 = createUseStyles(styles$1);
+const TooltipedProgressBar = withToolTip(ProgressBar);
+const ProgressBarContainer = ({
+  percentage,
+  fillerExtraStyles,
+  progressBarExtraStyles,
+  tooltip,
+  onPercentageChange,
+  tooltipStyle
+}) => {
+  const ref = useRef();
+  const previousValue = usePrevious({
+    percentage,
+    ref
   });
-
-  var _useState = React.useState(false),
-      savedOnpercentage = _useState[0],
-      setSaveOnPercentage = _useState[1];
-
-  var ProgressBarToUse = ProgressBar;
-  var hasTooltip = tooltip && tooltip.length > 0;
-  React.useEffect(function () {
-    var hasChanged = previousValue && previousValue.percentage !== percentage;
-    var hasSetOnPercentageChange = onPercentageChange && typeof onPercentageChange === 'function';
+  const [savedOnpercentage, setSaveOnPercentage] = useState(false);
+  let ProgressBarToUse = ProgressBar;
+  const hasTooltip = tooltip && tooltip.length > 0;
+  useEffect(() => {
+    const hasChanged = previousValue && previousValue.percentage !== percentage;
+    const hasSetOnPercentageChange = onPercentageChange && typeof onPercentageChange === 'function';
 
     if (hasChanged && hasSetOnPercentageChange && !savedOnpercentage) {
       onPercentageChange(percentage);
@@ -1338,8 +1306,8 @@ var ProgressBarContainer = function ProgressBarContainer(_ref) {
     setSaveOnPercentage(true);
   }
 
-  var classes = useStyles$1();
-  var extraOptions = {};
+  const classes = useStyles$1();
+  let extraOptions = {};
 
   if (percentage === 100) {
     return null;
@@ -1347,12 +1315,12 @@ var ProgressBarContainer = function ProgressBarContainer(_ref) {
 
   if (hasTooltip) {
     ProgressBarToUse = TooltipedProgressBar;
-    extraOptions = _extends({}, extraOptions, {
-      tooltipStyle: tooltipStyle
-    });
+    extraOptions = { ...extraOptions,
+      tooltipStyle
+    };
   }
 
-  return /*#__PURE__*/React__default.createElement(ProgressBarToUse, _extends({
+  return /*#__PURE__*/React.createElement(ProgressBarToUse, Object.assign({
     percentage: percentage,
     fillerExtraStyles: fillerExtraStyles,
     progressBarExtraStyles: progressBarExtraStyles,
@@ -1368,13 +1336,13 @@ ProgressBarContainer.propTypes = {
   progressBarExtraStyles: propTypes.object
 };
 
-var _excluded$1 = ["children"];
-var ProgressBarContainer$1 = function ProgressBarContainer$1(props) {
-  var children = props.children,
-      restProps = _objectWithoutPropertiesLoose(props, _excluded$1);
-
-  return /*#__PURE__*/React__default.createElement(ProgressBarContainer, restProps, " ", children, " ");
+const ProgressBarContainer$1 = props => {
+  const {
+    children,
+    ...restProps
+  } = props;
+  return /*#__PURE__*/React.createElement(ProgressBarContainer, restProps, " ", children, " ");
 };
 
-exports.ProgressBarContainer = ProgressBarContainer$1;
-//# sourceMappingURL=index.js.map
+export { ProgressBarContainer$1 as ProgressBarContainer };
+//# sourceMappingURL=index.modern.js.map

@@ -1,6 +1,14 @@
-# progress-bar-for-react
+# progress_bar_for_react
 
-[![npm version](https://img.shields.io/npm/v/progress_bar_for_react?style=flat-square)](https://www.npmjs.com/package/progress_bar_for_react)
+> Made with create-react-library
+
+[![NPM](https://img.shields.io/npm/v/progress_bar_for_react.svg)](https://www.npmjs.com/package/progress_bar_for_react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+## Install
+
+```bash
+npm install --save progress_bar_for_react
+```
 
 This is a simple fully customizable react progress bar component
 
@@ -78,4 +86,5 @@ This repo is licensed under GNU General Public License v3.0
 
 ### Changelog
 
+v1.0.51 --> Tested with node version > 16.13.1
 v1.0.45 --> Removed third party dependency of `react-tooltip` package
