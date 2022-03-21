@@ -1,6 +1,6 @@
 {
   "name": "progress_bar_for_react",
-  "version": "1.0.52",
+  "version": "1.0.53",
   "description": "Made with create-react-library",
   "author": "Myron Apostolakis",
   "license": "MIT",
@@ -51,7 +51,6 @@
     "@storybook/react": "^6.5.0-alpha.49",
     "@storybook/testing-library": "0.0.9",
     "@testing-library/cypress": "^8.0.2",
-    "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "cypress": "^9.5.2",
     "cypress-real-events": "^1.7.0",
