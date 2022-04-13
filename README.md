@@ -84,6 +84,11 @@ You can use the following commands
 
 This repo is licensed under GNU General Public License v3.0
 
+### Tutorial
+
+A short tutorial can be found in the following link
+[https://codebitshub.com/progress_bar_for_react](https://codebitshub.com/progress_bar_for_react)
+
 ### Changelog
 
 - v1.0.55 --> Tested with React 18
