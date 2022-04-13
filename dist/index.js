@@ -1154,7 +1154,7 @@ function _extends$1() {
 }
 
 function memoize(fn) {
-  var cache = {};
+  var cache = Object.create(null);
   return function (arg) {
     if (cache[arg] === undefined) cache[arg] = fn(arg);
     return cache[arg];
@@ -1842,7 +1842,7 @@ var processStyleValue = function processStyleValue(key, value) {
 };
 
 if (process.env.NODE_ENV !== 'production') {
-  var contentValuePattern = /(attr|counters?|url|(((repeating-)?(linear|radial))|conic)-gradient)\(|(no-)?(open|close)-quote/;
+  var contentValuePattern = /(var|attr|counters?|url|(((repeating-)?(linear|radial))|conic)-gradient)\(|(no-)?(open|close)-quote/;
   var contentValues = ['normal', 'none', 'initial', 'inherit', 'unset'];
   var oldProcessStyleValue = processStyleValue;
   var msPattern = /^-ms-/;
@@ -2213,358 +2213,6 @@ if (process.env.NODE_ENV !== 'production') {
   Emotion.displayName = 'EmotionCssPropInternal';
 }
 
-var isBrowser$1 = "object" !== 'undefined';
-function getRegisteredStyles$1(registered, registeredStyles, classNames) {
-  var rawClassName = '';
-  classNames.split(' ').forEach(function (className) {
-    if (registered[className] !== undefined) {
-      registeredStyles.push(registered[className] + ";");
-    } else {
-      rawClassName += className + " ";
-    }
-  });
-  return rawClassName;
-}
-var registerStyles$1 = function registerStyles(cache, serialized, isStringTag) {
-  var className = cache.key + "-" + serialized.name;
-
-  if ( // we only need to add the styles to the registered cache if the
-  // class name could be used further down
-  // the tree but if it's a string tag, we know it won't
-  // so we don't have to add it to registered cache.
-  // this improves memory usage since we can avoid storing the whole style string
-  (isStringTag === false || // we need to always store it if we're in compat mode and
-  // in node since emotion-server relies on whether a style is in
-  // the registered cache to know whether a style is global or not
-  // also, note that this check will be dead code eliminated in the browser
-  isBrowser$1 === false ) && cache.registered[className] === undefined) {
-    cache.registered[className] = serialized.styles;
-  }
-};
-var insertStyles$1 = function insertStyles(cache, serialized, isStringTag) {
-  registerStyles$1(cache, serialized, isStringTag);
-  var className = cache.key + "-" + serialized.name;
-
-  if (cache.inserted[serialized.name] === undefined) {
-    var current = serialized;
-
-    do {
-      var maybeStyles = cache.insert(serialized === current ? "." + className : '', current, cache.sheet, true);
-
-      current = current.next;
-    } while (current !== undefined);
-  }
-};
-
-var ILLEGAL_ESCAPE_SEQUENCE_ERROR$1 = "You have illegal escape sequence in your template literal, most likely inside content's property value.\nBecause you write your CSS inside a JavaScript string you actually have to do double escaping, so for example \"content: '\\00d7';\" should become \"content: '\\\\00d7';\".\nYou can read more about this here:\nhttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#ES2018_revision_of_illegal_escape_sequences";
-var UNDEFINED_AS_OBJECT_KEY_ERROR$1 = "You have passed in falsy value as style object's key (can happen when in example you pass unexported component as computed key).";
-var hyphenateRegex$1 = /[A-Z]|^ms/g;
-var animationRegex$1 = /_EMO_([^_]+?)_([^]*?)_EMO_/g;
-
-var isCustomProperty$1 = function isCustomProperty(property) {
-  return property.charCodeAt(1) === 45;
-};
-
-var isProcessableValue$1 = function isProcessableValue(value) {
-  return value != null && typeof value !== 'boolean';
-};
-
-var processStyleName$1 = /* #__PURE__ */memoize(function (styleName) {
-  return isCustomProperty$1(styleName) ? styleName : styleName.replace(hyphenateRegex$1, '-$&').toLowerCase();
-});
-
-var processStyleValue$1 = function processStyleValue(key, value) {
-  switch (key) {
-    case 'animation':
-    case 'animationName':
-      {
-        if (typeof value === 'string') {
-          return value.replace(animationRegex$1, function (match, p1, p2) {
-            cursor$1 = {
-              name: p1,
-              styles: p2,
-              next: cursor$1
-            };
-            return p1;
-          });
-        }
-      }
-  }
-
-  if (unitlessKeys[key] !== 1 && !isCustomProperty$1(key) && typeof value === 'number' && value !== 0) {
-    return value + 'px';
-  }
-
-  return value;
-};
-
-if (process.env.NODE_ENV !== 'production') {
-  var contentValuePattern$1 = /(attr|counters?|url|(((repeating-)?(linear|radial))|conic)-gradient)\(|(no-)?(open|close)-quote/;
-  var contentValues$1 = ['normal', 'none', 'initial', 'inherit', 'unset'];
-  var oldProcessStyleValue$1 = processStyleValue$1;
-  var msPattern$1 = /^-ms-/;
-  var hyphenPattern$1 = /-(.)/g;
-  var hyphenatedCache$1 = {};
-
-  processStyleValue$1 = function processStyleValue(key, value) {
-    if (key === 'content') {
-      if (typeof value !== 'string' || contentValues$1.indexOf(value) === -1 && !contentValuePattern$1.test(value) && (value.charAt(0) !== value.charAt(value.length - 1) || value.charAt(0) !== '"' && value.charAt(0) !== "'")) {
-        throw new Error("You seem to be using a value for 'content' without quotes, try replacing it with `content: '\"" + value + "\"'`");
-      }
-    }
-
-    var processed = oldProcessStyleValue$1(key, value);
-
-    if (processed !== '' && !isCustomProperty$1(key) && key.indexOf('-') !== -1 && hyphenatedCache$1[key] === undefined) {
-      hyphenatedCache$1[key] = true;
-      console.error("Using kebab-case for css properties in objects is not supported. Did you mean " + key.replace(msPattern$1, 'ms-').replace(hyphenPattern$1, function (str, _char) {
-        return _char.toUpperCase();
-      }) + "?");
-    }
-
-    return processed;
-  };
-}
-
-function handleInterpolation$1(mergedProps, registered, interpolation) {
-  if (interpolation == null) {
-    return '';
-  }
-
-  if (interpolation.__emotion_styles !== undefined) {
-    if (process.env.NODE_ENV !== 'production' && interpolation.toString() === 'NO_COMPONENT_SELECTOR') {
-      throw new Error('Component selectors can only be used in conjunction with @emotion/babel-plugin.');
-    }
-
-    return interpolation;
-  }
-
-  switch (typeof interpolation) {
-    case 'boolean':
-      {
-        return '';
-      }
-
-    case 'object':
-      {
-        if (interpolation.anim === 1) {
-          cursor$1 = {
-            name: interpolation.name,
-            styles: interpolation.styles,
-            next: cursor$1
-          };
-          return interpolation.name;
-        }
-
-        if (interpolation.styles !== undefined) {
-          var next = interpolation.next;
-
-          if (next !== undefined) {
-            // not the most efficient thing ever but this is a pretty rare case
-            // and there will be very few iterations of this generally
-            while (next !== undefined) {
-              cursor$1 = {
-                name: next.name,
-                styles: next.styles,
-                next: cursor$1
-              };
-              next = next.next;
-            }
-          }
-
-          var styles = interpolation.styles + ";";
-
-          if (process.env.NODE_ENV !== 'production' && interpolation.map !== undefined) {
-            styles += interpolation.map;
-          }
-
-          return styles;
-        }
-
-        return createStringFromObject$1(mergedProps, registered, interpolation);
-      }
-
-    case 'function':
-      {
-        if (mergedProps !== undefined) {
-          var previousCursor = cursor$1;
-          var result = interpolation(mergedProps);
-          cursor$1 = previousCursor;
-          return handleInterpolation$1(mergedProps, registered, result);
-        } else if (process.env.NODE_ENV !== 'production') {
-          console.error('Functions that are interpolated in css calls will be stringified.\n' + 'If you want to have a css call based on props, create a function that returns a css call like this\n' + 'let dynamicStyle = (props) => css`color: ${props.color}`\n' + 'It can be called directly with props or interpolated in a styled call like this\n' + "let SomeComponent = styled('div')`${dynamicStyle}`");
-        }
-
-        break;
-      }
-
-    case 'string':
-      if (process.env.NODE_ENV !== 'production') {
-        var matched = [];
-        var replaced = interpolation.replace(animationRegex$1, function (match, p1, p2) {
-          var fakeVarName = "animation" + matched.length;
-          matched.push("const " + fakeVarName + " = keyframes`" + p2.replace(/^@keyframes animation-\w+/, '') + "`");
-          return "${" + fakeVarName + "}";
-        });
-
-        if (matched.length) {
-          console.error('`keyframes` output got interpolated into plain string, please wrap it with `css`.\n\n' + 'Instead of doing this:\n\n' + [].concat(matched, ["`" + replaced + "`"]).join('\n') + '\n\nYou should wrap it with `css` like this:\n\n' + ("css`" + replaced + "`"));
-        }
-      }
-
-      break;
-  } // finalize string values (regular strings and functions interpolated into css calls)
-
-
-  if (registered == null) {
-    return interpolation;
-  }
-
-  var cached = registered[interpolation];
-  return cached !== undefined ? cached : interpolation;
-}
-
-function createStringFromObject$1(mergedProps, registered, obj) {
-  var string = '';
-
-  if (Array.isArray(obj)) {
-    for (var i = 0; i < obj.length; i++) {
-      string += handleInterpolation$1(mergedProps, registered, obj[i]) + ";";
-    }
-  } else {
-    for (var _key in obj) {
-      var value = obj[_key];
-
-      if (typeof value !== 'object') {
-        if (registered != null && registered[value] !== undefined) {
-          string += _key + "{" + registered[value] + "}";
-        } else if (isProcessableValue$1(value)) {
-          string += processStyleName$1(_key) + ":" + processStyleValue$1(_key, value) + ";";
-        }
-      } else {
-        if (_key === 'NO_COMPONENT_SELECTOR' && process.env.NODE_ENV !== 'production') {
-          throw new Error('Component selectors can only be used in conjunction with @emotion/babel-plugin.');
-        }
-
-        if (Array.isArray(value) && typeof value[0] === 'string' && (registered == null || registered[value[0]] === undefined)) {
-          for (var _i = 0; _i < value.length; _i++) {
-            if (isProcessableValue$1(value[_i])) {
-              string += processStyleName$1(_key) + ":" + processStyleValue$1(_key, value[_i]) + ";";
-            }
-          }
-        } else {
-          var interpolated = handleInterpolation$1(mergedProps, registered, value);
-
-          switch (_key) {
-            case 'animation':
-            case 'animationName':
-              {
-                string += processStyleName$1(_key) + ":" + interpolated + ";";
-                break;
-              }
-
-            default:
-              {
-                if (process.env.NODE_ENV !== 'production' && _key === 'undefined') {
-                  console.error(UNDEFINED_AS_OBJECT_KEY_ERROR$1);
-                }
-
-                string += _key + "{" + interpolated + "}";
-              }
-          }
-        }
-      }
-    }
-  }
-
-  return string;
-}
-
-var labelPattern$1 = /label:\s*([^\s;\n{]+)\s*(;|$)/g;
-var sourceMapPattern$1;
-
-if (process.env.NODE_ENV !== 'production') {
-  sourceMapPattern$1 = /\/\*#\ssourceMappingURL=data:application\/json;\S+\s+\*\//g;
-} // this is the cursor for keyframes
-// keyframes are stored on the SerializedStyles object as a linked list
-
-
-var cursor$1;
-var serializeStyles$1 = function serializeStyles(args, registered, mergedProps) {
-  if (args.length === 1 && typeof args[0] === 'object' && args[0] !== null && args[0].styles !== undefined) {
-    return args[0];
-  }
-
-  var stringMode = true;
-  var styles = '';
-  cursor$1 = undefined;
-  var strings = args[0];
-
-  if (strings == null || strings.raw === undefined) {
-    stringMode = false;
-    styles += handleInterpolation$1(mergedProps, registered, strings);
-  } else {
-    if (process.env.NODE_ENV !== 'production' && strings[0] === undefined) {
-      console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR$1);
-    }
-
-    styles += strings[0];
-  } // we start at 1 since we've already handled the first arg
-
-
-  for (var i = 1; i < args.length; i++) {
-    styles += handleInterpolation$1(mergedProps, registered, args[i]);
-
-    if (stringMode) {
-      if (process.env.NODE_ENV !== 'production' && strings[i] === undefined) {
-        console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR$1);
-      }
-
-      styles += strings[i];
-    }
-  }
-
-  var sourceMap;
-
-  if (process.env.NODE_ENV !== 'production') {
-    styles = styles.replace(sourceMapPattern$1, function (match) {
-      sourceMap = match;
-      return '';
-    });
-  } // using a global regex with .exec is stateful so lastIndex has to be reset each time
-
-
-  labelPattern$1.lastIndex = 0;
-  var identifierName = '';
-  var match; // https://esbench.com/bench/5b809c2cf2949800a0f61fb5
-
-  while ((match = labelPattern$1.exec(styles)) !== null) {
-    identifierName += '-' + // $FlowFixMe we know it's not null
-    match[1];
-  }
-
-  var name = murmur2(styles) + identifierName;
-
-  if (process.env.NODE_ENV !== 'production') {
-    // $FlowFixMe SerializedStyles type doesn't have toString property (and we don't want to add it)
-    return {
-      name: name,
-      styles: styles,
-      map: sourceMap,
-      next: cursor$1,
-      toString: function toString() {
-        return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop).";
-      }
-    };
-  }
-
-  return {
-    name: name,
-    styles: styles,
-    next: cursor$1
-  };
-};
-
 var testOmitPropsOnStringTag = isPropValid;
 
 var testOmitPropsOnComponent = function testOmitPropsOnComponent(key) {
@@ -2602,15 +2250,15 @@ function useInsertionEffectMaybe$1(create) {
   useInsertionEffect$1(create);
 }
 
-var ILLEGAL_ESCAPE_SEQUENCE_ERROR$2 = "You have illegal escape sequence in your template literal, most likely inside content's property value.\nBecause you write your CSS inside a JavaScript string you actually have to do double escaping, so for example \"content: '\\00d7';\" should become \"content: '\\\\00d7';\".\nYou can read more about this here:\nhttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#ES2018_revision_of_illegal_escape_sequences";
+var ILLEGAL_ESCAPE_SEQUENCE_ERROR$1 = "You have illegal escape sequence in your template literal, most likely inside content's property value.\nBecause you write your CSS inside a JavaScript string you actually have to do double escaping, so for example \"content: '\\00d7';\" should become \"content: '\\\\00d7';\".\nYou can read more about this here:\nhttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#ES2018_revision_of_illegal_escape_sequences";
 
 var Insertion$1 = function Insertion(_ref) {
   var cache = _ref.cache,
       serialized = _ref.serialized,
       isStringTag = _ref.isStringTag;
-  registerStyles$1(cache, serialized, isStringTag);
+  registerStyles(cache, serialized, isStringTag);
   var rules = useInsertionEffectMaybe$1(function () {
-    return insertStyles$1(cache, serialized, isStringTag);
+    return insertStyles(cache, serialized, isStringTag);
   });
 
   return null;
@@ -2648,7 +2296,7 @@ var createStyled = function createStyled(tag, options) {
       styles.push.apply(styles, args);
     } else {
       if (process.env.NODE_ENV !== 'production' && args[0][0] === undefined) {
-        console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR$2);
+        console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR$1);
       }
 
       styles.push(args[0][0]);
@@ -2657,7 +2305,7 @@ var createStyled = function createStyled(tag, options) {
 
       for (; i < len; i++) {
         if (process.env.NODE_ENV !== 'production' && args[0][i] === undefined) {
-          console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR$2);
+          console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR$1);
         }
 
         styles.push(args[i], args[0][i]);
@@ -2682,12 +2330,12 @@ var createStyled = function createStyled(tag, options) {
       }
 
       if (typeof props.className === 'string') {
-        className = getRegisteredStyles$1(cache.registered, classInterpolations, props.className);
+        className = getRegisteredStyles(cache.registered, classInterpolations, props.className);
       } else if (props.className != null) {
         className = props.className + " ";
       }
 
-      var serialized = serializeStyles$1(styles.concat(classInterpolations), cache.registered, mergedProps);
+      var serialized = serializeStyles(styles.concat(classInterpolations), cache.registered, mergedProps);
       className += cache.key + "-" + serialized.name;
 
       if (targetClassName !== undefined) {
