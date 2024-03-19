@@ -1,5 +1,6 @@
-import React from 'react';
 import styled from '@emotion/styled';
+
+import { TooltipProps } from './types';
 
 const StyledSpan = styled.span`
   color: #fff;
@@ -40,12 +41,13 @@ const TooltipContainer = styled.div`
  * Then the react component will be rendered and a tooltip will be
  * displayed on mouse hover */
 
-export const Tooltip = ({ tooltipContent, children, style }) => {
+export const Tooltip = ({ tooltipContent, children, style }: TooltipProps) => {
   let tooltipStyle = {};
 
   if (style) {
     tooltipStyle = { ...style };
   }
+
   return (
     <TooltipContainer style={tooltipStyle} data-testid="tooltip">
       {children}

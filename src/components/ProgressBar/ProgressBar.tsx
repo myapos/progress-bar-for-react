@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+
+import { ProgressBarProps } from './types';
 import { Filler } from '../Filler/Filler';
 
 const Container = styled.div`
@@ -21,7 +21,7 @@ export const ProgressBar = ({
   percentage,
   fillerExtraStyles,
   progressBarExtraStyles,
-}) => {
+}: ProgressBarProps) => {
   const opt = progressBarExtraStyles;
   return (
     <Container data-testid="progress-bar">
@@ -35,10 +35,4 @@ export const ProgressBar = ({
       </ProgressBarChild>
     </Container>
   );
-};
-ProgressBar.propTypes = {
-  percentage: PropTypes.number,
-  backgroundColor: PropTypes.string,
-  fillerExtraStyles: PropTypes.object,
-  progressBarExtraStyles: PropTypes.object,
 };

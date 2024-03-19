@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
 import { ProgressBarContainer as ProgressBar } from '../components/ProgressBarContainer';
 
-const Simple = () => {
+const ToolTip = () => {
   return (
     <div id="container">
-      <ProgressBar percentage={50} />
+      <ProgressBar percentage={50} tooltip="demo text" />
     </div>
   );
 };
 
-export default Simple;
+export default ToolTip;

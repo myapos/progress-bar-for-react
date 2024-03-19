@@ -1,13 +1,15 @@
-import React, { Fragment } from 'react';
-// import ReactTooltip from 'react-tooltip';
+import { Fragment } from 'react';
+import { ComponentType } from 'react';
+
+import { WrappedComponentProps } from './types';
 import { Tooltip } from '../ToolTip/Tooltip';
 import { getDisplayName } from '../utils/getDisplayName';
 
 /* It provides a tooltip to the base component with same styling */
 
-const withToolTip = (BaseComponent) => {
-  const WrappedComponent = (props) => {
-    const { tooltipContent, tooltipStyle, ...restProps } = props;
+const withToolTip = (BaseComponent: ComponentType<any>) => {
+  const WrappedComponent = (props: WrappedComponentProps) => {
+    const { tooltipContent, tooltipStyle = {}, ...restProps } = props;
 
     // add tooltip if there is something to show
     if (tooltipContent && tooltipContent.length) {

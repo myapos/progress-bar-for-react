@@ -1,5 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import { useRef, useEffect, useState } from 'react';
+
+import { ProgressBarContainerProps } from './types';
 
 import withTooltip from '../HOCS/withTooltip';
 import usePrevious from '../HOCS/usePrevious';
@@ -10,22 +11,22 @@ const TooltipedProgressBar = withTooltip(ProgressBar);
 
 export const ProgressBarContainer = ({
   percentage,
-  fillerExtraStyles,
-  progressBarExtraStyles,
+  fillerExtraStyles = {},
+  progressBarExtraStyles = {},
   tooltip,
   onPercentageChange,
   tooltipStyle,
-}) => {
-  const ref = useRef();
+}: ProgressBarContainerProps) => {
+  const ref = useRef<number>();
   // inspired source
   // https://stackoverflow.com/questions/53446020/how-to-compare-oldvalues-and-newvalues-on-react-hooks-useeffect
   const previousValue = usePrevious({ percentage, ref });
   const [savedOnpercentage, setSaveOnPercentage] = useState(false);
-  let ProgressBarToUse = ProgressBar;
+
   const hasTooltip = tooltip && tooltip.length > 0;
 
   useEffect(() => {
-    const hasChanged = previousValue && previousValue.percentage !== percentage;
+    const hasChanged = previousValue && previousValue !== percentage;
     const hasSetOnPercentageChange =
       onPercentageChange && typeof onPercentageChange === 'function';
 
@@ -33,46 +34,37 @@ export const ProgressBarContainer = ({
       // process here
       onPercentageChange(percentage);
     } else if (hasChanged && hasSetOnPercentageChange && savedOnpercentage) {
-      window.top.onPercentageChange(percentage);
+      window?.top?.onPercentageChange(percentage);
     }
   }, [percentage, onPercentageChange, previousValue, savedOnpercentage]);
 
-  if (
-    window.top &&
-    window.top.Cypress &&
-    !savedOnpercentage &&
-    onPercentageChange
-  ) {
+  if (window?.top?.Cypress && !savedOnpercentage && onPercentageChange) {
     // keep reference for testing with cypresss
     window.top.onPercentageChange = onPercentageChange;
     setSaveOnPercentage(true);
   }
-
-  let extraOptions = {};
 
   if (percentage === 100) {
     return null;
   }
 
   if (hasTooltip) {
-    ProgressBarToUse = TooltipedProgressBar;
-    extraOptions = { ...extraOptions, tooltipStyle };
+    return (
+      <TooltipedProgressBar
+        percentage={percentage}
+        fillerExtraStyles={fillerExtraStyles}
+        progressBarExtraStyles={progressBarExtraStyles}
+        tooltipContent={tooltip}
+        tooltipStyle={tooltipStyle}
+      />
+    );
   }
 
   return (
-    <ProgressBarToUse
+    <ProgressBar
       percentage={percentage}
       fillerExtraStyles={fillerExtraStyles}
       progressBarExtraStyles={progressBarExtraStyles}
-      tooltipContent={tooltip}
-      {...extraOptions}
     />
   );
-};
-
-ProgressBarContainer.propTypes = {
-  percentage: PropTypes.number,
-  backgroundColor: PropTypes.string,
-  fillerExtraStyles: PropTypes.object,
-  progressBarExtraStyles: PropTypes.object,
 };

@@ -4,7 +4,7 @@
  * @param str String in camelcase
  * @param separator Separator for the new decamelized string.
  */
-export const decamelize = (str, separator) => {
+export const decamelize = (str: string, separator: string) => {
   separator = typeof separator === 'undefined' ? '-' : separator;
 
   return str
