@@ -1,7 +1,7 @@
 import * as B from "react";
-import { forwardRef as Fn, useContext as Dn, Fragment as Mn, useEffect as en, useRef as jn, useState as $n } from "react";
+import { forwardRef as Fn, useContext as Dn, Fragment as Mn, useEffect as en, useRef as jn, useState as Un } from "react";
 import * as se from "react/jsx-runtime";
-function Un(e) {
+function $n(e) {
   if (e.sheet)
     return e.sheet;
   for (var n = 0; n < document.styleSheets.length; n++)
@@ -32,7 +32,7 @@ var qn = /* @__PURE__ */ function() {
 ` + t + "\n\n`@import` rules must be before all other types of rules in a stylesheet but other rules have already been inserted. Please ensure that `@import` rules are before all other rules."), this._alreadyInsertedOrderInsensitiveRule = this._alreadyInsertedOrderInsensitiveRule || !o;
     }
     if (this.isSpeedy) {
-      var c = Un(a);
+      var c = $n(a);
       try {
         c.insertRule(t, c.cssRules.length);
       } catch (s) {
@@ -46,9 +46,9 @@ var qn = /* @__PURE__ */ function() {
       return t.parentNode && t.parentNode.removeChild(t);
     }), this.tags = [], this.ctr = 0, process.env.NODE_ENV !== "production" && (this._alreadyInsertedOrderInsensitiveRule = !1);
   }, e;
-}(), V = "-ms-", le = "-moz-", v = "-webkit-", Ne = "comm", Re = "rule", Ze = "decl", Kn = "@import", nn = "@keyframes", er = "@layer", nr = Math.abs, de = String.fromCharCode, rr = Object.assign;
+}(), S = "-ms-", le = "-moz-", v = "-webkit-", Ne = "comm", Re = "rule", Ee = "decl", Kn = "@import", nn = "@keyframes", er = "@layer", nr = Math.abs, de = String.fromCharCode, rr = Object.assign;
 function tr(e, n) {
-  return S(e, 0) ^ 45 ? (((n << 2 ^ S(e, 0)) << 2 ^ S(e, 1)) << 2 ^ S(e, 2)) << 2 ^ S(e, 3) : 0;
+  return V(e, 0) ^ 45 ? (((n << 2 ^ V(e, 0)) << 2 ^ V(e, 1)) << 2 ^ V(e, 2)) << 2 ^ V(e, 3) : 0;
 }
 function rn(e) {
   return e.trim();
@@ -62,16 +62,16 @@ function y(e, n, r) {
 function ve(e, n) {
   return e.indexOf(n);
 }
-function S(e, n) {
+function V(e, n) {
   return e.charCodeAt(n) | 0;
 }
 function q(e, n, r) {
   return e.slice(n, r);
 }
-function J(e) {
+function T(e) {
   return e.length;
 }
-function Ee(e) {
+function Ze(e) {
   return e.length;
 }
 function oe(e, n) {
@@ -80,30 +80,30 @@ function oe(e, n) {
 function ar(e, n) {
   return e.map(n).join("");
 }
-var fe = 1, $ = 1, tn = 0, O = 0, E = 0, U = "";
+var fe = 1, U = 1, tn = 0, O = 0, Z = 0, $ = "";
 function me(e, n, r, t, a, o, c) {
-  return { value: e, root: n, parent: r, type: t, props: a, children: o, line: fe, column: $, length: c, return: "" };
+  return { value: e, root: n, parent: r, type: t, props: a, children: o, line: fe, column: U, length: c, return: "" };
 }
 function Q(e, n) {
   return rr(me("", null, null, "", null, null, 0), e, { length: -e.length }, n);
 }
 function cr() {
-  return E;
+  return Z;
 }
 function ir() {
-  return E = O > 0 ? S(U, --O) : 0, $--, E === 10 && ($ = 1, fe--), E;
+  return Z = O > 0 ? V($, --O) : 0, U--, Z === 10 && (U = 1, fe--), Z;
 }
-function Y() {
-  return E = O < tn ? S(U, O++) : 0, $++, E === 10 && ($ = 1, fe++), E;
+function J() {
+  return Z = O < tn ? V($, O++) : 0, U++, Z === 10 && (U = 1, fe++), Z;
 }
 function H() {
-  return S(U, O);
+  return V($, O);
 }
 function ae() {
   return O;
 }
 function ne(e, n) {
-  return q(U, e, n);
+  return q($, e, n);
 }
 function K(e) {
   switch (e) {
@@ -138,61 +138,61 @@ function K(e) {
   return 0;
 }
 function on(e) {
-  return fe = $ = 1, tn = J(U = e), O = 0, [];
+  return fe = U = 1, tn = T($ = e), O = 0, [];
 }
 function an(e) {
-  return U = "", e;
+  return $ = "", e;
 }
 function ce(e) {
   return rn(ne(O - 1, ye(e === 91 ? e + 2 : e === 40 ? e + 1 : e)));
 }
 function sr(e) {
-  for (; (E = H()) && E < 33; )
-    Y();
-  return K(e) > 2 || K(E) > 3 ? "" : " ";
+  for (; (Z = H()) && Z < 33; )
+    J();
+  return K(e) > 2 || K(Z) > 3 ? "" : " ";
 }
 function lr(e, n) {
-  for (; --n && Y() && !(E < 48 || E > 102 || E > 57 && E < 65 || E > 70 && E < 97); )
+  for (; --n && J() && !(Z < 48 || Z > 102 || Z > 57 && Z < 65 || Z > 70 && Z < 97); )
     ;
-  return ne(e, ae() + (n < 6 && H() == 32 && Y() == 32));
+  return ne(e, ae() + (n < 6 && H() == 32 && J() == 32));
 }
 function ye(e) {
-  for (; Y(); )
-    switch (E) {
+  for (; J(); )
+    switch (Z) {
       case e:
         return O;
       case 34:
       case 39:
-        e !== 34 && e !== 39 && ye(E);
+        e !== 34 && e !== 39 && ye(Z);
         break;
       case 40:
         e === 41 && ye(e);
         break;
       case 92:
-        Y();
+        J();
         break;
     }
   return O;
 }
 function ur(e, n) {
-  for (; Y() && e + E !== 57; )
-    if (e + E === 84 && H() === 47)
+  for (; J() && e + Z !== 57; )
+    if (e + Z === 84 && H() === 47)
       break;
-  return "/*" + ne(n, O - 1) + "*" + de(e === 47 ? e : Y());
+  return "/*" + ne(n, O - 1) + "*" + de(e === 47 ? e : J());
 }
 function dr(e) {
   for (; !K(H()); )
-    Y();
+    J();
   return ne(e, O);
 }
 function fr(e) {
   return an(ie("", null, null, null, [""], e = on(e), 0, [0], e));
 }
 function ie(e, n, r, t, a, o, c, s, m) {
-  for (var b = 0, l = 0, p = c, Z = 0, I = 0, g = 0, d = 1, w = 1, A = 1, N = 0, h = "", R = a, i = o, X = t, C = h; w; )
-    switch (g = N, N = Y()) {
+  for (var b = 0, l = 0, p = c, E = 0, I = 0, g = 0, d = 1, w = 1, A = 1, N = 0, h = "", R = a, i = o, X = t, C = h; w; )
+    switch (g = N, N = J()) {
       case 40:
-        if (g != 108 && S(C, p - 1) == 58) {
+        if (g != 108 && V(C, p - 1) == 58) {
           ve(C += y(ce(N), "&", "&\f"), "&\f") != -1 && (A = -1);
           break;
         }
@@ -214,14 +214,14 @@ function ie(e, n, r, t, a, o, c, s, m) {
         switch (H()) {
           case 42:
           case 47:
-            oe(mr(ur(Y(), ae()), n, r), m);
+            oe(mr(ur(J(), ae()), n, r), m);
             break;
           default:
             C += "/";
         }
         break;
       case 123 * d:
-        s[b++] = J(C) * A;
+        s[b++] = T(C) * A;
       case 125 * d:
       case 59:
       case 0:
@@ -230,21 +230,21 @@ function ie(e, n, r, t, a, o, c, s, m) {
           case 125:
             w = 0;
           case 59 + l:
-            A == -1 && (C = y(C, /\f/g, "")), I > 0 && J(C) - p && oe(I > 32 ? ze(C + ";", t, r, p - 1) : ze(y(C, " ", "") + ";", t, r, p - 2), m);
+            A == -1 && (C = y(C, /\f/g, "")), I > 0 && T(C) - p && oe(I > 32 ? Ye(C + ";", t, r, p - 1) : Ye(y(C, " ", "") + ";", t, r, p - 2), m);
             break;
           case 59:
             C += ";";
           default:
-            if (oe(X = Ye(C, n, r, b, l, a, s, h, R = [], i = [], p), o), N === 123)
+            if (oe(X = Je(C, n, r, b, l, a, s, h, R = [], i = [], p), o), N === 123)
               if (l === 0)
                 ie(C, n, X, X, R, o, p, s, i);
               else
-                switch (Z === 99 && S(C, 3) === 110 ? 100 : Z) {
+                switch (E === 99 && V(C, 3) === 110 ? 100 : E) {
                   case 100:
                   case 108:
                   case 109:
                   case 115:
-                    ie(e, X, X, t && oe(Ye(e, X, X, 0, 0, a, s, h, a, R = [], p), i), a, i, p, s, t ? R : i);
+                    ie(e, X, X, t && oe(Je(e, X, X, 0, 0, a, s, h, a, R = [], p), i), a, i, p, s, t ? R : i);
                     break;
                   default:
                     ie(C, X, X, X, [""], i, 0, s, i);
@@ -253,7 +253,7 @@ function ie(e, n, r, t, a, o, c, s, m) {
         b = l = I = 0, d = A = 1, h = C = "", p = c;
         break;
       case 58:
-        p = 1 + J(C), I = g;
+        p = 1 + T(C), I = g;
       default:
         if (d < 1) {
           if (N == 123)
@@ -266,31 +266,31 @@ function ie(e, n, r, t, a, o, c, s, m) {
             A = l > 0 ? 1 : (C += "\f", -1);
             break;
           case 44:
-            s[b++] = (J(C) - 1) * A, A = 1;
+            s[b++] = (T(C) - 1) * A, A = 1;
             break;
           case 64:
-            H() === 45 && (C += ce(Y())), Z = H(), l = p = J(h = C += dr(ae())), N++;
+            H() === 45 && (C += ce(J())), E = H(), l = p = T(h = C += dr(ae())), N++;
             break;
           case 45:
-            g === 45 && J(C) == 2 && (d = 0);
+            g === 45 && T(C) == 2 && (d = 0);
         }
     }
   return o;
 }
-function Ye(e, n, r, t, a, o, c, s, m, b, l) {
-  for (var p = a - 1, Z = a === 0 ? o : [""], I = Ee(Z), g = 0, d = 0, w = 0; g < t; ++g)
+function Je(e, n, r, t, a, o, c, s, m, b, l) {
+  for (var p = a - 1, E = a === 0 ? o : [""], I = Ze(E), g = 0, d = 0, w = 0; g < t; ++g)
     for (var A = 0, N = q(e, p + 1, p = nr(d = c[g])), h = e; A < I; ++A)
-      (h = rn(d > 0 ? Z[A] + " " + N : y(N, /&\f/g, Z[A]))) && (m[w++] = h);
+      (h = rn(d > 0 ? E[A] + " " + N : y(N, /&\f/g, E[A]))) && (m[w++] = h);
   return me(e, n, r, a === 0 ? Re : s, m, b, l);
 }
 function mr(e, n, r) {
   return me(e, n, r, Ne, de(cr()), q(e, 2, -2), 0);
 }
-function ze(e, n, r, t) {
-  return me(e, n, r, Ze, q(e, 0, t), q(e, t + 1, -1), t);
+function Ye(e, n, r, t) {
+  return me(e, n, r, Ee, q(e, 0, t), q(e, t + 1, -1), t);
 }
 function j(e, n) {
-  for (var r = "", t = Ee(e), a = 0; a < t; a++)
+  for (var r = "", t = Ze(e), a = 0; a < t; a++)
     r += n(e[a], a, e, n) || "";
   return r;
 }
@@ -300,7 +300,7 @@ function br(e, n, r, t) {
       if (e.children.length)
         break;
     case Kn:
-    case Ze:
+    case Ee:
       return e.return = e.return || e.value;
     case Ne:
       return "";
@@ -309,10 +309,10 @@ function br(e, n, r, t) {
     case Re:
       e.value = e.props.join(",");
   }
-  return J(r = j(e.children, t)) ? e.return = e.value + "{" + r + "}" : "";
+  return T(r = j(e.children, t)) ? e.return = e.value + "{" + r + "}" : "";
 }
 function pr(e) {
-  var n = Ee(e);
+  var n = Ze(e);
   return function(r, t, a, o) {
     for (var c = "", s = 0; s < n; s++)
       c += e[s](r, t, a, o) || "";
@@ -332,7 +332,7 @@ function cn(e) {
 }
 var hr = function(n, r, t) {
   for (var a = 0, o = 0; a = o, o = H(), a === 38 && o === 12 && (r[t] = 1), !K(o); )
-    Y();
+    J();
   return ne(n, O);
 }, vr = function(n, r) {
   var t = -1, a = 44;
@@ -352,19 +352,19 @@ var hr = function(n, r, t) {
       default:
         n[t] += de(a);
     }
-  while (a = Y());
+  while (a = J());
   return n;
 }, yr = function(n, r) {
   return an(vr(on(n), r));
-}, Pe = /* @__PURE__ */ new WeakMap(), Ir = function(n) {
+}, ze = /* @__PURE__ */ new WeakMap(), Ir = function(n) {
   if (!(n.type !== "rule" || !n.parent || // positive .length indicates that this rule contains pseudo
   // negative .length indicates that this rule has been already prefixed
   n.length < 1)) {
     for (var r = n.value, t = n.parent, a = n.column === t.column && n.line === t.line; t.type !== "rule"; )
       if (t = t.parent, !t)
         return;
-    if (!(n.props.length === 1 && r.charCodeAt(0) !== 58 && !Pe.get(t)) && !a) {
-      Pe.set(n, !0);
+    if (!(n.props.length === 1 && r.charCodeAt(0) !== 58 && !ze.get(t)) && !a) {
+      ze.set(n, !0);
       for (var o = [], c = yr(r, o), s = t.props, m = 0, b = 0; m < c.length; m++)
         for (var l = 0; l < s.length; l++, b++)
           n.props[b] = o[m] ? c[m].replace(/&\f/g, s[l]) : s[l] + " " + c[m];
@@ -410,10 +410,10 @@ var hr = function(n, r, t) {
     if (!sn(r[t]))
       return !0;
   return !1;
-}, Te = function(n) {
+}, ke = function(n) {
   n.type = "", n.value = "", n.return = "", n.children = "", n.props = "";
 }, Nr = function(n, r, t) {
-  sn(n) && (n.parent ? (console.error("`@import` rules can't be nested inside other rules. Please move it to the top level and put it before regular rules. Keep in mind that they can only be used within global styles."), Te(n)) : wr(r, t) && (console.error("`@import` rules can't be after other rules. Please put your `@import` rules before your other rules."), Te(n)));
+  sn(n) && (n.parent ? (console.error("`@import` rules can't be nested inside other rules. Please move it to the top level and put it before regular rules. Keep in mind that they can only be used within global styles."), ke(n)) : wr(r, t) && (console.error("`@import` rules can't be after other rules. Please put your `@import` rules before your other rules."), ke(n)));
 };
 function ln(e, n) {
   switch (tr(e, n)) {
@@ -450,24 +450,24 @@ function ln(e, n) {
     case 4810:
     case 6968:
     case 2756:
-      return v + e + le + e + V + e + e;
+      return v + e + le + e + S + e + e;
     case 6828:
     case 4268:
-      return v + e + V + e + e;
+      return v + e + S + e + e;
     case 6165:
-      return v + e + V + "flex-" + e + e;
+      return v + e + S + "flex-" + e + e;
     case 5187:
-      return v + e + y(e, /(\w+).+(:[^]+)/, v + "box-$1$2" + V + "flex-$1$2") + e;
+      return v + e + y(e, /(\w+).+(:[^]+)/, v + "box-$1$2" + S + "flex-$1$2") + e;
     case 5443:
-      return v + e + V + "flex-item-" + y(e, /flex-|-self/, "") + e;
+      return v + e + S + "flex-item-" + y(e, /flex-|-self/, "") + e;
     case 4675:
-      return v + e + V + "flex-line-pack" + y(e, /align-content|flex-|-self/, "") + e;
+      return v + e + S + "flex-line-pack" + y(e, /align-content|flex-|-self/, "") + e;
     case 5548:
-      return v + e + V + y(e, "shrink", "negative") + e;
+      return v + e + S + y(e, "shrink", "negative") + e;
     case 5292:
-      return v + e + V + y(e, "basis", "preferred-size") + e;
+      return v + e + S + y(e, "basis", "preferred-size") + e;
     case 6060:
-      return v + "box-" + y(e, "-grow", "") + v + e + V + y(e, "grow", "positive") + e;
+      return v + "box-" + y(e, "-grow", "") + v + e + S + y(e, "grow", "positive") + e;
     case 4554:
       return v + y(e, /([^-])(transform)/g, "$1" + v + "$2") + e;
     case 6187:
@@ -476,7 +476,7 @@ function ln(e, n) {
     case 3959:
       return y(e, /(image-set\([^]*)/, v + "$1$`$1");
     case 4968:
-      return y(y(e, /(.+:)(flex-)?(.*)/, v + "box-pack:$3" + V + "flex-pack:$3"), /s.+-b[^;]+/, "justify") + v + e + e;
+      return y(y(e, /(.+:)(flex-)?(.*)/, v + "box-pack:$3" + S + "flex-pack:$3"), /s.+-b[^;]+/, "justify") + v + e + e;
     case 4095:
     case 3583:
     case 4068:
@@ -494,45 +494,45 @@ function ln(e, n) {
     case 5789:
     case 5021:
     case 4765:
-      if (J(e) - 1 - n > 6)
-        switch (S(e, n + 1)) {
+      if (T(e) - 1 - n > 6)
+        switch (V(e, n + 1)) {
           case 109:
-            if (S(e, n + 4) !== 45)
+            if (V(e, n + 4) !== 45)
               break;
           case 102:
-            return y(e, /(.+:)(.+)-([^]+)/, "$1" + v + "$2-$3$1" + le + (S(e, n + 3) == 108 ? "$3" : "$2-$3")) + e;
+            return y(e, /(.+:)(.+)-([^]+)/, "$1" + v + "$2-$3$1" + le + (V(e, n + 3) == 108 ? "$3" : "$2-$3")) + e;
           case 115:
             return ~ve(e, "stretch") ? ln(y(e, "stretch", "fill-available"), n) + e : e;
         }
       break;
     case 4949:
-      if (S(e, n + 1) !== 115)
+      if (V(e, n + 1) !== 115)
         break;
     case 6444:
-      switch (S(e, J(e) - 3 - (~ve(e, "!important") && 10))) {
+      switch (V(e, T(e) - 3 - (~ve(e, "!important") && 10))) {
         case 107:
           return y(e, ":", ":" + v) + e;
         case 101:
-          return y(e, /(.+:)([^;!]+)(;|!.+)?/, "$1" + v + (S(e, 14) === 45 ? "inline-" : "") + "box$3$1" + v + "$2$3$1" + V + "$2box$3") + e;
+          return y(e, /(.+:)([^;!]+)(;|!.+)?/, "$1" + v + (V(e, 14) === 45 ? "inline-" : "") + "box$3$1" + v + "$2$3$1" + S + "$2box$3") + e;
       }
       break;
     case 5936:
-      switch (S(e, n + 11)) {
+      switch (V(e, n + 11)) {
         case 114:
-          return v + e + V + y(e, /[svh]\w+-[tblr]{2}/, "tb") + e;
+          return v + e + S + y(e, /[svh]\w+-[tblr]{2}/, "tb") + e;
         case 108:
-          return v + e + V + y(e, /[svh]\w+-[tblr]{2}/, "tb-rl") + e;
+          return v + e + S + y(e, /[svh]\w+-[tblr]{2}/, "tb-rl") + e;
         case 45:
-          return v + e + V + y(e, /[svh]\w+-[tblr]{2}/, "lr") + e;
+          return v + e + S + y(e, /[svh]\w+-[tblr]{2}/, "lr") + e;
       }
-      return v + e + V + e + e;
+      return v + e + S + e + e;
   }
   return e;
 }
 var Rr = function(n, r, t, a) {
   if (n.length > -1 && !n.return)
     switch (n.type) {
-      case Ze:
+      case Ee:
         n.return = ln(n.value, n.length);
         break;
       case nn:
@@ -554,13 +554,13 @@ var Rr = function(n, r, t, a) {
                 }), Q(n, {
                   props: [y(o, /:(plac\w+)/, ":" + le + "$1")]
                 }), Q(n, {
-                  props: [y(o, /:(plac\w+)/, V + "input-$1")]
+                  props: [y(o, /:(plac\w+)/, S + "input-$1")]
                 })], a);
             }
             return "";
           });
     }
-}, Zr = [Rr], Er = function(n) {
+}, Er = [Rr], Zr = function(n) {
   var r = n.key;
   if (process.env.NODE_ENV !== "production" && !r)
     throw new Error(`You have to configure \`key\` for your cache. Please make sure it's unique (and not equal to 'css') as it's used for linking styles to your cache.
@@ -572,7 +572,7 @@ If multiple caches share the same key they might "fight" for each other's style 
       w.indexOf(" ") !== -1 && (document.head.appendChild(d), d.setAttribute("data-s", ""));
     });
   }
-  var a = n.stylisPlugins || Zr;
+  var a = n.stylisPlugins || Er;
   if (process.env.NODE_ENV !== "production" && /[^a-z-]/.test(r))
     throw new Error('Emotion key must only contain lower case alphabetical characters and - but "' + r + '" was passed');
   var o = {}, c, s = [];
@@ -597,8 +597,8 @@ If multiple caches share the same key they might "fight" for each other's style 
       d.root || (d.return ? l.insert(d.return) : d.value && d.type !== Ne && l.insert(d.value + "{}"));
     } : gr(function(d) {
       l.insert(d);
-    })], Z = pr(b.concat(a, p)), I = function(w) {
-      return j(fr(w), Z);
+    })], E = pr(b.concat(a, p)), I = function(w) {
+      return j(fr(w), E);
     };
     m = function(w, A, N, h) {
       l = N, process.env.NODE_ENV !== "production" && A.map !== void 0 && (l = {
@@ -644,12 +644,12 @@ var Ce = { exports: {} }, x = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var Je;
+var Te;
 function Xr() {
-  if (Je)
+  if (Te)
     return x;
-  Je = 1;
-  var e = typeof Symbol == "function" && Symbol.for, n = e ? Symbol.for("react.element") : 60103, r = e ? Symbol.for("react.portal") : 60106, t = e ? Symbol.for("react.fragment") : 60107, a = e ? Symbol.for("react.strict_mode") : 60108, o = e ? Symbol.for("react.profiler") : 60114, c = e ? Symbol.for("react.provider") : 60109, s = e ? Symbol.for("react.context") : 60110, m = e ? Symbol.for("react.async_mode") : 60111, b = e ? Symbol.for("react.concurrent_mode") : 60111, l = e ? Symbol.for("react.forward_ref") : 60112, p = e ? Symbol.for("react.suspense") : 60113, Z = e ? Symbol.for("react.suspense_list") : 60120, I = e ? Symbol.for("react.memo") : 60115, g = e ? Symbol.for("react.lazy") : 60116, d = e ? Symbol.for("react.block") : 60121, w = e ? Symbol.for("react.fundamental") : 60117, A = e ? Symbol.for("react.responder") : 60118, N = e ? Symbol.for("react.scope") : 60119;
+  Te = 1;
+  var e = typeof Symbol == "function" && Symbol.for, n = e ? Symbol.for("react.element") : 60103, r = e ? Symbol.for("react.portal") : 60106, t = e ? Symbol.for("react.fragment") : 60107, a = e ? Symbol.for("react.strict_mode") : 60108, o = e ? Symbol.for("react.profiler") : 60114, c = e ? Symbol.for("react.provider") : 60109, s = e ? Symbol.for("react.context") : 60110, m = e ? Symbol.for("react.async_mode") : 60111, b = e ? Symbol.for("react.concurrent_mode") : 60111, l = e ? Symbol.for("react.forward_ref") : 60112, p = e ? Symbol.for("react.suspense") : 60113, E = e ? Symbol.for("react.suspense_list") : 60120, I = e ? Symbol.for("react.memo") : 60115, g = e ? Symbol.for("react.lazy") : 60116, d = e ? Symbol.for("react.block") : 60121, w = e ? Symbol.for("react.fundamental") : 60117, A = e ? Symbol.for("react.responder") : 60118, N = e ? Symbol.for("react.scope") : 60119;
   function h(i) {
     if (typeof i == "object" && i !== null) {
       var X = i.$$typeof;
@@ -708,7 +708,7 @@ function Xr() {
   }, x.isSuspense = function(i) {
     return h(i) === p;
   }, x.isValidElementType = function(i) {
-    return typeof i == "string" || typeof i == "function" || i === t || i === b || i === o || i === a || i === p || i === Z || typeof i == "object" && i !== null && (i.$$typeof === g || i.$$typeof === I || i.$$typeof === c || i.$$typeof === s || i.$$typeof === l || i.$$typeof === w || i.$$typeof === A || i.$$typeof === N || i.$$typeof === d);
+    return typeof i == "string" || typeof i == "function" || i === t || i === b || i === o || i === a || i === p || i === E || typeof i == "object" && i !== null && (i.$$typeof === g || i.$$typeof === I || i.$$typeof === c || i.$$typeof === s || i.$$typeof === l || i.$$typeof === w || i.$$typeof === A || i.$$typeof === N || i.$$typeof === d);
   }, x.typeOf = h, x;
 }
 var G = {};
@@ -723,10 +723,10 @@ var G = {};
 var He;
 function _r() {
   return He || (He = 1, process.env.NODE_ENV !== "production" && function() {
-    var e = typeof Symbol == "function" && Symbol.for, n = e ? Symbol.for("react.element") : 60103, r = e ? Symbol.for("react.portal") : 60106, t = e ? Symbol.for("react.fragment") : 60107, a = e ? Symbol.for("react.strict_mode") : 60108, o = e ? Symbol.for("react.profiler") : 60114, c = e ? Symbol.for("react.provider") : 60109, s = e ? Symbol.for("react.context") : 60110, m = e ? Symbol.for("react.async_mode") : 60111, b = e ? Symbol.for("react.concurrent_mode") : 60111, l = e ? Symbol.for("react.forward_ref") : 60112, p = e ? Symbol.for("react.suspense") : 60113, Z = e ? Symbol.for("react.suspense_list") : 60120, I = e ? Symbol.for("react.memo") : 60115, g = e ? Symbol.for("react.lazy") : 60116, d = e ? Symbol.for("react.block") : 60121, w = e ? Symbol.for("react.fundamental") : 60117, A = e ? Symbol.for("react.responder") : 60118, N = e ? Symbol.for("react.scope") : 60119;
+    var e = typeof Symbol == "function" && Symbol.for, n = e ? Symbol.for("react.element") : 60103, r = e ? Symbol.for("react.portal") : 60106, t = e ? Symbol.for("react.fragment") : 60107, a = e ? Symbol.for("react.strict_mode") : 60108, o = e ? Symbol.for("react.profiler") : 60114, c = e ? Symbol.for("react.provider") : 60109, s = e ? Symbol.for("react.context") : 60110, m = e ? Symbol.for("react.async_mode") : 60111, b = e ? Symbol.for("react.concurrent_mode") : 60111, l = e ? Symbol.for("react.forward_ref") : 60112, p = e ? Symbol.for("react.suspense") : 60113, E = e ? Symbol.for("react.suspense_list") : 60120, I = e ? Symbol.for("react.memo") : 60115, g = e ? Symbol.for("react.lazy") : 60116, d = e ? Symbol.for("react.block") : 60121, w = e ? Symbol.for("react.fundamental") : 60117, A = e ? Symbol.for("react.responder") : 60118, N = e ? Symbol.for("react.scope") : 60119;
     function h(u) {
       return typeof u == "string" || typeof u == "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-      u === t || u === b || u === o || u === a || u === p || u === Z || typeof u == "object" && u !== null && (u.$$typeof === g || u.$$typeof === I || u.$$typeof === c || u.$$typeof === s || u.$$typeof === l || u.$$typeof === w || u.$$typeof === A || u.$$typeof === N || u.$$typeof === d);
+      u === t || u === b || u === o || u === a || u === p || u === E || typeof u == "object" && u !== null && (u.$$typeof === g || u.$$typeof === I || u.$$typeof === c || u.$$typeof === s || u.$$typeof === l || u.$$typeof === w || u.$$typeof === A || u.$$typeof === N || u.$$typeof === d);
     }
     function R(u) {
       if (typeof u == "object" && u !== null) {
@@ -760,8 +760,8 @@ function _r() {
         }
       }
     }
-    var i = m, X = b, C = s, pe = c, D = n, M = l, Nn = t, Rn = g, Zn = I, En = r, Xn = o, _n = a, Sn = p, Be = !1;
-    function Vn(u) {
+    var i = m, X = b, C = s, pe = c, D = n, M = l, Nn = t, Rn = g, En = I, Zn = r, Xn = o, _n = a, Vn = p, Be = !1;
+    function Sn(u) {
       return Be || (Be = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), Oe(u) || R(u) === m;
     }
     function Oe(u) {
@@ -776,35 +776,35 @@ function _r() {
     function Wn(u) {
       return typeof u == "object" && u !== null && u.$$typeof === n;
     }
-    function Yn(u) {
+    function Jn(u) {
       return R(u) === l;
     }
-    function zn(u) {
+    function Yn(u) {
       return R(u) === t;
     }
-    function Pn(u) {
+    function zn(u) {
       return R(u) === g;
     }
-    function Tn(u) {
+    function kn(u) {
       return R(u) === I;
     }
-    function Jn(u) {
+    function Tn(u) {
       return R(u) === r;
     }
     function Hn(u) {
       return R(u) === o;
     }
-    function kn(u) {
+    function Pn(u) {
       return R(u) === a;
     }
     function Ln(u) {
       return R(u) === p;
     }
-    G.AsyncMode = i, G.ConcurrentMode = X, G.ContextConsumer = C, G.ContextProvider = pe, G.Element = D, G.ForwardRef = M, G.Fragment = Nn, G.Lazy = Rn, G.Memo = Zn, G.Portal = En, G.Profiler = Xn, G.StrictMode = _n, G.Suspense = Sn, G.isAsyncMode = Vn, G.isConcurrentMode = Oe, G.isContextConsumer = Bn, G.isContextProvider = On, G.isElement = Wn, G.isForwardRef = Yn, G.isFragment = zn, G.isLazy = Pn, G.isMemo = Tn, G.isPortal = Jn, G.isProfiler = Hn, G.isStrictMode = kn, G.isSuspense = Ln, G.isValidElementType = h, G.typeOf = R;
+    G.AsyncMode = i, G.ConcurrentMode = X, G.ContextConsumer = C, G.ContextProvider = pe, G.Element = D, G.ForwardRef = M, G.Fragment = Nn, G.Lazy = Rn, G.Memo = En, G.Portal = Zn, G.Profiler = Xn, G.StrictMode = _n, G.Suspense = Vn, G.isAsyncMode = Sn, G.isConcurrentMode = Oe, G.isContextConsumer = Bn, G.isContextProvider = On, G.isElement = Wn, G.isForwardRef = Jn, G.isFragment = Yn, G.isLazy = zn, G.isMemo = kn, G.isPortal = Tn, G.isProfiler = Hn, G.isStrictMode = Pn, G.isSuspense = Ln, G.isValidElementType = h, G.typeOf = R;
   }()), G;
 }
 process.env.NODE_ENV === "production" ? Ce.exports = Xr() : Ce.exports = _r();
-var Sr = Ce.exports, un = Sr, Vr = {
+var Vr = Ce.exports, un = Vr, Sr = {
   $$typeof: !0,
   render: !0,
   defaultProps: !0,
@@ -818,7 +818,7 @@ var Sr = Ce.exports, un = Sr, Vr = {
   propTypes: !0,
   type: !0
 }, dn = {};
-dn[un.ForwardRef] = Vr;
+dn[un.ForwardRef] = Sr;
 dn[un.Memo] = Br;
 var Or = !0;
 function fn(e, n, r) {
@@ -868,7 +868,7 @@ function Wr(e) {
   return n ^= n >>> 13, n = /* Math.imul(h, m): */
   (n & 65535) * 1540483477 + ((n >>> 16) * 59797 << 16), ((n ^ n >>> 15) >>> 0).toString(36);
 }
-var Yr = {
+var Jr = {
   animationIterationCount: 1,
   aspectRatio: 1,
   borderImageOutset: 1,
@@ -916,37 +916,37 @@ var Yr = {
   strokeMiterlimit: 1,
   strokeOpacity: 1,
   strokeWidth: 1
-}, ke = `You have illegal escape sequence in your template literal, most likely inside content's property value.
+}, Pe = `You have illegal escape sequence in your template literal, most likely inside content's property value.
 Because you write your CSS inside a JavaScript string you actually have to do double escaping, so for example "content: '\\00d7';" should become "content: '\\\\00d7';".
 You can read more about this here:
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#ES2018_revision_of_illegal_escape_sequences`, zr = "You have passed in falsy value as style object's key (can happen when in example you pass unexported component as computed key).", Pr = /[A-Z]|^ms/g, bn = /_EMO_([^_]+?)_([^]*?)_EMO_/g, _e = function(n) {
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#ES2018_revision_of_illegal_escape_sequences`, Yr = "You have passed in falsy value as style object's key (can happen when in example you pass unexported component as computed key).", zr = /[A-Z]|^ms/g, bn = /_EMO_([^_]+?)_([^]*?)_EMO_/g, _e = function(n) {
   return n.charCodeAt(1) === 45;
 }, Le = function(n) {
   return n != null && typeof n != "boolean";
 }, he = /* @__PURE__ */ cn(function(e) {
-  return _e(e) ? e : e.replace(Pr, "-$&").toLowerCase();
+  return _e(e) ? e : e.replace(zr, "-$&").toLowerCase();
 }), ue = function(n, r) {
   switch (n) {
     case "animation":
     case "animationName":
       if (typeof r == "string")
         return r.replace(bn, function(t, a, o) {
-          return P = {
+          return z = {
             name: a,
             styles: o,
-            next: P
+            next: z
           }, a;
         });
   }
-  return Yr[n] !== 1 && !_e(n) && typeof r == "number" && r !== 0 ? r + "px" : r;
+  return Jr[n] !== 1 && !_e(n) && typeof r == "number" && r !== 0 ? r + "px" : r;
 };
 if (process.env.NODE_ENV !== "production") {
-  var Tr = /(var|attr|counters?|url|element|(((repeating-)?(linear|radial))|conic)-gradient)\(|(no-)?(open|close)-quote/, Jr = ["normal", "none", "initial", "inherit", "unset"], Hr = ue, kr = /^-ms-/, Lr = /-(.)/g, Fe = {};
+  var kr = /(var|attr|counters?|url|element|(((repeating-)?(linear|radial))|conic)-gradient)\(|(no-)?(open|close)-quote/, Tr = ["normal", "none", "initial", "inherit", "unset"], Hr = ue, Pr = /^-ms-/, Lr = /-(.)/g, Fe = {};
   ue = function(n, r) {
-    if (n === "content" && (typeof r != "string" || Jr.indexOf(r) === -1 && !Tr.test(r) && (r.charAt(0) !== r.charAt(r.length - 1) || r.charAt(0) !== '"' && r.charAt(0) !== "'")))
+    if (n === "content" && (typeof r != "string" || Tr.indexOf(r) === -1 && !kr.test(r) && (r.charAt(0) !== r.charAt(r.length - 1) || r.charAt(0) !== '"' && r.charAt(0) !== "'")))
       throw new Error("You seem to be using a value for 'content' without quotes, try replacing it with `content: '\"" + r + "\"'`");
     var t = Hr(n, r);
-    return t !== "" && !_e(n) && n.indexOf("-") !== -1 && Fe[n] === void 0 && (Fe[n] = !0, console.error("Using kebab-case for css properties in objects is not supported. Did you mean " + n.replace(kr, "ms-").replace(Lr, function(a, o) {
+    return t !== "" && !_e(n) && n.indexOf("-") !== -1 && Fe[n] === void 0 && (Fe[n] = !0, console.error("Using kebab-case for css properties in objects is not supported. Did you mean " + n.replace(Pr, "ms-").replace(Lr, function(a, o) {
       return o.toUpperCase();
     }) + "?")), t;
   };
@@ -965,19 +965,19 @@ function ee(e, n, r) {
       return "";
     case "object": {
       if (r.anim === 1)
-        return P = {
+        return z = {
           name: r.name,
           styles: r.styles,
-          next: P
+          next: z
         }, r.name;
       if (r.styles !== void 0) {
         var t = r.next;
         if (t !== void 0)
           for (; t !== void 0; )
-            P = {
+            z = {
               name: t.name,
               styles: t.styles,
-              next: P
+              next: z
             }, t = t.next;
         var a = r.styles + ";";
         return process.env.NODE_ENV !== "production" && r.map !== void 0 && (a += r.map), a;
@@ -986,17 +986,17 @@ function ee(e, n, r) {
     }
     case "function": {
       if (e !== void 0) {
-        var o = P, c = r(e);
-        return P = o, ee(e, n, c);
+        var o = z, c = r(e);
+        return z = o, ee(e, n, c);
       } else
         process.env.NODE_ENV !== "production" && console.error("Functions that are interpolated in css calls will be stringified.\nIf you want to have a css call based on props, create a function that returns a css call like this\nlet dynamicStyle = (props) => css`color: ${props.color}`\nIt can be called directly with props or interpolated in a styled call like this\nlet SomeComponent = styled('div')`${dynamicStyle}`");
       break;
     }
     case "string":
       if (process.env.NODE_ENV !== "production") {
-        var s = [], m = r.replace(bn, function(l, p, Z) {
+        var s = [], m = r.replace(bn, function(l, p, E) {
           var I = "animation" + s.length;
-          return s.push("const " + I + " = keyframes`" + Z.replace(/^@keyframes animation-\w+/, "") + "`"), "${" + I + "}";
+          return s.push("const " + I + " = keyframes`" + E.replace(/^@keyframes animation-\w+/, "") + "`"), "${" + I + "}";
         });
         s.length && console.error("`keyframes` output got interpolated into plain string, please wrap it with `css`.\n\nInstead of doing this:\n\n" + [].concat(s, ["`" + m + "`"]).join(`
 `) + `
@@ -1037,7 +1037,7 @@ function Fr(e, n, r) {
               break;
             }
             default:
-              process.env.NODE_ENV !== "production" && o === "undefined" && console.error(zr), t += o + "{" + m + "}";
+              process.env.NODE_ENV !== "production" && o === "undefined" && console.error(Yr), t += o + "{" + m + "}";
           }
         }
       }
@@ -1046,18 +1046,18 @@ function Fr(e, n, r) {
 }
 var De = /label:\s*([^\s;\n{]+)\s*(;|$)/g, gn;
 process.env.NODE_ENV !== "production" && (gn = /\/\*#\ssourceMappingURL=data:application\/json;\S+\s+\*\//g);
-var P, xe = function(n, r, t) {
+var z, xe = function(n, r, t) {
   if (n.length === 1 && typeof n[0] == "object" && n[0] !== null && n[0].styles !== void 0)
     return n[0];
   var a = !0, o = "";
-  P = void 0;
+  z = void 0;
   var c = n[0];
-  c == null || c.raw === void 0 ? (a = !1, o += ee(t, r, c)) : (process.env.NODE_ENV !== "production" && c[0] === void 0 && console.error(ke), o += c[0]);
+  c == null || c.raw === void 0 ? (a = !1, o += ee(t, r, c)) : (process.env.NODE_ENV !== "production" && c[0] === void 0 && console.error(Pe), o += c[0]);
   for (var s = 1; s < n.length; s++)
-    o += ee(t, r, n[s]), a && (process.env.NODE_ENV !== "production" && c[s] === void 0 && console.error(ke), o += c[s]);
+    o += ee(t, r, n[s]), a && (process.env.NODE_ENV !== "production" && c[s] === void 0 && console.error(Pe), o += c[s]);
   var m;
-  process.env.NODE_ENV !== "production" && (o = o.replace(gn, function(Z) {
-    return m = Z, "";
+  process.env.NODE_ENV !== "production" && (o = o.replace(gn, function(E) {
+    return m = E, "";
   })), De.lastIndex = 0;
   for (var b = "", l; (l = De.exec(o)) !== null; )
     b += "-" + // $FlowFixMe we know it's not null
@@ -1067,37 +1067,37 @@ var P, xe = function(n, r, t) {
     name: p,
     styles: o,
     map: m,
-    next: P,
+    next: z,
     toString: function() {
       return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop).";
     }
   } : {
     name: p,
     styles: o,
-    next: P
+    next: z
   };
 }, Dr = function(n) {
   return n();
-}, Mr = B.useInsertionEffect ? B.useInsertionEffect : !1, hn = Mr || Dr, be = {}.hasOwnProperty, Se = /* @__PURE__ */ B.createContext(
+}, Mr = B.useInsertionEffect ? B.useInsertionEffect : !1, hn = Mr || Dr, be = {}.hasOwnProperty, Ve = /* @__PURE__ */ B.createContext(
   // we're doing this to avoid preconstruct's dead code elimination in this one case
   // because this module is primarily intended for the browser and node
   // but it's also required in react native and similar environments sometimes
   // and we could have a special build just for that
   // but this is much easier and the native packages
   // might use a different theme context in the future anyway
-  typeof HTMLElement < "u" ? /* @__PURE__ */ Er({
+  typeof HTMLElement < "u" ? /* @__PURE__ */ Zr({
     key: "css"
   }) : null
 );
-process.env.NODE_ENV !== "production" && (Se.displayName = "EmotionCacheContext");
-Se.Provider;
+process.env.NODE_ENV !== "production" && (Ve.displayName = "EmotionCacheContext");
+Ve.Provider;
 var vn = function(n) {
   return /* @__PURE__ */ Fn(function(r, t) {
-    var a = Dn(Se);
+    var a = Dn(Ve);
     return n(r, a, t);
   });
-}, Ve = /* @__PURE__ */ B.createContext({});
-process.env.NODE_ENV !== "production" && (Ve.displayName = "EmotionThemeContext");
+}, Se = /* @__PURE__ */ B.createContext({});
+process.env.NODE_ENV !== "production" && (Se.displayName = "EmotionThemeContext");
 var Me = function(n) {
   var r = n.split(".");
   return r[r.length - 1];
@@ -1105,7 +1105,7 @@ var Me = function(n) {
   var r = /^\s+at\s+([A-Za-z0-9$.]+)\s/.exec(n);
   if (r || (r = /^([A-Za-z0-9$.]+)@/.exec(n), r))
     return Me(r[1]);
-}, $r = /* @__PURE__ */ new Set(["renderWithHooks", "processChild", "finishClassComponent", "renderToString"]), Ur = function(n) {
+}, Ur = /* @__PURE__ */ new Set(["renderWithHooks", "processChild", "finishClassComponent", "renderToString"]), $r = function(n) {
   return n.replace(/\$/g, "-");
 }, Qr = function(n) {
   if (n)
@@ -1113,10 +1113,10 @@ var Me = function(n) {
 `), t = 0; t < r.length; t++) {
       var a = jr(r[t]);
       if (a) {
-        if ($r.has(a))
+        if (Ur.has(a))
           break;
         if (/^[A-Z]/.test(a))
-          return Ur(a);
+          return $r(a);
       }
     }
 }, Ge = "__EMOTION_TYPE_PLEASE_DO_NOT_USE__", Ae = "__EMOTION_LABEL_PLEASE_DO_NOT_USE__", yn = function(n, r) {
@@ -1141,7 +1141,7 @@ var Me = function(n) {
   typeof t == "string" && n.registered[t] !== void 0 && (t = n.registered[t]);
   var a = e[Ge], o = [t], c = "";
   typeof e.className == "string" ? c = fn(n.registered, o, e.className) : e.className != null && (c = e.className + " ");
-  var s = xe(o, void 0, B.useContext(Ve));
+  var s = xe(o, void 0, B.useContext(Se));
   if (process.env.NODE_ENV !== "production" && s.name.indexOf("-") === -1) {
     var m = e[Ae];
     m && (s = xe([s, "label:" + m + ";"]));
@@ -1171,12 +1171,12 @@ var Kr = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|def
   /* Z+1 */
 ), nt = et, rt = function(n) {
   return n !== "theme";
-}, $e = function(n) {
+}, Ue = function(n) {
   return typeof n == "string" && // 96 is one less than the char code
   // for "a" so this is checking that
   // it's a lowercase character
   n.charCodeAt(0) > 96 ? nt : rt;
-}, Ue = function(n, r, t) {
+}, $e = function(n, r, t) {
   var a;
   if (r) {
     var o = r.shouldForwardProp;
@@ -1199,14 +1199,14 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
 You may have forgotten to import it.`);
   var t = n.__emotion_real === n, a = t && n.__emotion_base || n, o, c;
   r !== void 0 && (o = r.label, c = r.target);
-  var s = Ue(n, r, t), m = s || $e(a), b = !m("as");
+  var s = $e(n, r, t), m = s || Ue(a), b = !m("as");
   return function() {
     var l = arguments, p = t && n.__emotion_styles !== void 0 ? n.__emotion_styles.slice(0) : [];
     if (o !== void 0 && p.push("label:" + o + ";"), l[0] == null || l[0].raw === void 0)
       p.push.apply(p, l);
     else {
       process.env.NODE_ENV !== "production" && l[0][0] === void 0 && console.error(Qe), p.push(l[0][0]);
-      for (var Z = l.length, I = 1; I < Z; I++)
+      for (var E = l.length, I = 1; I < E; I++)
         process.env.NODE_ENV !== "production" && l[0][I] === void 0 && console.error(Qe), p.push(l[I], l[0][I]);
     }
     var g = vn(function(d, w, A) {
@@ -1215,12 +1215,12 @@ You may have forgotten to import it.`);
         i = {};
         for (var X in d)
           i[X] = d[X];
-        i.theme = B.useContext(Ve);
+        i.theme = B.useContext(Se);
       }
       typeof d.className == "string" ? h = fn(w.registered, R, d.className) : d.className != null && (h = d.className + " ");
       var C = xe(p.concat(R), w.registered, i);
       h += w.key + "-" + C.name, c !== void 0 && (h += " " + c);
-      var pe = b && s === void 0 ? $e(N) : m, D = {};
+      var pe = b && s === void 0 ? Ue(N) : m, D = {};
       for (var M in d)
         b && M === "as" || // $FlowFixMe
         pe(M) && (D[M] = d[M]);
@@ -1236,12 +1236,12 @@ You may have forgotten to import it.`);
       }
     }), g.withComponent = function(d, w) {
       return e(d, Ie({}, r, w, {
-        shouldForwardProp: Ue(g, w, !0)
+        shouldForwardProp: $e(g, w, !0)
       })).apply(void 0, p);
     }, g;
   };
 };
-function T() {
+function k() {
   var e = "/home/myros/projects/progress-bar-for-react/src/components/ToolTip/Tooltip.tsx", n = "b52acdd7fd1a9bdc425f9ef5d32b24fafc46ad4f", r = new Function("return this")(), t = "__coverage__", a = {
     path: "/home/myros/projects/progress-bar-for-react/src/components/ToolTip/Tooltip.tsx",
     statementMap: {
@@ -1386,15 +1386,15 @@ function T() {
   }, o = r[t] || (r[t] = {});
   (!o[e] || o[e].hash !== n) && (o[e] = a);
   var c = o[e];
-  return T = function() {
+  return k = function() {
     return c;
   }, c;
 }
-T();
+k();
 function ot() {
   return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop).";
 }
-const we = (T().s[0]++, /* @__PURE__ */ re("span", process.env.NODE_ENV === "production" ? {
+const we = (k().s[0]++, /* @__PURE__ */ re("span", process.env.NODE_ENV === "production" ? {
   target: "eyeb28y1"
 } : {
   target: "eyeb28y1",
@@ -1407,25 +1407,25 @@ const we = (T().s[0]++, /* @__PURE__ */ re("span", process.env.NODE_ENV === "pro
   styles: "color:#fff;width:auto;bottom:150%;display:none;padding:5px;z-index:1;position:absolute;text-align:left;border-radius:6px;background-color:#222;&:after{top:100%;left:50%;content:' ';position:absolute;margin-left:-5px;border-color:black transparent transparent transparent;border-style:solid;border-width:5px;}",
   map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL215cm9zL3Byb2plY3RzL3Byb2dyZXNzLWJhci1mb3ItcmVhY3Qvc3JjL2NvbXBvbmVudHMvVG9vbFRpcC9Ub29sdGlwLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJOEIiLCJmaWxlIjoiL2hvbWUvbXlyb3MvcHJvamVjdHMvcHJvZ3Jlc3MtYmFyLWZvci1yZWFjdC9zcmMvY29tcG9uZW50cy9Ub29sVGlwL1Rvb2x0aXAudHN4Iiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tICdAZW1vdGlvbi9zdHlsZWQnO1xuXG5pbXBvcnQgeyBUb29sdGlwUHJvcHMgfSBmcm9tICcuL3R5cGVzJztcblxuY29uc3QgU3R5bGVkU3BhbiA9IHN0eWxlZC5zcGFuYFxuICBjb2xvcjogI2ZmZjtcbiAgd2lkdGg6IGF1dG87XG4gIGJvdHRvbTogMTUwJTtcbiAgZGlzcGxheTogbm9uZTtcbiAgcGFkZGluZzogNXB4O1xuICB6LWluZGV4OiAxO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzIyMjtcbiAgJjphZnRlciB7XG4gICAgdG9wOiAxMDAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICBjb250ZW50OiAnICc7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG1hcmdpbi1sZWZ0OiAtNXB4O1xuICAgIGJvcmRlci1jb2xvcjogYmxhY2sgdHJhbnNwYXJlbnQgdHJhbnNwYXJlbnQgdHJhbnNwYXJlbnQ7XG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcbiAgICBib3JkZXItd2lkdGg6IDVweDtcbiAgfVxuYDtcblxuY29uc3QgVG9vbHRpcENvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGZsZXg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICY6aG92ZXIgJHtTdHlsZWRTcGFufSB7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gIH1cbmA7XG5cbi8qKkl0IHdpbGwgYWNjZXB0IGEgdG9vbHRpcCBjb250ZW50IG1lc3NhZ2UuXG4gKiBBbnkgY2hpbGRyZW4gY29tcG9uZW50IHRoYXQgaXMgcGFzc2VkIHdpbGwgYmUgdG9vbHRpcGVkIHdpdGggdGhlIGRlZmluZWQgY29udGVudC5cbiAqIFRoZW4gdGhlIHJlYWN0IGNvbXBvbmVudCB3aWxsIGJlIHJlbmRlcmVkIGFuZCBhIHRvb2x0aXAgd2lsbCBiZVxuICogZGlzcGxheWVkIG9uIG1vdXNlIGhvdmVyICovXG5cbmV4cG9ydCBjb25zdCBUb29sdGlwID0gKHsgdG9vbHRpcENvbnRlbnQsIGNoaWxkcmVuLCBzdHlsZSB9OiBUb29sdGlwUHJvcHMpID0+IHtcbiAgaWYgKHN0eWxlKSB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxUb29sdGlwQ29udGFpbmVyIHN0eWxlPXtzdHlsZX0gZGF0YS10ZXN0aWQ9XCJ0b29sdGlwXCI+XG4gICAgICAgIHtjaGlsZHJlbn1cbiAgICAgICAgPFN0eWxlZFNwYW4gZGF0YS10ZXN0aWQ9XCJ0b29sdGlwdGV4dFwiPnt0b29sdGlwQ29udGVudH08L1N0eWxlZFNwYW4+XG4gICAgICA8L1Rvb2x0aXBDb250YWluZXI+XG4gICAgKTtcbiAgfVxuXG4gIHJldHVybiAoXG4gICAgPFRvb2x0aXBDb250YWluZXIgZGF0YS10ZXN0aWQ9XCJ0b29sdGlwXCI+XG4gICAgICB7Y2hpbGRyZW59XG4gICAgICA8U3R5bGVkU3BhbiBkYXRhLXRlc3RpZD1cInRvb2x0aXB0ZXh0XCI+e3Rvb2x0aXBDb250ZW50fTwvU3R5bGVkU3Bhbj5cbiAgICA8L1Rvb2x0aXBDb250YWluZXI+XG4gICk7XG59O1xuIl19 */",
   toString: ot
-})), qe = (T().s[1]++, /* @__PURE__ */ re("div", process.env.NODE_ENV === "production" ? {
+})), qe = (k().s[1]++, /* @__PURE__ */ re("div", process.env.NODE_ENV === "production" ? {
   target: "eyeb28y0"
 } : {
   target: "eyeb28y0",
   label: "TooltipContainer"
 })("display:flex;position:relative;min-width:150px;align-items:center;justify-content:center;&:hover ", we, "{display:block;}" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL215cm9zL3Byb2plY3RzL3Byb2dyZXNzLWJhci1mb3ItcmVhY3Qvc3JjL2NvbXBvbmVudHMvVG9vbFRpcC9Ub29sdGlwLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUEyQm1DIiwiZmlsZSI6Ii9ob21lL215cm9zL3Byb2plY3RzL3Byb2dyZXNzLWJhci1mb3ItcmVhY3Qvc3JjL2NvbXBvbmVudHMvVG9vbFRpcC9Ub29sdGlwLnRzeCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJztcblxuaW1wb3J0IHsgVG9vbHRpcFByb3BzIH0gZnJvbSAnLi90eXBlcyc7XG5cbmNvbnN0IFN0eWxlZFNwYW4gPSBzdHlsZWQuc3BhbmBcbiAgY29sb3I6ICNmZmY7XG4gIHdpZHRoOiBhdXRvO1xuICBib3R0b206IDE1MCU7XG4gIGRpc3BsYXk6IG5vbmU7XG4gIHBhZGRpbmc6IDVweDtcbiAgei1pbmRleDogMTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBib3JkZXItcmFkaXVzOiA2cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICMyMjI7XG4gICY6YWZ0ZXIge1xuICAgIHRvcDogMTAwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgY29udGVudDogJyAnO1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICBtYXJnaW4tbGVmdDogLTVweDtcbiAgICBib3JkZXItY29sb3I6IGJsYWNrIHRyYW5zcGFyZW50IHRyYW5zcGFyZW50IHRyYW5zcGFyZW50O1xuICAgIGJvcmRlci1zdHlsZTogc29saWQ7XG4gICAgYm9yZGVyLXdpZHRoOiA1cHg7XG4gIH1cbmA7XG5cbmNvbnN0IFRvb2x0aXBDb250YWluZXIgPSBzdHlsZWQuZGl2YFxuICBkaXNwbGF5OiBmbGV4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIG1pbi13aWR0aDogMTUwcHg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAmOmhvdmVyICR7U3R5bGVkU3Bhbn0ge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICB9XG5gO1xuXG4vKipJdCB3aWxsIGFjY2VwdCBhIHRvb2x0aXAgY29udGVudCBtZXNzYWdlLlxuICogQW55IGNoaWxkcmVuIGNvbXBvbmVudCB0aGF0IGlzIHBhc3NlZCB3aWxsIGJlIHRvb2x0aXBlZCB3aXRoIHRoZSBkZWZpbmVkIGNvbnRlbnQuXG4gKiBUaGVuIHRoZSByZWFjdCBjb21wb25lbnQgd2lsbCBiZSByZW5kZXJlZCBhbmQgYSB0b29sdGlwIHdpbGwgYmVcbiAqIGRpc3BsYXllZCBvbiBtb3VzZSBob3ZlciAqL1xuXG5leHBvcnQgY29uc3QgVG9vbHRpcCA9ICh7IHRvb2x0aXBDb250ZW50LCBjaGlsZHJlbiwgc3R5bGUgfTogVG9vbHRpcFByb3BzKSA9PiB7XG4gIGlmIChzdHlsZSkge1xuICAgIHJldHVybiAoXG4gICAgICA8VG9vbHRpcENvbnRhaW5lciBzdHlsZT17c3R5bGV9IGRhdGEtdGVzdGlkPVwidG9vbHRpcFwiPlxuICAgICAgICB7Y2hpbGRyZW59XG4gICAgICAgIDxTdHlsZWRTcGFuIGRhdGEtdGVzdGlkPVwidG9vbHRpcHRleHRcIj57dG9vbHRpcENvbnRlbnR9PC9TdHlsZWRTcGFuPlxuICAgICAgPC9Ub29sdGlwQ29udGFpbmVyPlxuICAgICk7XG4gIH1cblxuICByZXR1cm4gKFxuICAgIDxUb29sdGlwQ29udGFpbmVyIGRhdGEtdGVzdGlkPVwidG9vbHRpcFwiPlxuICAgICAge2NoaWxkcmVufVxuICAgICAgPFN0eWxlZFNwYW4gZGF0YS10ZXN0aWQ9XCJ0b29sdGlwdGV4dFwiPnt0b29sdGlwQ29udGVudH08L1N0eWxlZFNwYW4+XG4gICAgPC9Ub29sdGlwQ29udGFpbmVyPlxuICApO1xufTtcbiJdfQ== */")));
-T().s[2]++;
+k().s[2]++;
 const at = ({
   tooltipContent: e,
   children: n,
   style: r
-}) => (T().f[0]++, T().s[3]++, r ? (T().b[0][0]++, T().s[4]++, /* @__PURE__ */ je(qe, { style: r, "data-testid": "tooltip", children: [
+}) => (k().f[0]++, k().s[3]++, r ? (k().b[0][0]++, k().s[4]++, /* @__PURE__ */ je(qe, { style: r, "data-testid": "tooltip", children: [
   n,
   /* @__PURE__ */ W(we, { "data-testid": "tooltiptext", children: e })
-] })) : (T().b[0][1]++, T().s[5]++, /* @__PURE__ */ je(qe, { "data-testid": "tooltip", children: [
+] })) : (k().b[0][1]++, k().s[5]++, /* @__PURE__ */ je(qe, { "data-testid": "tooltip", children: [
   n,
   /* @__PURE__ */ W(we, { "data-testid": "tooltiptext", children: e })
 ] })));
-function k() {
+function P() {
   var e = "/home/myros/projects/progress-bar-for-react/src/components/utils/getDisplayName.ts", n = "27ab0a4fa64b675cf08971f4858281fd3f3bf783", r = new Function("return this")(), t = "__coverage__", a = {
     path: "/home/myros/projects/progress-bar-for-react/src/components/utils/getDisplayName.ts",
     statementMap: {
@@ -1546,16 +1546,16 @@ function k() {
   }, o = r[t] || (r[t] = {});
   (!o[e] || o[e].hash !== n) && (o[e] = a);
   var c = o[e];
-  return k = function() {
+  return P = function() {
     return c;
   }, c;
 }
-k();
-k().s[0]++;
+P();
+P().s[0]++;
 const ct = (e) => {
-  k().f[0]++;
-  const n = (k().s[1]++, k().b[0][0]++, e.displayName || (k().b[0][1]++, e.name) || (k().b[0][2]++, "Component"));
-  return k().s[2]++, `withHOC-${n}`;
+  P().f[0]++;
+  const n = (P().s[1]++, P().b[0][0]++, e.displayName || (P().b[0][1]++, e.name) || (P().b[0][2]++, "Component"));
+  return P().s[2]++, `withHOC-${n}`;
 };
 function _() {
   var e = "/home/myros/projects/progress-bar-for-react/src/components/HOCS/withTooltip.tsx", n = "ef5773d25eb31c6ea2d567a9a49c64464e6ea5bb", r = new Function("return this")(), t = "__coverage__", a = {
@@ -1951,7 +1951,7 @@ const st = ({
 }) => (L().f[0]++, L().s[1]++, en(() => {
   L().f[1]++, L().s[2]++, n.current = e;
 }), L().s[3]++, n.current);
-function z() {
+function Y() {
   var e = "/home/myros/projects/progress-bar-for-react/src/components/Filler/Filler.tsx", n = "8d8511efd17d13fd2e0facd83f3144cc7d966386", r = new Function("return this")(), t = "__coverage__", a = {
     path: "/home/myros/projects/progress-bar-for-react/src/components/Filler/Filler.tsx",
     statementMap: {
@@ -2121,28 +2121,28 @@ function z() {
   }, o = r[t] || (r[t] = {});
   (!o[e] || o[e].hash !== n) && (o[e] = a);
   var c = o[e];
-  return z = function() {
+  return Y = function() {
     return c;
   }, c;
 }
-z();
-const Ke = (z().s[0]++, /* @__PURE__ */ re("div", process.env.NODE_ENV === "production" ? {
+Y();
+const Ke = (Y().s[0]++, /* @__PURE__ */ re("div", process.env.NODE_ENV === "production" ? {
   target: "e1rjefw80"
 } : {
   target: "e1rjefw80",
   label: "FillerContainer"
 })("background:black;height:100%;border-radius:inherit;transition:width 0.2s ease-in;width:", ({
   percentage: e
-}) => (z().f[0]++, z().s[1]++, `${e}%`), ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL215cm9zL3Byb2plY3RzL3Byb2dyZXNzLWJhci1mb3ItcmVhY3Qvc3JjL2NvbXBvbmVudHMvRmlsbGVyL0ZpbGxlci50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSXdEIiwiZmlsZSI6Ii9ob21lL215cm9zL3Byb2plY3RzL3Byb2dyZXNzLWJhci1mb3ItcmVhY3Qvc3JjL2NvbXBvbmVudHMvRmlsbGVyL0ZpbGxlci50c3giLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCc7XG5cbmltcG9ydCB7IEZpbGxlclByb3BzLCBGaWxsZXJDb250YWluZXJQcm9wcyB9IGZyb20gJy4vdHlwZXMnO1xuXG5jb25zdCBGaWxsZXJDb250YWluZXIgPSBzdHlsZWQuZGl2PEZpbGxlckNvbnRhaW5lclByb3BzPmBcbiAgYmFja2dyb3VuZDogYmxhY2s7XG4gIGhlaWdodDogMTAwJTtcbiAgYm9yZGVyLXJhZGl1czogaW5oZXJpdDtcbiAgdHJhbnNpdGlvbjogd2lkdGggMC4ycyBlYXNlLWluO1xuICB3aWR0aDogJHsoeyBwZXJjZW50YWdlIH0pID0+IGAke3BlcmNlbnRhZ2V9JWB9O1xuYDtcblxuZXhwb3J0IGNvbnN0IEZpbGxlciA9ICh7IHBlcmNlbnRhZ2UsIGZpbGxlckV4dHJhU3R5bGVzIH06IEZpbGxlclByb3BzKSA9PiB7XG4gIGlmIChmaWxsZXJFeHRyYVN0eWxlcykge1xuICAgIHJldHVybiAoXG4gICAgICA8RmlsbGVyQ29udGFpbmVyXG4gICAgICAgIGRhdGEtdGVzdGlkPVwiZmlsbGVyXCJcbiAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAuLi5maWxsZXJFeHRyYVN0eWxlcyxcbiAgICAgICAgfX1cbiAgICAgICAgcGVyY2VudGFnZT17cGVyY2VudGFnZX1cbiAgICAgIC8+XG4gICAgKTtcbiAgfVxuXG4gIHJldHVybiA8RmlsbGVyQ29udGFpbmVyIGRhdGEtdGVzdGlkPVwiZmlsbGVyXCIgcGVyY2VudGFnZT17cGVyY2VudGFnZX0gLz47XG59O1xuIl19 */")));
-z().s[2]++;
+}) => (Y().f[0]++, Y().s[1]++, `${e}%`), ";" + (process.env.NODE_ENV === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL215cm9zL3Byb2plY3RzL3Byb2dyZXNzLWJhci1mb3ItcmVhY3Qvc3JjL2NvbXBvbmVudHMvRmlsbGVyL0ZpbGxlci50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSXdEIiwiZmlsZSI6Ii9ob21lL215cm9zL3Byb2plY3RzL3Byb2dyZXNzLWJhci1mb3ItcmVhY3Qvc3JjL2NvbXBvbmVudHMvRmlsbGVyL0ZpbGxlci50c3giLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCc7XG5cbmltcG9ydCB7IEZpbGxlclByb3BzLCBGaWxsZXJDb250YWluZXJQcm9wcyB9IGZyb20gJy4vdHlwZXMnO1xuXG5jb25zdCBGaWxsZXJDb250YWluZXIgPSBzdHlsZWQuZGl2PEZpbGxlckNvbnRhaW5lclByb3BzPmBcbiAgYmFja2dyb3VuZDogYmxhY2s7XG4gIGhlaWdodDogMTAwJTtcbiAgYm9yZGVyLXJhZGl1czogaW5oZXJpdDtcbiAgdHJhbnNpdGlvbjogd2lkdGggMC4ycyBlYXNlLWluO1xuICB3aWR0aDogJHsoeyBwZXJjZW50YWdlIH0pID0+IGAke3BlcmNlbnRhZ2V9JWB9O1xuYDtcblxuZXhwb3J0IGNvbnN0IEZpbGxlciA9ICh7IHBlcmNlbnRhZ2UsIGZpbGxlckV4dHJhU3R5bGVzIH06IEZpbGxlclByb3BzKSA9PiB7XG4gIGlmIChmaWxsZXJFeHRyYVN0eWxlcykge1xuICAgIHJldHVybiAoXG4gICAgICA8RmlsbGVyQ29udGFpbmVyXG4gICAgICAgIGRhdGEtdGVzdGlkPVwiZmlsbGVyXCJcbiAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAuLi5maWxsZXJFeHRyYVN0eWxlcyxcbiAgICAgICAgfX1cbiAgICAgICAgcGVyY2VudGFnZT17cGVyY2VudGFnZX1cbiAgICAgIC8+XG4gICAgKTtcbiAgfVxuXG4gIHJldHVybiA8RmlsbGVyQ29udGFpbmVyIGRhdGEtdGVzdGlkPVwiZmlsbGVyXCIgcGVyY2VudGFnZT17cGVyY2VudGFnZX0gLz47XG59O1xuIl19 */")));
+Y().s[2]++;
 const lt = ({
   percentage: e,
   fillerExtraStyles: n
-}) => (z().f[1]++, z().s[3]++, n ? (z().b[0][0]++, z().s[4]++, /* @__PURE__ */ W(Ke, { "data-testid": "filler", style: {
+}) => (Y().f[1]++, Y().s[3]++, n ? (Y().b[0][0]++, Y().s[4]++, /* @__PURE__ */ W(Ke, { "data-testid": "filler", style: {
   ...n
-}, percentage: e })) : (z().b[0][1]++, z().s[5]++, /* @__PURE__ */ W(Ke, { "data-testid": "filler", percentage: e })));
+}, percentage: e })) : (Y().b[0][1]++, Y().s[5]++, /* @__PURE__ */ W(Ke, { "data-testid": "filler", percentage: e })));
 function F() {
-  var e = "/home/myros/projects/progress-bar-for-react/src/components/ProgressBar/ProgressBar.tsx", n = "8c9a54eb361b0bbbf4eb2bb43759a84e0a609908", r = new Function("return this")(), t = "__coverage__", a = {
+  var e = "/home/myros/projects/progress-bar-for-react/src/components/ProgressBar/ProgressBar.tsx", n = "8cf6a39897d7e2e149217628f1cb5c27b482db6d", r = new Function("return this")(), t = "__coverage__", a = {
     path: "/home/myros/projects/progress-bar-for-react/src/components/ProgressBar/ProgressBar.tsx",
     statementMap: {
       0: {
@@ -2171,27 +2171,17 @@ function F() {
           column: 27
         },
         end: {
-          line: 39,
+          line: 37,
           column: 1
         }
       },
       3: {
         start: {
           line: 25,
-          column: 14
-        },
-        end: {
-          line: 25,
-          column: 36
-        }
-      },
-      4: {
-        start: {
-          line: 27,
           column: 2
         },
         end: {
-          line: 38,
+          line: 36,
           column: 4
         }
       }
@@ -2215,7 +2205,7 @@ function F() {
             column: 24
           },
           end: {
-            line: 39,
+            line: 37,
             column: 1
           }
         },
@@ -2227,15 +2217,14 @@ function F() {
       0: 0,
       1: 0,
       2: 0,
-      3: 0,
-      4: 0
+      3: 0
     },
     f: {
       0: 0
     },
     b: {},
     _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    hash: "8c9a54eb361b0bbbf4eb2bb43759a84e0a609908"
+    hash: "8cf6a39897d7e2e149217628f1cb5c27b482db6d"
   }, o = r[t] || (r[t] = {});
   (!o[e] || o[e].hash !== n) && (o[e] = a);
   var c = o[e];
@@ -2258,7 +2247,7 @@ const ut = (F().s[0]++, /* @__PURE__ */ re("div", process.env.NODE_ENV === "prod
 } : {
   name: "1wnowod",
   styles: "display:flex;align-items:center;justify-content:center",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL215cm9zL3Byb2plY3RzL3Byb2dyZXNzLWJhci1mb3ItcmVhY3Qvc3JjL2NvbXBvbmVudHMvUHJvZ3Jlc3NCYXIvUHJvZ3Jlc3NCYXIudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUs0QiIsImZpbGUiOiIvaG9tZS9teXJvcy9wcm9qZWN0cy9wcm9ncmVzcy1iYXItZm9yLXJlYWN0L3NyYy9jb21wb25lbnRzL1Byb2dyZXNzQmFyL1Byb2dyZXNzQmFyLnRzeCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJztcblxuaW1wb3J0IHsgUHJvZ3Jlc3NCYXJQcm9wcyB9IGZyb20gJy4vdHlwZXMnO1xuaW1wb3J0IHsgRmlsbGVyIH0gZnJvbSAnLi4vRmlsbGVyL0ZpbGxlcic7XG5cbmNvbnN0IENvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuYDtcblxuY29uc3QgUHJvZ3Jlc3NCYXJDaGlsZCA9IHN0eWxlZC5kaXZgXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxNXB4O1xuICB3aWR0aDogODVweDtcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcbiAgYm9yZGVyOiAxcHggc29saWQgIzMzMztcbmA7XG5cbmV4cG9ydCBjb25zdCBQcm9ncmVzc0JhciA9ICh7XG4gIHBlcmNlbnRhZ2UsXG4gIGZpbGxlckV4dHJhU3R5bGVzLFxuICBwcm9ncmVzc0JhckV4dHJhU3R5bGVzLFxufTogUHJvZ3Jlc3NCYXJQcm9wcykgPT4ge1xuICBjb25zdCBvcHQgPSBwcm9ncmVzc0JhckV4dHJhU3R5bGVzO1xuXG4gIHJldHVybiAoXG4gICAgPENvbnRhaW5lciBkYXRhLXRlc3RpZD1cInByb2dyZXNzLWJhclwiPlxuICAgICAgPFByb2dyZXNzQmFyQ2hpbGRcbiAgICAgICAgZGF0YS10ZXN0aWQ9XCJwcm9ncmVzcy1iYXItY2hpbGRcIlxuICAgICAgICBzdHlsZT17e1xuICAgICAgICAgIC4uLm9wdCxcbiAgICAgICAgfX1cbiAgICAgID5cbiAgICAgICAgPEZpbGxlciBwZXJjZW50YWdlPXtwZXJjZW50YWdlfSBmaWxsZXJFeHRyYVN0eWxlcz17ZmlsbGVyRXh0cmFTdHlsZXN9IC8+XG4gICAgICA8L1Byb2dyZXNzQmFyQ2hpbGQ+XG4gICAgPC9Db250YWluZXI+XG4gICk7XG59O1xuIl19 */",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL215cm9zL3Byb2plY3RzL3Byb2dyZXNzLWJhci1mb3ItcmVhY3Qvc3JjL2NvbXBvbmVudHMvUHJvZ3Jlc3NCYXIvUHJvZ3Jlc3NCYXIudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUs0QiIsImZpbGUiOiIvaG9tZS9teXJvcy9wcm9qZWN0cy9wcm9ncmVzcy1iYXItZm9yLXJlYWN0L3NyYy9jb21wb25lbnRzL1Byb2dyZXNzQmFyL1Byb2dyZXNzQmFyLnRzeCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJztcblxuaW1wb3J0IHsgUHJvZ3Jlc3NCYXJQcm9wcyB9IGZyb20gJy4vdHlwZXMnO1xuaW1wb3J0IHsgRmlsbGVyIH0gZnJvbSAnLi4vRmlsbGVyL0ZpbGxlcic7XG5cbmNvbnN0IENvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuYDtcblxuY29uc3QgUHJvZ3Jlc3NCYXJDaGlsZCA9IHN0eWxlZC5kaXZgXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxNXB4O1xuICB3aWR0aDogODVweDtcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcbiAgYm9yZGVyOiAxcHggc29saWQgIzMzMztcbmA7XG5cbmV4cG9ydCBjb25zdCBQcm9ncmVzc0JhciA9ICh7XG4gIHBlcmNlbnRhZ2UsXG4gIGZpbGxlckV4dHJhU3R5bGVzLFxuICBwcm9ncmVzc0JhckV4dHJhU3R5bGVzLFxufTogUHJvZ3Jlc3NCYXJQcm9wcykgPT4ge1xuICByZXR1cm4gKFxuICAgIDxDb250YWluZXIgZGF0YS10ZXN0aWQ9XCJwcm9ncmVzcy1iYXJcIj5cbiAgICAgIDxQcm9ncmVzc0JhckNoaWxkXG4gICAgICAgIGRhdGEtdGVzdGlkPVwicHJvZ3Jlc3MtYmFyLWNoaWxkXCJcbiAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAuLi5wcm9ncmVzc0JhckV4dHJhU3R5bGVzLFxuICAgICAgICB9fVxuICAgICAgPlxuICAgICAgICA8RmlsbGVyIHBlcmNlbnRhZ2U9e3BlcmNlbnRhZ2V9IGZpbGxlckV4dHJhU3R5bGVzPXtmaWxsZXJFeHRyYVN0eWxlc30gLz5cbiAgICAgIDwvUHJvZ3Jlc3NCYXJDaGlsZD5cbiAgICA8L0NvbnRhaW5lcj5cbiAgKTtcbn07XG4iXX0= */",
   toString: xn
 })), dt = (F().s[1]++, /* @__PURE__ */ re("div", process.env.NODE_ENV === "production" ? {
   target: "e9xeayt0"
@@ -2271,7 +2260,7 @@ const ut = (F().s[0]++, /* @__PURE__ */ re("div", process.env.NODE_ENV === "prod
 } : {
   name: "fhgbou",
   styles: "position:relative;height:15px;width:85px;border-radius:20px;border:1px solid #333",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL215cm9zL3Byb2plY3RzL3Byb2dyZXNzLWJhci1mb3ItcmVhY3Qvc3JjL2NvbXBvbmVudHMvUHJvZ3Jlc3NCYXIvUHJvZ3Jlc3NCYXIudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVdtQyIsImZpbGUiOiIvaG9tZS9teXJvcy9wcm9qZWN0cy9wcm9ncmVzcy1iYXItZm9yLXJlYWN0L3NyYy9jb21wb25lbnRzL1Byb2dyZXNzQmFyL1Byb2dyZXNzQmFyLnRzeCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJztcblxuaW1wb3J0IHsgUHJvZ3Jlc3NCYXJQcm9wcyB9IGZyb20gJy4vdHlwZXMnO1xuaW1wb3J0IHsgRmlsbGVyIH0gZnJvbSAnLi4vRmlsbGVyL0ZpbGxlcic7XG5cbmNvbnN0IENvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuYDtcblxuY29uc3QgUHJvZ3Jlc3NCYXJDaGlsZCA9IHN0eWxlZC5kaXZgXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxNXB4O1xuICB3aWR0aDogODVweDtcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcbiAgYm9yZGVyOiAxcHggc29saWQgIzMzMztcbmA7XG5cbmV4cG9ydCBjb25zdCBQcm9ncmVzc0JhciA9ICh7XG4gIHBlcmNlbnRhZ2UsXG4gIGZpbGxlckV4dHJhU3R5bGVzLFxuICBwcm9ncmVzc0JhckV4dHJhU3R5bGVzLFxufTogUHJvZ3Jlc3NCYXJQcm9wcykgPT4ge1xuICBjb25zdCBvcHQgPSBwcm9ncmVzc0JhckV4dHJhU3R5bGVzO1xuXG4gIHJldHVybiAoXG4gICAgPENvbnRhaW5lciBkYXRhLXRlc3RpZD1cInByb2dyZXNzLWJhclwiPlxuICAgICAgPFByb2dyZXNzQmFyQ2hpbGRcbiAgICAgICAgZGF0YS10ZXN0aWQ9XCJwcm9ncmVzcy1iYXItY2hpbGRcIlxuICAgICAgICBzdHlsZT17e1xuICAgICAgICAgIC4uLm9wdCxcbiAgICAgICAgfX1cbiAgICAgID5cbiAgICAgICAgPEZpbGxlciBwZXJjZW50YWdlPXtwZXJjZW50YWdlfSBmaWxsZXJFeHRyYVN0eWxlcz17ZmlsbGVyRXh0cmFTdHlsZXN9IC8+XG4gICAgICA8L1Byb2dyZXNzQmFyQ2hpbGQ+XG4gICAgPC9Db250YWluZXI+XG4gICk7XG59O1xuIl19 */",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL215cm9zL3Byb2plY3RzL3Byb2dyZXNzLWJhci1mb3ItcmVhY3Qvc3JjL2NvbXBvbmVudHMvUHJvZ3Jlc3NCYXIvUHJvZ3Jlc3NCYXIudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVdtQyIsImZpbGUiOiIvaG9tZS9teXJvcy9wcm9qZWN0cy9wcm9ncmVzcy1iYXItZm9yLXJlYWN0L3NyYy9jb21wb25lbnRzL1Byb2dyZXNzQmFyL1Byb2dyZXNzQmFyLnRzeCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJztcblxuaW1wb3J0IHsgUHJvZ3Jlc3NCYXJQcm9wcyB9IGZyb20gJy4vdHlwZXMnO1xuaW1wb3J0IHsgRmlsbGVyIH0gZnJvbSAnLi4vRmlsbGVyL0ZpbGxlcic7XG5cbmNvbnN0IENvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuYDtcblxuY29uc3QgUHJvZ3Jlc3NCYXJDaGlsZCA9IHN0eWxlZC5kaXZgXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAxNXB4O1xuICB3aWR0aDogODVweDtcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcbiAgYm9yZGVyOiAxcHggc29saWQgIzMzMztcbmA7XG5cbmV4cG9ydCBjb25zdCBQcm9ncmVzc0JhciA9ICh7XG4gIHBlcmNlbnRhZ2UsXG4gIGZpbGxlckV4dHJhU3R5bGVzLFxuICBwcm9ncmVzc0JhckV4dHJhU3R5bGVzLFxufTogUHJvZ3Jlc3NCYXJQcm9wcykgPT4ge1xuICByZXR1cm4gKFxuICAgIDxDb250YWluZXIgZGF0YS10ZXN0aWQ9XCJwcm9ncmVzcy1iYXJcIj5cbiAgICAgIDxQcm9ncmVzc0JhckNoaWxkXG4gICAgICAgIGRhdGEtdGVzdGlkPVwicHJvZ3Jlc3MtYmFyLWNoaWxkXCJcbiAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAuLi5wcm9ncmVzc0JhckV4dHJhU3R5bGVzLFxuICAgICAgICB9fVxuICAgICAgPlxuICAgICAgICA8RmlsbGVyIHBlcmNlbnRhZ2U9e3BlcmNlbnRhZ2V9IGZpbGxlckV4dHJhU3R5bGVzPXtmaWxsZXJFeHRyYVN0eWxlc30gLz5cbiAgICAgIDwvUHJvZ3Jlc3NCYXJDaGlsZD5cbiAgICA8L0NvbnRhaW5lcj5cbiAgKTtcbn07XG4iXX0= */",
   toString: xn
 }));
 F().s[2]++;
@@ -2279,13 +2268,9 @@ const Gn = ({
   percentage: e,
   fillerExtraStyles: n,
   progressBarExtraStyles: r
-}) => {
-  F().f[0]++;
-  const t = (F().s[3]++, r);
-  return F().s[4]++, /* @__PURE__ */ W(ut, { "data-testid": "progress-bar", children: /* @__PURE__ */ W(dt, { "data-testid": "progress-bar-child", style: {
-    ...t
-  }, children: /* @__PURE__ */ W(lt, { percentage: e, fillerExtraStyles: n }) }) });
-};
+}) => (F().f[0]++, F().s[3]++, /* @__PURE__ */ W(ut, { "data-testid": "progress-bar", children: /* @__PURE__ */ W(dt, { "data-testid": "progress-bar-child", style: {
+  ...r
+}, children: /* @__PURE__ */ W(lt, { percentage: e, fillerExtraStyles: n }) }) }));
 function An() {
   var e = "/home/myros/projects/progress-bar-for-react/src/components/ProgressBar/index.ts", n = "0515891f4a2d2300894473c2f4aa69286bdf0773", r = new Function("return this")(), t = "__coverage__", a = {
     path: "/home/myros/projects/progress-bar-for-react/src/components/ProgressBar/index.ts",
@@ -3021,12 +3006,12 @@ const bt = ({
   const c = (f().s[2]++, jn()), s = (f().s[3]++, st({
     percentage: e,
     ref: c
-  })), [m, b] = (f().s[4]++, $n(!1)), l = (f().s[5]++, f().b[2][0]++, t && (f().b[2][1]++, t.length > 0));
+  })), [m, b] = (f().s[4]++, Un(!1)), l = (f().s[5]++, f().b[2][0]++, t && (f().b[2][1]++, t.length > 0));
   return f().s[6]++, en(() => {
     var g;
     f().f[1]++;
-    const Z = (f().s[7]++, f().b[3][0]++, s && (f().b[3][1]++, s !== e)), I = (f().s[8]++, f().b[4][0]++, a && (f().b[4][1]++, typeof a == "function"));
-    f().s[9]++, f().b[6][0]++, Z && (f().b[6][1]++, I) && (f().b[6][2]++, !m) ? (f().b[5][0]++, f().s[10]++, a(e)) : (f().b[5][1]++, f().s[11]++, f().b[8][0]++, Z && (f().b[8][1]++, I) && (f().b[8][2]++, m) ? (f().b[7][0]++, f().s[12]++, (g = window == null ? void 0 : window.top) == null || g.onPercentageChange(e)) : f().b[7][1]++);
+    const E = (f().s[7]++, f().b[3][0]++, s && (f().b[3][1]++, s !== e)), I = (f().s[8]++, f().b[4][0]++, a && (f().b[4][1]++, typeof a == "function"));
+    f().s[9]++, f().b[6][0]++, E && (f().b[6][1]++, I) && (f().b[6][2]++, !m) ? (f().b[5][0]++, f().s[10]++, a(e)) : (f().b[5][1]++, f().s[11]++, f().b[8][0]++, E && (f().b[8][1]++, I) && (f().b[8][2]++, m) ? (f().b[7][0]++, f().s[12]++, (g = window == null ? void 0 : window.top) == null || g.onPercentageChange(e)) : f().b[7][1]++);
   }, [e, a, s, m]), f().s[13]++, f().b[10][0]++, ((p = window == null ? void 0 : window.top) == null ? void 0 : p.Cypress) && (f().b[10][1]++, !m) && (f().b[10][2]++, a) ? (f().b[9][0]++, f().s[14]++, window.top.onPercentageChange = a, f().s[15]++, b(!0)) : f().b[9][1]++, f().s[16]++, l ? (f().b[11][0]++, f().s[17]++, /* @__PURE__ */ W(ft, { percentage: e, fillerExtraStyles: n, progressBarExtraStyles: r, tooltipContent: t, tooltipStyle: o })) : (f().b[11][1]++, f().s[18]++, /* @__PURE__ */ W(Gn, { percentage: e, fillerExtraStyles: n, progressBarExtraStyles: r }));
 };
 function wn() {
