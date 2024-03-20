@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   plugins: [
@@ -10,12 +12,22 @@ export default defineConfig({
         presets: ['@babel/preset-typescript'],
       },
     }),
+    dts({ rollupTypes: true }),
   ],
   build: {
+    copyPublicDir: false,
     rollupOptions: {
-      input: {
-        main: './src/index.tsx', // Specify the entry module here
+      external: ['react', 'react/jsx-runtime', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
       },
+    },
+    lib: {
+      entry: resolve(__dirname, 'src/components/ProgressBarContainer/index.ts'),
+      formats: ['es'],
     },
   },
   server: {

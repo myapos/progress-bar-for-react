@@ -56,10 +56,6 @@ Please see the **src/Examples** folder for more descriptive usage.
 
 It will be triggered when a new percentage is received. Please see examples
 
-### Demo
-
-You can see a demo in the following [link](https://compassionate-shockley-ed598b.netlify.app/)
-
 ### Fork instructions
 
 You can fork this repository for your own modifications following the bellow steps

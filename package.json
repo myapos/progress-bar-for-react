@@ -1,29 +1,28 @@
 {
   "name": "progress_bar_for_react",
-  "version": "1.0.57",
-  "description": "Made with create-react-library",
+  "version": "1.0.58",
+  "description": "Made with Vite",
   "author": "Myron Apostolakis",
   "license": "MIT",
   "repository": "https://github.com/myapos/progress-bar-for-react",
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
-  "source": "src/index.js",
+  "main": "dist/progress_bar_for_react.mjs",
+  "types": "dist/main.d.ts",
   "engines": {
     "node": ">=18"
   },
   "scripts": {
     "build": "vite build",
+    "prebuild": "tsc",
     "start": "vite",
     "vite:start:ts": "tsc && VITE_NODE_ENV=development vite",
     "ts": "tsc --noEmit",
     "prepare": "run-s build",
     "publish": "npm publish",
+    "prepublishOnly": "npm run build",
     "test:build": "run-s build",
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build",
     "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "cy": "cypress open",
     "cy:headless": "cypress run --config video=false",
@@ -33,7 +32,8 @@
     "build-storybook": "storybook build"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.1",
@@ -71,7 +71,8 @@
     "start-server-and-test": "^2.0.3",
     "storybook": "^8.0.2",
     "typescript": "^5.4.2",
-    "vite": "^5.1.6"
+    "vite": "^5.1.6",
+    "vite-plugin-dts": "^3.7.3"
   },
   "files": [
     "dist"
