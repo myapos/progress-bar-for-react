@@ -14,7 +14,6 @@
 // ***********************************************************
 import '@cypress/code-coverage/support';
 import 'cypress-real-events/support';
-
 // setGlobalConfig(sbPreview);
 
 // Import commands.js using ES2015 syntax:

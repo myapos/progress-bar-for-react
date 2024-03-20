@@ -10,7 +10,6 @@ root.render(
   <>
     {(Object.keys(Examples) as Array<keyof typeof Examples>).map((key) => {
       const ExampleToRender = Examples[key];
-      console.log('key', key);
       return (
         <div key={key} data-testid={key}>
           <h3 style={{ textAlign: 'center' }}>{key}</h3>

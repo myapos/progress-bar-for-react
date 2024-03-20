@@ -2,19 +2,27 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import dts from 'vite-plugin-dts';
+import istanbul from 'vite-plugin-istanbul';
 
 export default defineConfig({
   plugins: [
     react({
       jsxImportSource: '@emotion/react',
       babel: {
-        plugins: ['@emotion/babel-plugin'],
+        plugins: ['@emotion/babel-plugin', 'istanbul'],
         presets: ['@babel/preset-typescript'],
       },
     }),
     dts({ rollupTypes: true }),
+    istanbul({
+      include: ['src/*'], // list of all directories/files you want to track coverage for
+      exclude: ['node_modules'], // list of all directories/files you do not want to track coverage for
+      extension: ['.js', '.ts', '.jsx', '.tsx'], // list of all file extensions you would like to track coverage for
+      requireEnv: false, // if set to true, more config is needed
+    }),
   ],
   build: {
+    sourcemap: true,
     copyPublicDir: false,
     rollupOptions: {
       external: ['react', 'react/jsx-runtime', 'react-dom'],
