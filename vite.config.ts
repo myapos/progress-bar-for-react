@@ -1,8 +1,16 @@
 import { defineConfig } from 'vite';
-import reactRefresh from '@vitejs/plugin-react-refresh';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [reactRefresh()],
+  plugins: [
+    react({
+      jsxImportSource: '@emotion/react',
+      babel: {
+        plugins: ['@emotion/babel-plugin'],
+        presets: ['@babel/preset-typescript'],
+      },
+    }),
+  ],
   build: {
     rollupOptions: {
       input: {
