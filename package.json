@@ -17,6 +17,7 @@
     "vite:start:ts": "tsc && VITE_NODE_ENV=development vite",
     "ts": "tsc --noEmit",
     "prepare": "run-s build",
+    "prepush": "tsc",
     "publish": "npm publish",
     "prepublishOnly": "npm run build",
     "test:build": "run-s build",
