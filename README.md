@@ -1,8 +1,9 @@
 # progress_bar_for_react
 
-> Made with create-react-library
+> Made with Vite
 
 [![NPM](https://img.shields.io/npm/v/progress_bar_for_react.svg)](https://www.npmjs.com/package/progress_bar_for_react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
 ## Install
 
@@ -56,10 +57,6 @@ Please see the **src/Examples** folder for more descriptive usage.
 
 It will be triggered when a new percentage is received. Please see examples
 
-### Demo
-
-You can see a demo in the following [link](https://compassionate-shockley-ed598b.netlify.app/)
-
 ### Fork instructions
 
 You can fork this repository for your own modifications following the bellow steps
@@ -73,12 +70,12 @@ You can view the storybook online [here](https://622e55013e5eac003a9669be-uavmoh
 
 ### Testing
 
-This component is tested using Cypress and storybook
+This component is tested using Cypress and Vite Server
 
 You can use the following commands
 
-- `npm test` to run storybook and cypress in browser mode.
-- `npm run test:headless` to run storybook and cypress in headless mode.
+- `npm test` to run vite dev server and cypress in browser mode.
+- `npm run test:headless` to run vite dev server and cypress in headless mode.
 
 ### License
 

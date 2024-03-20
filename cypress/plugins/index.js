@@ -15,9 +15,9 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-// eslint-disable-next-line no-unused-vars
+// Cypress/plugins/index.js
 module.exports = (on, config) => {
   require('@cypress/code-coverage/task')(on, config);
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+
+  return config;
 };

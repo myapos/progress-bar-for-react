@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    linear-gradient(45deg, #92baac 45px, transparent 45px) 64px 64px,
+    linear-gradient(
+      45deg,
+      #92baac 45px,
+      transparent 45px,
+      transparent 91px,
+      #e1ebbd 91px,
+      #e1ebbd 135px,
+      transparent 135px
+    ),
+    linear-gradient(
+      -45deg,
+      #92baac 23px,
+      transparent 23px,
+      transparent 68px,
+      #92baac 68px,
+      #92baac 113px,
+      transparent 113px,
+      transparent 158px,
+      #92baac 158px
+    );
+  background-color: #e1ebbd;
+  background-size: 128px 128px;
+
+  display: flex;
+  justify-content: center;
+  height: 1000px;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  background-color: grey;
+  padding: 1rem;
+  border-radius: 2px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 1rem;
+  text-align: center;
+}
