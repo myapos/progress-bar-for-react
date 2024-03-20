@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1710954682294" clover="3.2.0">
-  <project timestamp="1710954682294" name="All files">
-    <metrics statements="78" coveredstatements="67" conditionals="41" coveredconditionals="25" methods="21" coveredmethods="19" elements="140" coveredelements="111" complexity="0" loc="78" ncloc="78" packages="8" files="17" classes="17"/>
+<coverage generated="1710958025119" clover="3.2.0">
+  <project timestamp="1710958025119" name="All files">
+    <metrics statements="79" coveredstatements="71" conditionals="43" coveredconditionals="29" methods="24" coveredmethods="24" elements="146" coveredelements="124" complexity="0" loc="79" ncloc="79" packages="8" files="17" classes="17"/>
     <package name="src">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="index.tsx" path="/home/myros/projects/progress-bar-for-react/src/index.tsx">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="12" count="18" type="stmt"/>
-        <line num="13" count="18" type="stmt"/>
-        <line num="14" count="18" type="stmt"/>
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="11" type="stmt"/>
+        <line num="7" count="11" type="stmt"/>
+        <line num="9" count="11" type="stmt"/>
+        <line num="12" count="66" type="stmt"/>
+        <line num="13" count="66" type="stmt"/>
+        <line num="14" count="26" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Filler">
       <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="Filler.tsx" path="/home/myros/projects/progress-bar-for-react/src/components/Filler/Filler.tsx">
         <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="10" count="18" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="14" count="18" type="cond" truecount="1" falsecount="1"/>
-        <line num="15" count="18" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
+        <line num="10" count="67" type="stmt"/>
+        <line num="13" count="11" type="stmt"/>
+        <line num="14" count="67" type="cond" truecount="1" falsecount="1"/>
+        <line num="15" count="67" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
       </file>
     </package>
@@ -30,31 +30,31 @@
       <metrics statements="12" coveredstatements="11" conditionals="5" coveredconditionals="4" methods="4" coveredmethods="4"/>
       <file name="usePrevious.ts" path="/home/myros/projects/progress-bar-for-react/src/components/HOCS/usePrevious.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="18" type="stmt"/>
-        <line num="7" count="18" type="stmt"/>
-        <line num="9" count="18" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
+        <line num="6" count="67" type="stmt"/>
+        <line num="7" count="67" type="stmt"/>
+        <line num="9" count="67" type="stmt"/>
       </file>
       <file name="withTooltip.tsx" path="/home/myros/projects/progress-bar-for-react/src/components/HOCS/withTooltip.tsx">
         <metrics statements="8" coveredstatements="7" conditionals="5" coveredconditionals="4" methods="2" coveredmethods="2"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="12" count="9" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="9" type="cond" truecount="3" falsecount="1"/>
-        <line num="16" count="9" type="stmt"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="11" count="11" type="stmt"/>
+        <line num="12" count="34" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="34" type="cond" truecount="3" falsecount="1"/>
+        <line num="16" count="34" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
-        <line num="30" count="3" type="stmt"/>
+        <line num="28" count="11" type="stmt"/>
+        <line num="30" count="11" type="stmt"/>
       </file>
     </package>
     <package name="src.components.ProgressBar">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="ProgressBar.tsx" path="/home/myros/projects/progress-bar-for-react/src/components/ProgressBar/ProgressBar.tsx">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="25" count="18" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="11" type="stmt"/>
+        <line num="12" count="11" type="stmt"/>
+        <line num="20" count="11" type="stmt"/>
+        <line num="25" count="67" type="stmt"/>
         <line num="26" count="18" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/myros/projects/progress-bar-for-react/src/components/ProgressBar/index.ts">
@@ -62,29 +62,30 @@
       </file>
     </package>
     <package name="src.components.ProgressBarContainer">
-      <metrics statements="21" coveredstatements="16" conditionals="27" coveredconditionals="17" methods="2" coveredmethods="2"/>
+      <metrics statements="22" coveredstatements="18" conditionals="29" coveredconditionals="20" methods="3" coveredmethods="3"/>
       <file name="ProgressBarContainer.tsx" path="/home/myros/projects/progress-bar-for-react/src/components/ProgressBarContainer/ProgressBarContainer.tsx">
-        <metrics statements="21" coveredstatements="16" conditionals="27" coveredconditionals="17" methods="2" coveredmethods="2"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="20" count="18" type="stmt"/>
-        <line num="23" count="18" type="stmt"/>
-        <line num="24" count="18" type="stmt"/>
-        <line num="26" count="18" type="cond" truecount="2" falsecount="0"/>
-        <line num="28" count="18" type="stmt"/>
-        <line num="29" count="18" type="cond" truecount="1" falsecount="1"/>
-        <line num="31" count="18" type="cond" truecount="1" falsecount="1"/>
-        <line num="33" count="18" type="cond" truecount="2" falsecount="3"/>
+        <metrics statements="22" coveredstatements="18" conditionals="29" coveredconditionals="20" methods="3" coveredmethods="3"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="12" count="11" type="stmt"/>
+        <line num="20" count="67" type="stmt"/>
+        <line num="23" count="67" type="stmt"/>
+        <line num="24" count="67" type="stmt"/>
+        <line num="26" count="67" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="67" type="stmt"/>
+        <line num="29" count="67" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="67" type="cond" truecount="1" falsecount="1"/>
+        <line num="33" count="67" type="cond" truecount="2" falsecount="3"/>
         <line num="35" count="0" type="stmt"/>
-        <line num="36" count="18" type="cond" truecount="2" falsecount="3"/>
+        <line num="36" count="67" type="cond" truecount="2" falsecount="3"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="41" count="18" type="cond" truecount="4" falsecount="1"/>
+        <line num="41" count="67" type="cond" truecount="4" falsecount="1"/>
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="47" count="18" type="cond" truecount="1" falsecount="1"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="51" count="18" type="cond" truecount="2" falsecount="0"/>
-        <line num="52" count="9" type="stmt"/>
+        <line num="47" count="67" type="cond" truecount="4" falsecount="0"/>
+        <line num="48" count="28" type="stmt"/>
+        <line num="51" count="26" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="17" type="stmt"/>
+        <line num="59" count="27" type="stmt"/>
         <line num="63" count="9" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/myros/projects/progress-bar-for-react/src/components/ProgressBarContainer/index.ts">
@@ -95,11 +96,11 @@
       <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="Tooltip.tsx" path="/home/myros/projects/progress-bar-for-react/src/components/ToolTip/Tooltip.tsx">
         <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
-        <line num="44" count="3" type="stmt"/>
-        <line num="45" count="9" type="cond" truecount="1" falsecount="1"/>
-        <line num="46" count="9" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
+        <line num="28" count="11" type="stmt"/>
+        <line num="44" count="11" type="stmt"/>
+        <line num="45" count="34" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="34" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
       </file>
     </package>
@@ -107,49 +108,49 @@
       <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="getDisplayName.ts" path="/home/myros/projects/progress-bar-for-react/src/components/utils/getDisplayName.ts">
         <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="3" type="cond" truecount="2" falsecount="1"/>
-        <line num="7" count="3" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="5" count="11" type="cond" truecount="2" falsecount="1"/>
+        <line num="7" count="11" type="stmt"/>
       </file>
     </package>
     <package name="src.examples">
-      <metrics statements="19" coveredstatements="16" conditionals="2" coveredconditionals="0" methods="9" coveredmethods="7"/>
+      <metrics statements="19" coveredstatements="18" conditionals="2" coveredconditionals="1" methods="9" coveredmethods="9"/>
       <file name="ClockedProgressBar.tsx" path="/home/myros/projects/progress-bar-for-react/src/examples/ClockedProgressBar.tsx">
-        <metrics statements="9" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="2"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="9" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="4" count="11" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
       </file>
       <file name="Complex.tsx" path="/home/myros/projects/progress-bar-for-react/src/examples/Complex.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
       </file>
       <file name="ExtraStyles.tsx" path="/home/myros/projects/progress-bar-for-react/src/examples/ExtraStyles.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
       </file>
       <file name="ProgressBarStyles.tsx" path="/home/myros/projects/progress-bar-for-react/src/examples/ProgressBarStyles.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
       </file>
       <file name="Simple.tsx" path="/home/myros/projects/progress-bar-for-react/src/examples/Simple.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
       </file>
       <file name="ToolTip.tsx" path="/home/myros/projects/progress-bar-for-react/src/examples/ToolTip.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/myros/projects/progress-bar-for-react/src/examples/index.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>

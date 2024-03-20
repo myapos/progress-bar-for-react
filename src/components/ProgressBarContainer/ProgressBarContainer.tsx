@@ -44,10 +44,6 @@ export const ProgressBarContainer = ({
     setSaveOnPercentage(true);
   }
 
-  if (percentage === 100) {
-    return null;
-  }
-
   if (hasTooltip) {
     return (
       <TooltipedProgressBar

@@ -22,13 +22,12 @@ export const ProgressBar = ({
   fillerExtraStyles,
   progressBarExtraStyles,
 }: ProgressBarProps) => {
-  const opt = progressBarExtraStyles;
   return (
     <Container data-testid="progress-bar">
       <ProgressBarChild
         data-testid="progress-bar-child"
         style={{
-          ...opt,
+          ...progressBarExtraStyles,
         }}
       >
         <Filler percentage={percentage} fillerExtraStyles={fillerExtraStyles} />
