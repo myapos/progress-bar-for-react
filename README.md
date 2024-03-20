@@ -73,12 +73,12 @@ You can view the storybook online [here](https://622e55013e5eac003a9669be-uavmoh
 
 ### Testing
 
-This component is tested using Cypress and storybook
+This component is tested using Cypress and Vite Server
 
 You can use the following commands
 
-- `npm test` to run storybook and cypress in browser mode.
-- `npm run test:headless` to run storybook and cypress in headless mode.
+- `npm test` to run vite dev server and cypress in browser mode.
+- `npm run test:headless` to run vite dev server and cypress in headless mode.
 
 ### License
 

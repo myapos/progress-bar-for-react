@@ -42,14 +42,17 @@ const TooltipContainer = styled.div`
  * displayed on mouse hover */
 
 export const Tooltip = ({ tooltipContent, children, style }: TooltipProps) => {
-  let tooltipStyle = {};
-
   if (style) {
-    tooltipStyle = { ...style };
+    return (
+      <TooltipContainer style={style} data-testid="tooltip">
+        {children}
+        <StyledSpan data-testid="tooltiptext">{tooltipContent}</StyledSpan>
+      </TooltipContainer>
+    );
   }
 
   return (
-    <TooltipContainer style={tooltipStyle} data-testid="tooltip">
+    <TooltipContainer data-testid="tooltip">
       {children}
       <StyledSpan data-testid="tooltiptext">{tooltipContent}</StyledSpan>
     </TooltipContainer>
