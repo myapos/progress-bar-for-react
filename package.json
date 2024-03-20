@@ -29,7 +29,7 @@
     "cy:headless": "cypress run --config video=false",
     "test": "start-server-and-test start http://localhost:3000 cy --browser chrome",
     "test:headless": "start-server-and-test start http://localhost:3000  cy:headless",
-    "storybook": "storybook dev -p 6006 @cypress/instrument-cra",
+    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "peerDependencies": {
