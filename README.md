@@ -88,6 +88,7 @@ A short tutorial can be found in the following link
 
 ### Changelog
 
+- v1.0.59 --> Added Typescript support, build with Vite
 - v1.0.55 --> Tested with React 18
 - v1.0.52 --> Replaced react-jss with emotion
 - v1.0.51 --> Tested with node version > 16.13.1
