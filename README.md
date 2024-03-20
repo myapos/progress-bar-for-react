@@ -1,8 +1,9 @@
 # progress_bar_for_react
 
-> Made with create-react-library
+> Made with Vite
 
 [![NPM](https://img.shields.io/npm/v/progress_bar_for_react.svg)](https://www.npmjs.com/package/progress_bar_for_react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
 ## Install
 
