@@ -65,8 +65,8 @@ Please follow the instructions from `https://help.github.com/en/github/getting-s
 
 ### Development - Storybook
 
-Use command `npm run storybook` and visit `http://localhost:6006`. The stories folder exists in the path `src/stories`.
-You can view the storybook online [here](https://622e55013e5eac003a9669be-uavmohiioj.chromatic.com/?path=/story/progressbar--simple)
+Use command `npm run storybook` and visit `http://localhost:6006`.
+You can view the storybook online [here](https://622e55013e5eac003a9669be-gnobmxhwps.chromatic.com/?path=/story/progress-bar--simple)
 
 ### Testing
 

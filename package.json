@@ -2,9 +2,14 @@
   "name": "progress_bar_for_react",
   "version": "1.0.59",
   "description": "Made with Vite",
-  "author": "Myron Apostolakis",
+  "author": {
+    "name": "Myron Apostolakis"
+  },
   "license": "MIT",
-  "repository": "https://github.com/myapos/progress-bar-for-react",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myapos/progress-bar-for-react.git"
+  },
   "main": "dist/progress_bar_for_react.mjs",
   "types": "dist/main.d.ts",
   "engines": {
@@ -27,7 +32,8 @@
     "test": "start-server-and-test start http://localhost:3000 cy --browser chrome",
     "test:headless": "start-server-and-test start http://localhost:3000  cy:headless",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=98790b89b1c7"
   },
   "pre-push": [
     "ts"
@@ -55,6 +61,7 @@
     "@testing-library/cypress": "^10.0.1",
     "@types/react": "^18.2.67",
     "@types/react-dom": "^18.2.22",
+    "chromatic": "^11.2.0",
     "cross-env": "^7.0.3",
     "cypress": "^13.7.0",
     "cypress-real-events": "^1.12.0",
@@ -83,5 +90,9 @@
   ],
   "dependencies": {
     "@vitejs/plugin-react": "^4.2.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/myapos/progress-bar-for-react/issues"
+  },
+  "homepage": "https://github.com/myapos/progress-bar-for-react#readme"
 }
